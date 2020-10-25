@@ -6,15 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020/10 | 世人皆苦</title>
+  <title>批量增删改查操作,分页器,IP限制 | 世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/archives/2020/10/index.html">
+  <meta name="description" content="表模型，抽象表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批量增删改查操作,分页器,IP限制">
+<meta property="og:url" content="http://example.com/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="表模型，抽象表">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020185100.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020190430.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020191850.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020191904.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020212932.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020212913.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201021162356.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020185634.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201024145354.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201024150139.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201024150914.png">
+<meta property="article:published_time" content="2020-10-25T08:30:18.691Z">
+<meta property="article:modified_time" content="2020-10-25T08:35:21.105Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201020185100.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,130 +164,249 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-全栈python开发 85 day" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      批量增删改查操作,分页器,IP限制
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/" class="archive-article-date">
+
+        
+        <a href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/" class="archive-article-date">
   	<time datetime="2020-10-25T08:30:18.691Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/">批量增删改查操作,分页器,IP限制</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="表模型，抽象表"><a href="#表模型，抽象表" class="headerlink" title="表模型，抽象表"></a>表模型，抽象表</h1><a id="more"></a>  
 
-        <div class="article-info info-on-right">
-          
-          
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020185100.png" alt="image-20201020185059884"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020190430.png" alt="image-20201020190430600"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020191850.png" alt="image-20201020191849928"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020191904.png" alt="image-20201020191904518"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库表基类（其余所以表都应该有的字段)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    <span class="comment"># 创建时间， auto_now_add 新建的时间</span></span><br><span class="line">    create_time = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 最后一次修改时间</span></span><br><span class="line">    last_update_time = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 是否删除 默认为False</span></span><br><span class="line">    is_delete = models.BooleanField(default=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 抽象表不需要生成表</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        abstract = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span>(<span class="params">Base</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>, verbose_name=<span class="string">&#x27;书名&#x27;</span>)</span><br><span class="line">    price = models.DecimalField(max_digits=<span class="number">5</span>, decimal_places=<span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 一对多   关联字段写在多的一方</span></span><br><span class="line">    <span class="comment"># 出版社没有了  书也应该还是原来的出版社  models.DO_NOTHING不做操作</span></span><br><span class="line">    publish = models.ForeignKey(to=<span class="string">&#x27;Publish&#x27;</span>, on_delete=models.DO_NOTHING, db_constraint=<span class="literal">False</span>)</span><br><span class="line">    <span class="comment"># 多对多   写在查询评率高的一方</span></span><br><span class="line">    <span class="comment"># db_constraint这个就是保留跨表查询的便利(双下划线跨表查询```),但是不用约束字段了,一半公司都用false,这样就省的报错,</span></span><br><span class="line">    <span class="comment"># 因为没有了约束(Field字段对象,既约束,又建立表与表之间的关系)</span></span><br><span class="line">    authors = models.ManyToManyField(to=<span class="string">&#x27;Author&#x27;</span>, db_constraint=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        <span class="comment"># verbose_name = &#x27;书&#x27;  显示时  会在 书后面加s  书s</span></span><br><span class="line">        verbose_name_plural = <span class="string">&#x27;书&#x27;</span>  <span class="comment"># 显示的就是书</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">publish_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.publish.name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">author_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> [&#123;<span class="string">&#x27;name&#x27;</span>: i.name, <span class="string">&#x27;sex&#x27;</span>: i.get_sex_display()&#125; <span class="keyword">for</span> i <span class="keyword">in</span> self.authors.all()]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Publish</span>(<span class="params">Base</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    add = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 当显示表对象时</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Author</span>(<span class="params">Base</span>):</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">32</span>)</span><br><span class="line">    sex = models.IntegerField(choices=((<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>), (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>)))</span><br><span class="line">    <span class="comment"># 一对一  关联字段写在查询频率高的表</span></span><br><span class="line">    <span class="comment"># models.CASCADE 级联删除  作者没有了  作者详情应该一起没有</span></span><br><span class="line">    author_more = models.OneToOneField(to=<span class="string">&#x27;AuthorMore&#x27;</span>, on_delete=models.CASCADE, db_constraint=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AuthorMore</span>(<span class="params">Base</span>):</span></span><br><span class="line">    photo = models.CharField(max_length=<span class="number">11</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.photo</span><br></pre></td></tr></table></figure>
 
+
+
+
+
+
+
+<h2 id="断表关联"><a href="#断表关联" class="headerlink" title="断表关联"></a>断表关联</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">db_constraint=<span class="literal">False</span></span><br><span class="line"><span class="comment"># 1、表之间没有外键关联，但是有外键逻辑关联(有充当外键的字段)</span></span><br><span class="line"><span class="comment"># 2、断关联后不会影响数据库查询效率，但是会极大提高数据库增删改效率（不影响增删改查操作&gt;)</span></span><br><span class="line"><span class="comment"># 3、断关联一定要通过逻辑保证表之间数据的安全，不要出现脏数据，代码控制</span></span><br><span class="line"><span class="comment"># 4、断关聘</span></span><br><span class="line"><span class="comment"># 5、级联关系</span></span><br><span class="line">    作者没了，详情也没: on_delete=models.CASCADE</span><br><span class="line">    出版社没了，书还是那个出版社出版: on_delete=models. DO_NOTHING</span><br><span class="line">    部门没了，员工没有部门(空不能): null=<span class="literal">True</span>,on_delete=models.SET_NULL</span><br><span class="line">    部门没了，员工进入默认部门(默认值):default=<span class="number">0</span>,on_delete=models. SET_DEFAULT</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="admin的使用"><a href="#admin的使用" class="headerlink" title="admin的使用"></a>admin的使用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">verbose_name	<span class="comment"># admin中显示中文</span></span><br><span class="line">help_text	<span class="comment"># admin中的提示</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    verbose_name_plural		<span class="comment"># admin中表名  </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__str__</span>(<span class="params">self</span>):</span></span><br><span class="line">    <span class="keyword">return</span> xxx	<span class="comment"># 显示对象时</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> app01 <span class="keyword">import</span> models</span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line"></span><br><span class="line">admin.site.register(models.Author)</span><br><span class="line">admin.site.register(models.AuthorMore)</span><br><span class="line">admin.site.register(models.Book)</span><br><span class="line">admin.site.register(models.Publish)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="序列化组件"><a href="#序列化组件" class="headerlink" title="序列化组件"></a>序列化组件</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020212932.png" alt="image-20201020212932391"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020212913.png" alt="image-20201020212912961"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers</span><br><span class="line"><span class="keyword">from</span> rest_framework.serializers <span class="keyword">import</span> ListSerializer</span><br><span class="line"><span class="keyword">from</span> app01 <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookList</span>(<span class="params">ListSerializer</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span>(<span class="params">self, instance, validated_data</span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            self.child.update(instance=instance[i], validated_data=attrs) <span class="keyword">for</span> i, attrs <span class="keyword">in</span> enumerate(validated_data)</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookSer</span>(<span class="params">serializers.ModelSerializer</span>):</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        <span class="comment">#  list_serializer_class 当many=True时的效验类</span></span><br><span class="line">        list_serializer_class = BookList</span><br><span class="line">        model = models.Book</span><br><span class="line">        <span class="comment"># fields = &#x27;__all__&#x27;</span></span><br><span class="line">        <span class="comment"># depth 显示的层级  默认0 ， 等于1时  展示外键所连表的下一级</span></span><br><span class="line">        <span class="comment"># depth = 0</span></span><br><span class="line">        fields = <span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;price&#x27;</span>, <span class="string">&#x27;publish&#x27;</span>, <span class="string">&#x27;authors&#x27;</span>, <span class="string">&#x27;publish_name&#x27;</span>, <span class="string">&#x27;author_name&#x27;</span></span><br><span class="line">        extra_kwargs = &#123;</span><br><span class="line">            <span class="string">&#x27;publish&#x27;</span>: &#123;<span class="string">&#x27;write_only&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">            <span class="string">&#x27;authors&#x27;</span>: &#123;<span class="string">&#x27;write_only&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">            <span class="string">&#x27;publish_name&#x27;</span>: &#123;<span class="string">&#x27;read_only&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">            <span class="string">&#x27;author_name&#x27;</span>: &#123;<span class="string">&#x27;read_only&#x27;</span>: <span class="literal">True</span>&#125;,</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="批量-单条增"><a href="#批量-单条增" class="headerlink" title="批量 单条增"></a>批量 单条增</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201021162356.png" alt="image-20201021162348828"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(request.data, dict):</span><br><span class="line">        ser_obj = self.get_serializer(data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser_obj.is_valid():</span><br><span class="line">            ser_obj.save()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(data=ser_obj.errors)</span><br><span class="line">        <span class="keyword">return</span> Response(data=ser_obj.data)</span><br><span class="line">    <span class="keyword">elif</span> isinstance(request.data, list):</span><br><span class="line">        ser_list = self.get_serializer(data=request.data, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># print(type(ser_list))</span></span><br><span class="line">        <span class="keyword">if</span> ser_list.is_valid():</span><br><span class="line">            ser_list.save()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(ser_list.errors)</span><br><span class="line">        <span class="keyword">return</span> Response(data=ser_list.data)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="批量-改"><a href="#批量-改" class="headerlink" title="批量 改"></a>批量 改</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">put</span>(<span class="params">self, request, *args, **kwargs</span>):</span></span><br><span class="line">    <span class="keyword">if</span> kwargs.get(<span class="string">&#x27;pk&#x27;</span>):</span><br><span class="line">        book_obj = self.get_object()</span><br><span class="line">        ser_obj = self.get_serializer(instance=book_obj, data=request.data, )</span><br><span class="line">        <span class="comment"># print(book_obj, request.data)</span></span><br><span class="line">        <span class="keyword">if</span> ser_obj.is_valid():</span><br><span class="line">            ser_obj.save()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(data=ser_obj.errors)</span><br><span class="line">        <span class="keyword">return</span> Response(data=ser_obj.data)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        instance_list = []</span><br><span class="line">        data_list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> request.data:</span><br><span class="line">            id = i.pop(<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">            obj = models.Book.objects.filter(pk=id).first()</span><br><span class="line">            instance_list.append(obj)</span><br><span class="line">            data_list.append(i)</span><br><span class="line">        <span class="comment"># print(instance_list, data_list)</span></span><br><span class="line">        <span class="comment"># res_list = []</span></span><br><span class="line">        <span class="comment"># for i, obj in enumerate(instance_list):</span></span><br><span class="line">        <span class="comment">#     # print(i,obj)</span></span><br><span class="line">        <span class="comment">#     ser_obj = self.get_serializer(instance=obj, data=data_list[i])</span></span><br><span class="line">        <span class="comment">#     if ser_obj.is_valid():</span></span><br><span class="line">        <span class="comment">#         ser_obj.save()</span></span><br><span class="line">        <span class="comment">#         res_list.append(ser_obj.data)</span></span><br><span class="line">        <span class="comment">#     else:</span></span><br><span class="line">        <span class="comment">#         res_list.append(ser_obj.errors)</span></span><br><span class="line">        <span class="comment"># return Response(data=res_list)</span></span><br><span class="line">        ser_list = self.get_serializer(instance=instance_list, data=data_list, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> ser_list.is_valid():</span><br><span class="line">            ser_list.save()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(ser_list.errors)</span><br><span class="line">        <span class="keyword">return</span> Response(data=ser_list.data)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="批量删除"><a href="#批量删除" class="headerlink" title="批量删除"></a>批量删除</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete</span>(<span class="params">self, request, *args, **kwargs</span>):</span></span><br><span class="line">     <span class="keyword">if</span> kwargs.get(<span class="string">&#x27;pk&#x27;</span>):</span><br><span class="line">         res = models.Book.objects.filter(pk=kwargs.get(<span class="string">&#x27;pk&#x27;</span>), is_delete=<span class="literal">False</span>).update(is_delete=<span class="literal">True</span>)</span><br><span class="line">         <span class="keyword">return</span> Response(res)</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         res = models.Book.objects.filter(pk__in=request.data.get(<span class="string">&#x27;id&#x27;</span>), is_delete=<span class="literal">False</span>).update(is_delete=<span class="literal">True</span>)</span><br><span class="line">         <span class="keyword">return</span> Response(res)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="on-delete"><a href="#on-delete" class="headerlink" title="on_delete"></a>on_delete</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当删除关联表中的数据时, 当前表与其关联的行的行为</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201020185634.png" alt="image-20201020185634501"></p>
+<h1 id="分页的使用"><a href="#分页的使用" class="headerlink" title="分页的使用"></a>分页的使用</h1><h2 id="基本分页"><a href="#基本分页" class="headerlink" title="基本分页"></a>基本分页</h2><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201024145354.png" alt="image-20201024145354812"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># from rest_framework.generics import ListAPIView</span></span><br><span class="line"><span class="comment"># from rest_framework.pagination import PageNumberPagination</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class MyPageNumberPagination(PageNumberPagination):</span></span><br><span class="line"><span class="comment">#     page_size = 5  # 默认每页条数</span></span><br><span class="line"><span class="comment">#     page_query_param = &#x27;page&#x27;   # 第几页关键key</span></span><br><span class="line"><span class="comment">#     page_size_query_param = &#x27;size&#x27;  # 前端自定义显示个数关键key</span></span><br><span class="line"><span class="comment">#     max_page_size = 10  # 每页最多条数</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class PageBook(ListAPIView):</span></span><br><span class="line"><span class="comment">#     queryset = models.Book.objects.all()</span></span><br><span class="line"><span class="comment">#     serializer_class = BookSer</span></span><br><span class="line"><span class="comment">#     pagination_class = MyPageNumberPagination</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="偏移分页"><a href="#偏移分页" class="headerlink" title="偏移分页"></a>偏移分页</h2><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201024150139.png" alt="image-20201024150139568"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># from rest_framework.generics import ListAPIView</span></span><br><span class="line"><span class="comment"># from rest_framework.pagination import LimitOffsetPagination</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class MyPageNumberPagination(LimitOffsetPagination):</span></span><br><span class="line"><span class="comment">#     default_limit = 5  # 默认每页条数</span></span><br><span class="line"><span class="comment">#     max_limit = 10   # 最大展示个数</span></span><br><span class="line"><span class="comment">#     offset_query_param = &#x27;offset&#x27;   # 从哪个位置开始</span></span><br><span class="line"><span class="comment">#     limit_query_param = &#x27;limit&#x27;  # 展示的个数</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># class PageBook(ListAPIView):</span></span><br><span class="line"><span class="comment">#     queryset = models.Book.objects.all()</span></span><br><span class="line"><span class="comment">#     serializer_class = BookSer</span></span><br><span class="line"><span class="comment">#     pagination_class = MyPageNumberPagination</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="游标分页"><a href="#游标分页" class="headerlink" title="游标分页"></a>游标分页</h2><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201024150914.png" alt="image-20201024150914495"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.generics <span class="keyword">import</span> ListAPIView</span><br><span class="line"><span class="keyword">from</span> rest_framework.pagination <span class="keyword">import</span> CursorPagination</span><br><span class="line"><span class="keyword">from</span> app01.ip_pinlv <span class="keyword">import</span> MySimpleRateThrottle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPageNumberPagination</span>(<span class="params">CursorPagination</span>):</span></span><br><span class="line">    page_size = <span class="number">5</span>  <span class="comment"># 默认每页条数</span></span><br><span class="line">    max_page_size = <span class="number">10</span>  <span class="comment"># 最大个数</span></span><br><span class="line">    page_size_query_param = <span class="string">&#x27;size&#x27;</span></span><br><span class="line">    cursor_query_param = <span class="string">&#x27;cursor&#x27;</span>  <span class="comment"># 位置记录的key</span></span><br><span class="line">    ordering = <span class="string">&#x27;-id&#x27;</span>  <span class="comment"># 排序方式  加 ’-‘ 反向</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PageBook</span>(<span class="params">ListAPIView</span>):</span></span><br><span class="line">    queryset = models.Book.objects.all()</span><br><span class="line">    serializer_class = BookSer</span><br><span class="line">    pagination_class = MyPageNumberPagination</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="IP限制"><a href="#IP限制" class="headerlink" title="IP限制"></a>IP限制</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 写一个类 ， 继承SimpleRateThrottle  只需要重写get_cache_key</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># settings</span></span><br><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&#x27;DEFAULT_THROTTLE_RATES&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;test&#x27;</span>: <span class="string">&#x27;3/m&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 局部使用  全局使用</span></span><br><span class="line"><span class="keyword">from</span> rest_framework.throttling <span class="keyword">import</span> SimpleRateThrottle</span><br><span class="line"><span class="keyword">from</span> rest_framework.request <span class="keyword">import</span> Request</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySimpleRateThrottle</span>(<span class="params">SimpleRateThrottle</span>):</span></span><br><span class="line">    scope = <span class="string">&#x27;test&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_cache_key</span>(<span class="params">self, request, view</span>):</span></span><br><span class="line">        <span class="comment"># &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># Should return a unique cache-key which can be used for throttling.</span></span><br><span class="line">        <span class="comment"># Must be overridden.</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># May return `None` if the request should not be throttled.</span></span><br><span class="line">        <span class="comment"># &quot;&quot;&quot;</span></span><br><span class="line">        <span class="comment"># raise NotImplementedError(&#x27;.get_cache_key() must be overridden&#x27;)</span></span><br><span class="line">        print(request.META.get(<span class="string">&#x27;REMOTE_ADDR&#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> request.META.get(<span class="string">&#x27;REMOTE_ADDR&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/" class="archive-article-date">
-  	<time datetime="2020-10-19T06:12:04.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rest_framework权限，频率....</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/">rest_framework权限，频率....</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E6%A8%A1%E5%9E%8B%EF%BC%8C%E6%8A%BD%E8%B1%A1%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">表模型，抽象表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A1%A8%E5%85%B3%E8%81%94"><span class="toc-number">1.1.</span> <span class="toc-text">断表关联</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#admin%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">admin的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96%E7%BB%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">序列化组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%B9%E9%87%8F-%E5%8D%95%E6%9D%A1%E5%A2%9E"><span class="toc-number">4.</span> <span class="toc-text">批量 单条增</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%B9%E9%87%8F-%E6%94%B9"><span class="toc-number">5.</span> <span class="toc-text">批量 改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%88%A0%E9%99%A4"><span class="toc-number">6.</span> <span class="toc-text">批量删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#on-delete"><span class="toc-number">7.</span> <span class="toc-text">on_delete</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">8.</span> <span class="toc-text">分页的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5"><span class="toc-number">8.1.</span> <span class="toc-text">基本分页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E7%A7%BB%E5%88%86%E9%A1%B5"><span class="toc-number">8.2.</span> <span class="toc-text">偏移分页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%A0%87%E5%88%86%E9%A1%B5"><span class="toc-number">8.3.</span> <span class="toc-text">游标分页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IP%E9%99%90%E5%88%B6"><span class="toc-number">9.</span> <span class="toc-text">IP限制</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/" class="archive-article-date">
-  	<time datetime="2020-10-12T14:03:42.860Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-12</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/">rest_frame路由与认证</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/12/%E5%B9%B6%E5%8F%91%2001/" class="archive-article-date">
-  	<time datetime="2020-10-12T01:43:04.645Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/12/%E5%B9%B6%E5%8F%91%2001/">多道技术,进程理论,同步异步,阻塞非阻塞，开启进程的方式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -301,8 +436,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
