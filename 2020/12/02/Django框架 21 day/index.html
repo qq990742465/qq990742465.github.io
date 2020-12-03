@@ -8,13 +8,20 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="多表查询models测试环境123456789101112import os#if __name__ &#x3D;&#x3D; &quot;__main__&quot;:    os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;多表操作.settings&quot;)    import django#  if... -----  ....">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/Django%E6%A1%86%E6%9E%B6%2021%20day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="多表查询models测试环境123456789101112import os#if __name__ &#x3D;&#x3D; &quot;__main__&quot;:    os.environ.setdefault(&quot;DJANGO_SETTINGS_MODULE&quot;, &quot;多表操作.settings&quot;)    import django#  if... -----  ....">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212802.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212803.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.498Z">
+<meta property="article:modified_time" content="2020-12-02T13:28:07.862Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212802.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +155,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Django框架 21 day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><h2 id="models测试环境"><a href="#models测试环境" class="headerlink" title="models测试环境"></a>models测试环境</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    os.environ.setdefault(<span class="string">&quot;DJANGO_SETTINGS_MODULE&quot;</span>, <span class="string">&quot;多表操作.settings&quot;</span>)</span><br><span class="line">    <span class="keyword">import</span> django</span><br><span class="line"><span class="comment">#  if... -----  ....go  来自manage.py中  代表匹配值django环境</span></span><br><span class="line">    django.setup()  <span class="comment"># 装载django环境</span></span><br><span class="line">    <span class="comment"># 开始测试</span></span><br><span class="line">    <span class="keyword">from</span> ap <span class="keyword">import</span> models</span><br><span class="line">    res = models.Book.objects.filter(pk=<span class="number">1</span>).first()</span><br><span class="line">    print(res.name)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="外键的增删改查"><a href="#外键的增删改查" class="headerlink" title="外键的增删改查"></a>外键的增删改查</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一对多</span></span><br><span class="line"><span class="comment"># 增 create ：</span></span><br><span class="line">	<span class="comment">#方式一 直接外键写id</span></span><br><span class="line">	models.PublishingHouse.objects.create(name=<span class="string">&#x27;456&#x27;</span>, city=<span class="string">&#x27;789&#x27;</span>, publish_book_id=<span class="number">1</span> )</span><br><span class="line">    <span class="comment"># 方式二 通过 外键对象</span></span><br><span class="line">	models.PublishingHouse.objects.create(name=<span class="string">&#x27;1456&#x27;</span>, city=<span class="string">&#x27;7189&#x27;</span>, publish_book=book_obj )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删  delete：</span></span><br><span class="line">	<span class="comment"># 级联删除</span></span><br><span class="line">   models.PublishingHouse.objects.filter(pk=<span class="number">1</span>).delete()</span><br><span class="line">   </span><br><span class="line"><span class="comment"># 改 ：</span></span><br><span class="line">	<span class="comment"># 方法一 update 改外键id</span></span><br><span class="line">  models.PublishingHouse.objects.filter(pk=<span class="number">4</span>).update(publish_book_id=<span class="number">2</span>)</span><br><span class="line">	<span class="comment"># 方法二 通过外键对象 修改</span></span><br><span class="line">    book_obj = models.Book.objects.filter(pk=<span class="number">1</span>).first()</span><br><span class="line">  models.PublishingHouse.objects.filter(pk=<span class="number">4</span>).update(publish_book=book_obj)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多对多</span></span><br><span class="line"><span class="comment"># 增 add</span></span><br><span class="line">obj = models.PublishingHouse.objects.filter(pk=<span class="number">6</span>).first()</span><br><span class="line"><span class="comment"># 主键为6 的PublishingHouse 对象</span></span><br><span class="line">	obj.publish_author <span class="comment"># 主键为6 的PublishingHouse 对象 的 外键</span></span><br><span class="line">	obj.publish_author.add(<span class="number">1</span>)  <span class="comment"># 添加键为6 的PublishingHouse 对象 主键为1 的外键</span></span><br><span class="line">    obj.publish_author.add(<span class="number">1</span>, <span class="number">2</span>) <span class="comment"># 同时添加两个</span></span><br><span class="line"><span class="comment"># add中同样支持 通过外键对象添加</span></span><br><span class="line"><span class="comment"># 删除 remove</span></span><br><span class="line">	obj = models.PublishingHouse.objects.filter(pk=<span class="number">6</span>).first()</span><br><span class="line">    obj.publish_author.remove(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">  	<span class="comment"># remove同样支持 一个 或者多个  和  传入对象</span></span><br><span class="line"><span class="comment"># 改 set</span></span><br><span class="line">	obj.publish_author.set(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    <span class="comment"># 报错TypeError: set() takes 2 positional arguments but 3 were given </span></span><br><span class="line">    obj.publish_author.set(<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 报错TypeError: &#x27;int&#x27; object is not iterable</span></span><br><span class="line">    <span class="comment"># 所以 set中要传入一个可迭代对象  可以是 元组 可以是列表  可迭代对象中 可以是 外键id值 也可以是外键 对象  支持多个</span></span><br><span class="line"><span class="comment"># 清空 clear</span></span><br><span class="line">	<span class="comment"># 清空 主键为 1 的所有外键 绑定关系</span></span><br><span class="line">    obj = models.PublishingHouse.objects.filter(pk=<span class="number">1</span>).first()</span><br><span class="line">    obj.publish_author.clear()</span><br><span class="line">	<span class="comment"># clear（）  括号内  没有参数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="正反向查询的概念"><a href="#正反向查询的概念" class="headerlink" title="正反向查询的概念"></a>正反向查询的概念</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">有 A  B  两张表</span><br><span class="line">表A 中有外键B_id </span><br><span class="line"></span><br><span class="line">通过A表查询B表的信息为正向</span><br><span class="line">通过B表查询A表的信息为反向</span><br></pre></td></tr></table></figure>
+
+<h2 id="基于对象的跨表查询"><a href="#基于对象的跨表查询" class="headerlink" title="基于对象的跨表查询"></a>基于对象的跨表查询</h2><h3 id="正向"><a href="#正向" class="headerlink" title="正向"></a>正向</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj = models.Author.objects.filter(pk=<span class="number">1</span>).first() <span class="comment"># 获取主键为1 的作者对象</span></span><br><span class="line"><span class="comment"># obj.more 主键为1 的作者对象 的详细信息</span></span><br><span class="line">res = obj.more.city <span class="comment"># 主键为1 的作者对象 的详细信息 中的city 字段</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212802.png" alt="image-20200818134934956"></p>
+<h3 id="反向"><a href="#反向" class="headerlink" title="反向"></a>反向</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj = models.Book.objects.filter(pk=<span class="number">1</span>).first()</span><br><span class="line">    res = obj.publishinghouse_set.all()</span><br><span class="line">    print(res)</span><br><span class="line"><span class="comment"># 反向查询 .表名（小写）_set</span></span><br><span class="line"><span class="comment"># 当结果为 一个时  直接是 数据对象</span></span><br><span class="line"><span class="comment"># 当结果为多个是时  ap.PublishingHouse.None  此时需要加上 .all()</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212803.png" alt="image-20200818135610958"></p>
+<h2 id="基于双下划线的跨表查询"><a href="#基于双下划线的跨表查询" class="headerlink" title="基于双下划线的跨表查询"></a>基于双下划线的跨表查询</h2><h3 id="正向-1"><a href="#正向-1" class="headerlink" title="正向"></a>正向</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res = models.PublishingHouse.objects.filter(pk=<span class="number">3</span>).values(<span class="string">&#x27;publish_book__name&#x27;</span>)</span><br><span class="line">    print(res)</span><br><span class="line">res = models.PublishingHouse.objects.filter(pk=<span class="number">3</span>).values(<span class="string">&#x27;publish_author__more__city&#x27;</span>)</span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="反向-1"><a href="#反向-1" class="headerlink" title="反向"></a>反向</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">res = models.AuthorMore.objects.filter(pk=<span class="number">1</span>).values(<span class="string">&#x27;author__name&#x27;</span>)</span><br><span class="line">    print(res)</span><br><span class="line"></span><br><span class="line">    res = models.Book.objects.filter(pk=<span class="number">1</span>).values(<span class="string">&#x27;publishinghouse__name&#x27;</span>)</span><br><span class="line">    print(res)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +224,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/Django%E6%A1%86%E6%9E%B6%2021%20day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/Django%E6%A1%86%E6%9E%B6%2022%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/Django%E6%A1%86%E6%9E%B6%2020%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +316,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.</span> <span class="toc-text">多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#models%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.</span> <span class="toc-text">models测试环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%94%AE%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">1.2.</span> <span class="toc-text">外键的增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%8F%8D%E5%90%91%E6%9F%A5%E8%AF%A2%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.</span> <span class="toc-text">正反向查询的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%B7%A8%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.4.</span> <span class="toc-text">基于对象的跨表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91"><span class="toc-number">1.4.1.</span> <span class="toc-text">正向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91"><span class="toc-number">1.4.2.</span> <span class="toc-text">反向</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8F%8C%E4%B8%8B%E5%88%92%E7%BA%BF%E7%9A%84%E8%B7%A8%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.5.</span> <span class="toc-text">基于双下划线的跨表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91-1"><span class="toc-number">1.5.1.</span> <span class="toc-text">正向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91-1"><span class="toc-number">1.5.2.</span> <span class="toc-text">反向</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +371,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

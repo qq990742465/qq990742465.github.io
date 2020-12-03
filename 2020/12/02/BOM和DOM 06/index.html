@@ -8,13 +8,32 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="BOM 浏览器对象模型">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/BOM%E5%92%8CDOM%2006/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="BOM 浏览器对象模型">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203556.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203557.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203558.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203559.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203600.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203601.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203602.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203603.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203604.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203605.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203606.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203607.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203608.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203609.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.449Z">
+<meta property="article:modified_time" content="2020-12-02T13:24:29.650Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202203556.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,180 +167,268 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-BOM和DOM 06" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
-      
+        <h1 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM 浏览器对象模型"></a>BOM 浏览器对象模型</h1><a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><h3 id="window-innerHeight"><a href="#window-innerHeight" class="headerlink" title="window.innerHeight"></a>window.innerHeight</h3><p>浏览器窗口内部高度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">`window.innerWidth:<span class="subst">$&#123;<span class="built_in">window</span>.innerWidth&#125;</span></span></span><br><span class="line"><span class="string">window.innerHeight :<span class="subst">$&#123;<span class="built_in">window</span>.innerHeight&#125;</span>`</span></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
+<h3 id="window-innerWidth"><a href="#window-innerWidth" class="headerlink" title="window.innerWidth"></a>window.innerWidth</h3><p>浏览器窗口内部宽度</p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203556.png" alt="image-20200701205039221"></p>
+<h3 id="window-open"><a href="#window-open" class="headerlink" title="window.open()"></a>window.open()</h3><p>打开新窗口</p>
+<h3 id="window-close"><a href="#window-close" class="headerlink" title="window.close()"></a>window.close()</h3><p>关闭当前窗口（只能关闭用JS 的window.open()打开的窗口 了解）</p>
+<h2 id="window的子对象"><a href="#window的子对象" class="headerlink" title="window的子对象"></a>window的子对象</h2><h3 id="navigator对象（了解）"><a href="#navigator对象（了解）" class="headerlink" title="navigator对象（了解）"></a>navigator对象（了解）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">`navigator.appName : <span class="subst">$&#123;navigator.appName&#125;</span>   // 浏览器name</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">navigator.appVersion : <span class="subst">$&#123;navigator.appVersion&#125;</span>  // 浏览器版本厂商等信息</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">navigator.userAgent : <span class="subst">$&#123;navigator.userAgent&#125;</span>   // 浏览器请求头</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">navigator.platform : <span class="subst">$&#123;navigator.platform&#125;</span>   // 浏览器运行所在的操作系统</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line">alert(a)</span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h4 id="navigator-appName"><a href="#navigator-appName" class="headerlink" title="navigator.appName"></a>navigator.appName</h4><p>WEB浏览器的全称</p>
+<h4 id="navigator-appVersion"><a href="#navigator-appVersion" class="headerlink" title="navigator.appVersion"></a>navigator.appVersion</h4><p>WEb浏览器厂商和版本信息</p>
+<h4 id="navigator-userAgent"><a href="#navigator-userAgent" class="headerlink" title="navigator.userAgent"></a>navigator.userAgent</h4><p>客户端大部分信息</p>
+<h4 id="navigetor-platform"><a href="#navigetor-platform" class="headerlink" title="navigetor.platform"></a>navigetor.platform</h4><p>浏览器运行所在的操作系统</p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203557.png" alt="image-20200701205722181"></p>
+<h3 id="screen对象（了解）"><a href="#screen对象（了解）" class="headerlink" title="screen对象（了解）"></a>screen对象（了解）</h3><h4 id="screen-availWidth"><a href="#screen-availWidth" class="headerlink" title="screen.availWidth"></a>screen.availWidth</h4><p>可用的屏幕宽度</p>
+<h4 id="screen-availHeight"><a href="#screen-availHeight" class="headerlink" title="screen.availHeight"></a>screen.availHeight</h4><p>可用的屏幕高度</p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203558.png" alt="image-20200701210217291"></p>
+<h3 id="history对象-（了解）"><a href="#history对象-（了解）" class="headerlink" title="history对象 （了解）"></a>history对象 （了解）</h3><h4 id="history-back"><a href="#history-back" class="headerlink" title="history.back()"></a>history.back()</h4><p>后退</p>
+<h4 id="history-forward"><a href="#history-forward" class="headerlink" title="history.forward()"></a>history.forward()</h4><p>前进</p>
+<h3 id="location对象（-）"><a href="#location对象（-）" class="headerlink" title="location对象（* * * * *）"></a>location对象（* * * * *）</h3><h4 id="location-href"><a href="#location-href" class="headerlink" title="location.href"></a>location.href</h4><p>获取当前页的URL</p>
+<p>location.href = “URL”</p>
+<p>跳转到指定页面</p>
+<h4 id="location-reload"><a href="#location-reload" class="headerlink" title="location.reload()"></a>location.reload()</h4><p>重新加载（刷新）</p>
+<h3 id="弹出框"><a href="#弹出框" class="headerlink" title="弹出框"></a>弹出框</h3><h4 id="警告框alert"><a href="#警告框alert" class="headerlink" title="警告框alert"></a>警告框alert</h4><p>alert(“xxx”) </p>
+<p>注意：alert 只有在HTML源码中写入才有效</p>
+<p>在Console中写入不生效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;123&#x27;</span></span><br><span class="line">alert(a)</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203559.png" alt="image-20200701210526866"></p>
+<h4 id="确定框confirm"><a href="#确定框confirm" class="headerlink" title="确定框confirm"></a>确定框confirm</h4><p>confirm(‘xxx’)</p>
+<p>可在Console中使用</p>
+<p>点击确定返回true  点击取消返回false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;确认框&#x27;</span></span><br><span class="line"><span class="keyword">if</span> (confirm(a))&#123;</span><br><span class="line">    alert(<span class="string">&#x27;你点击了确定&#x27;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;你点击了取消&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203600.png" alt="image-20200701210633412"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203601.png" alt="image-20200701210607471"></p>
+<h4 id="提示框prompt"><a href="#提示框prompt" class="headerlink" title="提示框prompt"></a>提示框prompt</h4><p>prompt(‘提示内容’,’输入框内容 ‘)</p>
+<p>返回输入值为  输入的内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="string">&#x27;Please input name&#x27;</span></span><br><span class="line"><span class="keyword">let</span> i = prompt(a, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> (i)&#123;</span><br><span class="line">    alert(<span class="string">`your name is <span class="subst">$&#123;i&#125;</span>`</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">&#x27;请输入正确的名字&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let a &#x3D; &#39;Please input name&#39;</span><br><span class="line">let i &#x3D; prompt(a, &#39;&#39;)</span><br><span class="line">if (i)&#123;</span><br><span class="line">    alert(&#96;your name is $&#123;i&#125;&#96;)</span><br><span class="line">&#125;else &#123;</span><br><span class="line">    alert(&#39;请输入正确的名字&#39;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203602.png" alt="image-20200701210759150"></p>
+<h2 id="计时器相关-异步"><a href="#计时器相关-异步" class="headerlink" title="计时器相关(异步)"></a>计时器相关(异步)</h2><h3 id="setTimeout-‘jS语句’，‘-毫秒’"><a href="#setTimeout-‘jS语句’，‘-毫秒’" class="headerlink" title="setTimeout(‘jS语句’，‘ 毫秒’)"></a>setTimeout(‘jS语句’，‘ 毫秒’)</h3><p>一段时间后做某些事情</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="built_in">console</span>.log(<span class="number">123</span>), <span class="number">3000</span>)</span><br><span class="line"> <span class="number">123</span> <span class="comment">//代码题立即执行</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="string">&#x27;console.log(123)&#x27;</span>, <span class="number">3000</span>)</span><br><span class="line"><span class="number">123</span> <span class="comment">//3S 后执行</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">123</span>)</span><br><span class="line">&#125;, <span class="number">3000</span>)</span><br><span class="line"><span class="number">123</span> <span class="comment">// 3S后执行</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<p>一般用 一个 变量来 接受计时器的ID（由浏览器分配）</p>
+<p>var a = SetTimeout(JS,’5000’)</p>
+<p>clearTimeout(a)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let func = function()&#123;</span><br><span class="line">    alert(<span class="string">&#x27;等待3S弹出&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(func, <span class="number">3000</span>)</span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203603.png" alt="image-20200701211734953"></p>
+<p>其中JS代码最好写成函数</p>
+<h3 id="setInterval计时器"><a href="#setInterval计时器" class="headerlink" title="setInterval计时器"></a>setInterval计时器</h3><p>var a = setInterval(JS, ‘3000’)</p>
+<p>每隔3000ms执行一次</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i)</span><br><span class="line">    &#125;&#125;,<span class="number">1000</span>)</span><br><span class="line"><span class="built_in">clearInterval</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203604.png" alt="image-20200701212345184"></p>
+<p>停止  clearInterval(a )</p>
+<h1 id="DOM-文档对象模型"><a href="#DOM-文档对象模型" class="headerlink" title="DOM 文档对象模型"></a>DOM 文档对象模型</h1><h2 id="查找标签"><a href="#查找标签" class="headerlink" title="查找标签"></a>查找标签</h2><h3 id="直接查找"><a href="#直接查找" class="headerlink" title="直接查找"></a>直接查找</h3><h4 id="document-getElementById"><a href="#document-getElementById" class="headerlink" title="document.getElementById()"></a>document.getElementById()</h4><p>根据ID属强获取   得到的是标签对象</p>
+<p>var a = document.getElementById(‘d1’)</p>
+<p>a.innerText  // 获取标签下的文本内容</p>
+<p>a.innerText = ‘xxxxx’   //  替换文本内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; document.getElementById(&#39;d1&#39;)</span><br><span class="line">undefined</span><br><span class="line">a</span><br><span class="line">&lt;div id&#x3D;​&quot;d1&quot; class&#x3D;​&quot;c1&quot;&gt;​文本一​&lt;&#x2F;div&gt;​</span><br><span class="line">a.innerText &#x3D; &#39;修改一&#39;</span><br><span class="line">&quot;修改一&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203605.png" alt="image-20200701213429561"></p>
+<h4 id="document-getElementsByClassName"><a href="#document-getElementsByClassName" class="headerlink" title="document.getElementsByClassName()"></a>document.getElementsByClassName()</h4><p>根据class属性获取   得到的是数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;c1&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">a</span><br><span class="line">HTMLCollection [div#d1.c1, d1: div#d1.c1]</span><br><span class="line">a[<span class="number">0</span>].innerText  = <span class="string">&#x27;修改二&#x27;</span></span><br><span class="line"><span class="string">&quot;修改二&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="document-getElementsByTagName"><a href="#document-getElementsByTagName" class="headerlink" title="document.getElementsByTagName()"></a>document.getElementsByTagName()</h4><p>根据标签名 获取标签集合    得到的是数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a</span><br><span class="line">HTMLCollection(5) [div, div#d1.c1, div#d2.c2, div#xl_chrome_ext_&#123;4DB361DE-01F7-4376-B494-639E489D19ED&#125;.xl-chrome-ext-bar, div.xl-chrome-ext-bar__logo, d1: div#d1.c1, d2: div#d2.c2, xl_chrome_ext_&#123;4DB361DE-01F7-4376-B494-639E489D19ED&#125;: div#xl_chrome_ext_&#123;4DB361DE-01F7-4376-B494-639E489D19ED&#125;.xl-chrome-ext-bar]</span><br><span class="line">a = a[<span class="number">0</span>]</span><br><span class="line">a</span><br><span class="line">&lt;div&gt;​&lt;div id=​<span class="string">&quot;d1&quot;</span> <span class="class"><span class="keyword">class</span></span>=​<span class="string">&quot;c1&quot;</span>&gt;​修改二​&lt;<span class="regexp">/div&gt;​&lt;div id=​&quot;d2&quot; class=​&quot;c2&quot;&gt;​文本二​&lt;/</span>div&gt;​&lt;/div&gt;​</span><br><span class="line">a.innerText = <span class="string">&#x27;修改二&#x27;</span></span><br><span class="line"><span class="string">&quot;修改二&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<h3 id="间接查找"><a href="#间接查找" class="headerlink" title="间接查找"></a>间接查找</h3><p>var a = document.getElementByID(‘d1’);</p>
+<h4 id="parentElement"><a href="#parentElement" class="headerlink" title="parentElement"></a>parentElement</h4><p>a.parentElement  获取a的父级元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)  </span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">a.parentElement</span><br><span class="line">&lt;div&gt;​&lt;a href=​<span class="string">&quot;http:​/​/​www.baidu.com&quot;</span>&gt;​百度​&lt;<span class="regexp">/a&gt;​&lt;div id=​&quot;d1&quot; class=​&quot;c1&quot;&gt;​文本一​&lt;/</span>div&gt;​&lt;div id=​<span class="string">&quot;d2&quot;</span> <span class="class"><span class="keyword">class</span></span>=​<span class="string">&quot;c2&quot;</span>&gt;​文本二​&lt;<span class="regexp">/div&gt;​&lt;/</span>div&gt;​</span><br><span class="line">a.parentElement.innerText</span><br><span class="line"><span class="string">&quot;百度</span></span><br><span class="line"><span class="string">文本一</span></span><br><span class="line"><span class="string">文本二&quot;</span></span><br><span class="line">a.parentElement.innerHTML</span><br><span class="line"><span class="string">&quot;</span></span><br><span class="line"><span class="string">    &lt;a href=&quot;</span>http:<span class="comment">//www.baidu.com&quot;&gt;百度&lt;/a&gt;</span></span><br><span class="line">    &lt;div id=<span class="string">&quot;d1&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;c1&quot;</span>&gt;文本一&lt;/div&gt;</span><br><span class="line">    &lt;div id=<span class="string">&quot;d2&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;c2&quot;</span>&gt;文本二&lt;/div&gt;</span><br><span class="line"><span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h4 id="children"><a href="#children" class="headerlink" title="children"></a>children</h4><p>所有的子标签  获取到的是一个数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">a</span><br><span class="line">&lt;div id=​<span class="string">&quot;d&quot;</span>&gt;​…​&lt;/div&gt;​</span><br><span class="line">a.childElementCount</span><br><span class="line"><span class="number">3</span></span><br><span class="line">a.childElementCount</span><br><span class="line"><span class="number">3</span></span><br><span class="line">a.children</span><br><span class="line">HTMLCollection(3) [a, div#d1.c1, div#d2.c2, d1: div#d1.c1, d2: div#d2.c2]0: a1: div#d1.c12: div#d2.c2length: 3d1: div#d1.c1d2: div#d2.c2__proto__: HTMLCollection</span><br><span class="line">a.children[<span class="number">0</span>].innerHTML</span><br><span class="line"><span class="string">&quot;百度&quot;</span></span><br><span class="line">a.children[<span class="number">0</span>]</span><br><span class="line">&lt;a href=​<span class="string">&quot;http:​/​/​www.baidu.com&quot;</span>&gt;​百度​&lt;/a&gt;​</span><br></pre></td></tr></table></figure>
 
 
 
+<h4 id="firstElementChild"><a href="#firstElementChild" class="headerlink" title="firstElementChild"></a>firstElementChild</h4><p>第一个子元素</p>
+<h4 id="lastElementChild"><a href="#lastElementChild" class="headerlink" title="lastElementChild"></a>lastElementChild</h4><p>最后一个子元素</p>
+<h4 id="nextElementSibling"><a href="#nextElementSibling" class="headerlink" title="nextElementSibling"></a>nextElementSibling</h4><p>下一个兄弟标签（同级）元素</p>
+<h4 id="previousElementSibling"><a href="#previousElementSibling" class="headerlink" title="previousElementSibling"></a>previousElementSibling</h4><p>上一个兄弟标签（同级）元素</p>
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><h3 id="创建节点（创造标签）"><a href="#创建节点（创造标签）" class="headerlink" title="创建节点（创造标签）"></a>创建节点（创造标签）</h3><h4 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement"></a>document.createElement</h4><p>var a = document.createElement(‘a’)  </p>
+<p>创建a标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a4 = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line">a4.innerText = <span class="string">&#x27;a4&#x27;</span></span><br><span class="line"><span class="string">&quot;a4&quot;</span></span><br></pre></td></tr></table></figure>
 
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
+
+
+<h3 id="添加节点（标签）"><a href="#添加节点（标签）" class="headerlink" title="添加节点（标签）"></a>添加节点（标签）</h3><h4 id="somenode-appendChild"><a href="#somenode-appendChild" class="headerlink" title="somenode.appendChild"></a>somenode.appendChild</h4><p>somenode.appendChild(‘标签对象’)</p>
+<p>追加一个子节点（在最后添加）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)  <span class="comment">//找到父标签</span></span><br><span class="line">div.appendChild(a4)	<span class="comment">//在父标签下的最后追加</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203606.png" alt="image-20200701215454373"></p>
+<h4 id="somenode-insertBefore"><a href="#somenode-insertBefore" class="headerlink" title="somenode.insertBefore"></a>somenode.insertBefore</h4><p>somenode.insertBefor(‘标签对象’，某个节点)</p>
+<p>把增加的节点放到某个节点的前面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>) <span class="comment">//找到父标签</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;a2&#x27;</span>)	<span class="comment">// 找到用来定位的a2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a4 = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)	<span class="comment">//新建一个a标签</span></span><br><span class="line"></span><br><span class="line">a4.innerText = <span class="string">&#x27;a4&#x27;</span></span><br><span class="line"><span class="string">&quot;a4&quot;</span>	<span class="comment">// 为a4标签的文本赋值</span></span><br><span class="line"></span><br><span class="line">div.insertBefore(a4, a2)  <span class="comment">//把a4 放在a2的前面</span></span><br><span class="line">&lt;a&gt;​a4​&lt;/a&gt;​</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203607.png" alt="image-20200701215403796"></p>
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><h4 id="somenode-removeChild"><a href="#somenode-removeChild" class="headerlink" title="somenode.removeChild"></a>somenode.removeChild</h4><p>somenode.removeChild(‘标签对象’)</p>
+<p>删除 somenode父级标签下的儿子标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)</span><br><span class="line">div.removeChild(a4)</span><br><span class="line">&lt;a&gt;​a4​&lt;/a&gt;​</span><br></pre></td></tr></table></figure>
+
+<h3 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h3><p>somenode.replaceChild(‘标签对象’，被替换的节点)</p>
+<p>替换 somenode父级标签 下的 节点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)</span><br><span class="line">div.replaceChild(a4, a2)	</span><br></pre></td></tr></table></figure>
+
+<h3 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h3><h4 id="somenode-innerText"><a href="#somenode-innerText" class="headerlink" title="somenode.innerText"></a>somenode.innerText</h4><p>节点的文本信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">somenode.innerText = <span class="string">&quot;&lt;a href = &#x27;&#x27;&gt; 百度&lt;/a&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>替换后 无法识别标签    直接替换文本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d2&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">x.innerText = <span class="string">&#x27;&lt;a href = &quot;http://www.baidu.com&quot;&gt; 文本操作&lt;/a&gt;&#x27;</span></span><br><span class="line"><span class="string">&quot;&lt;a href = &quot;</span>http:<span class="comment">//www.baidu.com&quot;&gt; 文本操作&lt;/a&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203608.png" alt="image-20200701215809833"></p>
+<h4 id="somenode-innerHTML"><a href="#somenode-innerHTML" class="headerlink" title="somenode.innerHTML"></a>somenode.innerHTML</h4><p>节点的文本信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">somenode.innerHTML = <span class="string">&quot;&lt;a&gt;百度&lt;/a&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>能够识别标签  替换后 变为a标签</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d2&#x27;</span>)</span><br><span class="line">x.innerHTML = <span class="string">&#x27;&lt;a href = &quot;http://www.baidu.com&quot;&gt; 文本操作&lt;/a&gt;&#x27;</span></span><br><span class="line"><span class="string">&quot;&lt;a href = &quot;</span>http:<span class="comment">//www.baidu.com&quot;&gt; 文本操作&lt;/a&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202203609.png" alt="image-20200701215903196"></p>
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><h4 id="setAttribute设置属性"><a href="#setAttribute设置属性" class="headerlink" title="setAttribute设置属性"></a>setAttribute设置属性</h4><p>somenode.setAttribute(‘属性名’,’属性值’)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.setAttribute(<span class="string">&#x27;href&#x27;</span>, <span class="string">&#x27;http://www.jd.com&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="getAttribute-查看属性"><a href="#getAttribute-查看属性" class="headerlink" title="getAttribute 查看属性"></a>getAttribute 查看属性</h4><p>somenode.getAttribute(‘属性名’)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.getAttribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line"><span class="string">&quot;http://www.jd.com&quot;</span></span><br><span class="line">a.href</span><br><span class="line"><span class="string">&quot;http://www.jd.com/&quot;</span></span><br><span class="line">a.href = <span class="string">&#x27;http://www.baidu.com&#x27;</span></span><br><span class="line"><span class="string">&quot;http://www.baidu.com&quot;</span></span><br><span class="line"><span class="comment">//自带的属性可以直接通过  . 属性名   来获取和设置</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="removeAttribute删除属性"><a href="#removeAttribute删除属性" class="headerlink" title="removeAttribute删除属性"></a>removeAttribute删除属性</h4><p>somenode.removeAttribute(‘属性名’)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.removeAttribute(<span class="string">&#x27;href&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><p>自带的属性可以直接通过  . 属性名   来获取和设置  自定义的属性不能</p>
+<p>例如:    a.href    img.src</p>
+<h3 id="值操作-value"><a href="#值操作-value" class="headerlink" title="值操作 (.value)"></a>值操作 (.value)</h3><h4 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inp = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line">inp.value</span><br><span class="line">inp.value = <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> user = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">user.value</span><br><span class="line"><span class="string">&quot;asdasd&quot;</span></span><br><span class="line"><span class="keyword">let</span> pwd = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;password&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">pwd.value</span><br><span class="line"><span class="string">&quot;asdasd&quot;</span></span><br><span class="line">pwd.value</span><br><span class="line"><span class="string">&quot;123123&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="select标签"><a href="#select标签" class="headerlink" title="select标签"></a>select标签</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;s1&#x27;</span>)</span><br><span class="line">s1.value</span><br><span class="line"><span class="string">&quot;4&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="textarea标签"><a href="#textarea标签" class="headerlink" title="textarea标签"></a>textarea标签</h4><p>同上</p>
+<h3 id="class操作"><a href="#class操作" class="headerlink" title="class操作"></a>class操作</h3><h4 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h4><p>获取当前标签有哪些class值 以数组的形式</p>
+<h5 id="add"><a href="#add" class="headerlink" title="add"></a>add</h5><p>添加class</p>
+<h5 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h5><p>删除class</p>
+<h5 id="contains"><a href="#contains" class="headerlink" title="contains"></a>contains</h5><p>classList.contains(‘class’)</p>
+<p>判断class是否存在</p>
+<h5 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h5><p>classList.toggle(‘class’)</p>
+<p>如果有class  则删除</p>
+<p>如果没有class  则添加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> d1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">d1.classList</span><br><span class="line">DOMTokenList [<span class="string">&quot;c1&quot;</span>, <span class="attr">value</span>: <span class="string">&quot;c1&quot;</span>]</span><br><span class="line">d1.classList.add(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">d1.classList.remove(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line">d1.classList.contains(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">false</span></span><br><span class="line">d1.classList.toggle(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">true</span></span><br><span class="line">d1.classList.toggle(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="css操作"><a href="#css操作" class="headerlink" title="css操作"></a>css操作</h3><p>somenode.style.样式名（font,color,backgroundColor,…）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> d1 = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;d1&#x27;</span>)</span><br><span class="line">d1.style.backgroundColor = <span class="string">&#x27;red&#x27;</span></span><br><span class="line"><span class="string">&quot;red&quot;</span></span><br><span class="line">d1.style.height = <span class="string">&#x27;300px&#x27;</span></span><br><span class="line"><span class="string">&quot;300px&quot;</span></span><br><span class="line">d1.style.width = <span class="string">&#x27;300px&#x27;</span></span><br><span class="line"><span class="string">&quot;300px&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="绑定事件的两种方式"><a href="#绑定事件的两种方式" class="headerlink" title="绑定事件的两种方式"></a>绑定事件的两种方式</h3><h3 id="onclick"><a href="#onclick" class="headerlink" title="onclick"></a>onclick</h3><ul>
+<li><p>方式一：</p>
 <ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
+<li><pre><code class="html">&lt;div id=&quot;d1&quot; onclick = &quot;f1();&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+    function f1() &#123;
+    let d1 = document.getElementById(&#39;d1&#39;);
+    d1.style.backgroundColor = &#39;yellow&#39;
+&#125;
+&lt;/script&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 方式二(常用)</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;html</span><br><span class="line">    &lt;div id&#x3D;&quot;d1&quot;&gt; &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    	var d1 &#x3D; document.getElementById(&#39;d1&#39;)</span><br><span class="line">    	d1.onclick &#x3D; function()&#123;</span><br><span class="line">            d1.style.backgroundColor &#x3D; &#39;pink&#39;</span><br><span class="line">    	&#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 注意！！！：</span><br><span class="line">    &#x2F;&#x2F; script中的JS代码一定要在 标签之后</span><br><span class="line">    &#x2F;&#x2F; 这是因为浏览器在获取到服务器返回的代码时是按照顺序执行的，所以如果html的dom树还没有完全生成，你执行js的时候，就会出现无法读取到某些元素的情况，这样js代码也就无法执行了！</span><br></pre></td></tr></table></figure>
+
+
+</code></pre>
+</li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
+</li>
+</ul>
+<h3 id="事件中this-的两种用法"><a href="#事件中this-的两种用法" class="headerlink" title="事件中this 的两种用法"></a>事件中this 的两种用法</h3><p>this 表示当前标签对象</p>
+<ul>
+<li><p>方式一</p>
+<ul>
+<li><pre><code class="html">&lt;div id=&quot;d1&quot; class=&quot;c1&quot; onclick=&quot;f1(this)&quot;&gt;&lt;/div&gt;
+
+&lt;script &gt; 
+    function f1(ths) &#123;
+    ths.style.backgroundColor = &#39;red&#39;
+&#125;
+&lt;/script&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">* 方式二</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;html</span><br><span class="line">    &lt;div id&#x3D;&quot;d1&quot; class&#x3D;&quot;c1&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        let d1 &#x3D; document.getElementById(&#39;d1&#39;)</span><br><span class="line">    d1.onclick &#x3D; function () &#123;</span><br><span class="line">        this.style.backgroundColor &#x3D; &#39;red&#39;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="confocus-和-onblur"><a href="#confocus-和-onblur" class="headerlink" title="confocus 和 onblur"></a>confocus 和 onblur</h3><h3 id="获得光标时和失去光标时"><a href="#获得光标时和失去光标时" class="headerlink" title="获得光标时和失去光标时"></a>获得光标时和失去光标时</h3><h3 id="onchange"><a href="#onchange" class="headerlink" title="onchange"></a>onchange</h3><p>标签内容发生变化是 触发</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -330,16 +437,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/BOM%E5%92%8CDOM%2006/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/bootstrap%2012day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2081%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -354,67 +529,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BOM-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">BOM 浏览器对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text">window对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#window-innerHeight"><span class="toc-number">1.1.1.</span> <span class="toc-text">window.innerHeight</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-innerWidth"><span class="toc-number">1.1.2.</span> <span class="toc-text">window.innerWidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-open"><span class="toc-number">1.1.3.</span> <span class="toc-text">window.open()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-close"><span class="toc-number">1.1.4.</span> <span class="toc-text">window.close()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window%E7%9A%84%E5%AD%90%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.2.</span> <span class="toc-text">window的子对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#navigator%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">navigator对象（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator-appName"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">navigator.appName</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator-appVersion"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">navigator.appVersion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigator-userAgent"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">navigator.userAgent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#navigetor-platform"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">navigetor.platform</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#screen%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">screen对象（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#screen-availWidth"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">screen.availWidth</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#screen-availHeight"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">screen.availHeight</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history%E5%AF%B9%E8%B1%A1-%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">history对象 （了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#history-back"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">history.back()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#history-forward"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">history.forward()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#location%E5%AF%B9%E8%B1%A1%EF%BC%88-%EF%BC%89"><span class="toc-number">1.2.4.</span> <span class="toc-text">location对象（* * * * *）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#location-href"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">location.href</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#location-reload"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">location.reload()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B9%E5%87%BA%E6%A1%86"><span class="toc-number">1.2.5.</span> <span class="toc-text">弹出框</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AD%A6%E5%91%8A%E6%A1%86alert"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">警告框alert</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E6%A1%86confirm"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">确定框confirm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E6%A1%86prompt"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">提示框prompt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6%E5%99%A8%E7%9B%B8%E5%85%B3-%E5%BC%82%E6%AD%A5"><span class="toc-number">1.3.</span> <span class="toc-text">计时器相关(异步)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout-%E2%80%98jS%E8%AF%AD%E5%8F%A5%E2%80%99%EF%BC%8C%E2%80%98-%E6%AF%AB%E7%A7%92%E2%80%99"><span class="toc-number">1.3.1.</span> <span class="toc-text">setTimeout(‘jS语句’，‘ 毫秒’)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setInterval%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="toc-number">1.3.2.</span> <span class="toc-text">setInterval计时器</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">DOM 文档对象模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%A0%87%E7%AD%BE"><span class="toc-number">2.1.</span> <span class="toc-text">查找标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.1.</span> <span class="toc-text">直接查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#document-getElementById"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">document.getElementById()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-getElementsByClassName"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">document.getElementsByClassName()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-getElementsByTagName"><span class="toc-number">2.1.1.3.</span> <span class="toc-text">document.getElementsByTagName()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%B4%E6%8E%A5%E6%9F%A5%E6%89%BE"><span class="toc-number">2.1.2.</span> <span class="toc-text">间接查找</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#parentElement"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">parentElement</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#children"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">children</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#firstElementChild"><span class="toc-number">2.1.2.3.</span> <span class="toc-text">firstElementChild</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lastElementChild"><span class="toc-number">2.1.2.4.</span> <span class="toc-text">lastElementChild</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nextElementSibling"><span class="toc-number">2.1.2.5.</span> <span class="toc-text">nextElementSibling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#previousElementSibling"><span class="toc-number">2.1.2.6.</span> <span class="toc-text">previousElementSibling</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%EF%BC%88%E5%88%9B%E9%80%A0%E6%A0%87%E7%AD%BE%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">创建节点（创造标签）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#document-createElement"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">document.createElement</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9%EF%BC%88%E6%A0%87%E7%AD%BE%EF%BC%89"><span class="toc-number">2.2.2.</span> <span class="toc-text">添加节点（标签）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#somenode-appendChild"><span class="toc-number">2.2.2.1.</span> <span class="toc-text">somenode.appendChild</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#somenode-insertBefore"><span class="toc-number">2.2.2.2.</span> <span class="toc-text">somenode.insertBefore</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.3.</span> <span class="toc-text">删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#somenode-removeChild"><span class="toc-number">2.2.3.1.</span> <span class="toc-text">somenode.removeChild</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.4.</span> <span class="toc-text">替换节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.5.</span> <span class="toc-text">文本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#somenode-innerText"><span class="toc-number">2.2.5.1.</span> <span class="toc-text">somenode.innerText</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#somenode-innerHTML"><span class="toc-number">2.2.5.2.</span> <span class="toc-text">somenode.innerHTML</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.6.</span> <span class="toc-text">属性操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#setAttribute%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">setAttribute设置属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#getAttribute-%E6%9F%A5%E7%9C%8B%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.6.2.</span> <span class="toc-text">getAttribute 查看属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#removeAttribute%E5%88%A0%E9%99%A4%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.6.3.</span> <span class="toc-text">removeAttribute删除属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">2.2.6.4.</span> <span class="toc-text">补充</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%BC%E6%93%8D%E4%BD%9C-value"><span class="toc-number">2.2.7.</span> <span class="toc-text">值操作 (.value)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#input%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.7.1.</span> <span class="toc-text">input标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.7.2.</span> <span class="toc-text">select标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#textarea%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.7.3.</span> <span class="toc-text">textarea标签</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#class%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.8.</span> <span class="toc-text">class操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#classList"><span class="toc-number">2.2.8.1.</span> <span class="toc-text">classList</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#add"><span class="toc-number">2.2.8.1.1.</span> <span class="toc-text">add</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#remove"><span class="toc-number">2.2.8.1.2.</span> <span class="toc-text">remove</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#contains"><span class="toc-number">2.2.8.1.3.</span> <span class="toc-text">contains</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#toggle"><span class="toc-number">2.2.8.1.4.</span> <span class="toc-text">toggle</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#css%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.9.</span> <span class="toc-text">css操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text">绑定事件的两种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onclick"><span class="toc-number">2.3.2.</span> <span class="toc-text">onclick</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%B8%ADthis-%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%94%A8%E6%B3%95"><span class="toc-number">2.3.3.</span> <span class="toc-text">事件中this 的两种用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#confocus-%E5%92%8C-onblur"><span class="toc-number">2.3.4.</span> <span class="toc-text">confocus 和 onblur</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%BE%97%E5%85%89%E6%A0%87%E6%97%B6%E5%92%8C%E5%A4%B1%E5%8E%BB%E5%85%89%E6%A0%87%E6%97%B6"><span class="toc-number">2.3.5.</span> <span class="toc-text">获得光标时和失去光标时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#onchange"><span class="toc-number">2.3.6.</span> <span class="toc-text">onchange</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -444,8 +584,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

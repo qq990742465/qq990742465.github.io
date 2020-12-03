@@ -8,13 +8,22 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="table表格标签">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%7FHTML%2002%20day%20%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="table表格标签">
 <meta property="og:locale">
+<meta property="og:image" content="c:/Users/99074/AppData/Roaming/Typora/typora-user-images/image-20200613223643901.png">
+<meta property="og:image" content="c:/Users/99074/AppData/Roaming/Typora/typora-user-images/image-20200613223712324.png">
+<meta property="og:image" content="c:/Users/99074/AppData/Roaming/Typora/typora-user-images/image-20200613223801705.png">
+<meta property="og:image" content="c:/Users/99074/AppData/Roaming/Typora/typora-user-images/image-20200613223901579.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.542Z">
+<meta property="article:modified_time" content="2020-12-02T13:33:14.769Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/99074/AppData/Roaming/Typora/typora-user-images/image-20200613223643901.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +157,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-HTML 02 day 笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h3 id="table表格标签"><a href="#table表格标签" class="headerlink" title="table表格标签"></a>table表格标签</h3><a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;5&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">tr</span>&gt;</span>  一个tr 就是一行 </span><br><span class="line">        	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>  不加粗（正常文本）</span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span>  加粗</span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span>表头（字段）</span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>	</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>表单（数据）</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">table:</span><br><span class="line">	border: 加外边宽</span><br><span class="line">    cellpading: 内边距</span><br><span class="line">    cellspacisng: 外边距</span><br><span class="line">td:</span><br><span class="line">	colspan=&quot;&quot;: 水平占多行</span><br><span class="line">	rowsspan=&quot;&quot;: 竖直占多行</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;5&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;5&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;5&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thaed</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>表头一<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>表头二<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thaed</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> &gt;</span>2.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.2 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\99074\AppData\Roaming\Typora\typora-user-images\image-20200613223643901.png" alt="image-20200613223643901"><img src="C:\Users\99074\AppData\Roaming\Typora\typora-user-images\image-20200613223712324.png" alt="image-20200613223712324"><img src="C:\Users\99074\AppData\Roaming\Typora\typora-user-images\image-20200613223801705.png" alt="image-20200613223801705"><img src="C:\Users\99074\AppData\Roaming\Typora\typora-user-images\image-20200613223901579.png" alt="image-20200613223901579"></p>
+<h3 id="form表单标签"><a href="#form表单标签" class="headerlink" title="form表单标签"></a>form表单标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--能够获取前端用户的数据（用户输入的， 用户选择的， 用户上传的） 发给后端--&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 注册功能 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 第一种  放在里面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;d1&quot;</span>&gt;</span></span><br><span class="line">        username：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">d1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 第二种 放在外面 通过id关联--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">lable</span> <span class="attr">for</span>=<span class="string">&quot;d2&quot;</span>&gt;</span>password：<span class="tag">&lt;/<span class="name">lable</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">d2</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    birthday：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;注册&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>点击 <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>性别 gender：</span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span>男</span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> &gt;</span>女</span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span>&gt;</span>其他</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>爱好 hobby：</span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> &gt;</span>爱好1 </span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">checked</span> &gt;</span>爱好2</span><br><span class="line">    	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span>&gt;</span>爱好3</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--单选 下拉框 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>省份 province：</span><br><span class="line">    	<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多选 下拉框 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>省份 province：</span><br><span class="line">    	<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">multiple</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> <span class="attr">selected</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>头像：</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>大段文本框：</span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;&quot;</span> &gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span>	 在form标签内部书写的标签 获取的数据 都会发送到后端</span><br><span class="line"><span class="comment">&lt;!-- label 和 input 都是行内 标签 --&gt;</span></span><br><span class="line">action：</span><br><span class="line">	用来控制数据提交的 后端路径（给那个服务端提交数据）</span><br><span class="line">	1、 空 ： 默认就是向当前页面所在的url提交数据</span><br><span class="line">	2、写全路径： https://www.xxx.com</span><br><span class="line">	3、只写路径 后缀 ： /index/  自动识别   当前服务端的 ip 和 port 拼接到前面   host:port/index/</span><br><span class="line"></span><br><span class="line">method: 请求模式</span><br></pre></td></tr></table></figure>
+
+<h4 id="input-标签"><a href="#input-标签" class="headerlink" title="input 标签"></a>input 标签</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">可以通过type 属性变形</span><br><span class="line">	text：普通文本</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;username&quot;</span> id=<span class="string">&quot;d1&quot;</span>&gt;</span><br><span class="line">    password： 密文</span><br><span class="line">    &lt;input type=<span class="string">&quot;password&quot;</span> name=<span class="string">&quot;password&quot;</span> id=<span class="string">&quot;d2&quot;</span>&gt;</span><br><span class="line">    date：日期</span><br><span class="line">    &lt;input type=<span class="string">&quot;date&quot;</span> name=<span class="string">&quot;date&quot;</span> id=<span class="string">&quot;d3&quot;</span>&gt;</span><br><span class="line">    hidden：隐藏当前input框</span><br><span class="line">    &lt;input type=<span class="string">&quot;hidden&quot;</span>&gt;</span><br><span class="line">    disabled 参数 禁止输入</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> disabled&gt;</span><br><span class="line">    value = “默认值”</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> value=<span class="string">&quot;默认值&quot;</span>&gt;</span><br><span class="line">    readonly 只读</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> readonly&gt;</span><br><span class="line">    radio:单选框</span><br><span class="line">    	默认选择要加  checked=“checked”</span><br><span class="line">        当 标签名 和属性值 一样时  可以简写</span><br><span class="line">         checked=“checked” ---&gt;&gt;&gt; checked</span><br><span class="line">        &lt;input type=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;gender&quot;</span>&gt;男</span><br><span class="line">        &lt;input type=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;gender&quot;</span> checked=<span class="string">&quot;checked&quot;</span>&gt;女</span><br><span class="line">        &lt;input type=<span class="string">&quot;radio&quot;</span> name=<span class="string">&quot;gender&quot;</span>&gt;其他</span><br><span class="line">    checkbox：多选</span><br><span class="line">    	&lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobby&quot;</span>&gt;爱好<span class="number">1</span></span><br><span class="line">        &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobby&quot;</span>&gt;爱好<span class="number">2</span></span><br><span class="line">        &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;hobby&quot;</span> checked&gt;爱好<span class="number">2</span></span><br><span class="line">    file: 获取文件</span><br><span class="line">        默认 单个文件</span><br><span class="line">        加上 mulziple  可上传多个文件</span><br><span class="line">        &lt;input type=<span class="string">&quot;file&quot;</span> multiple&gt;</span><br><span class="line">    <span class="comment"># 当你没有指定 文本内容时  不同的浏览器显示的内容 不同</span></span><br><span class="line">	submit: 提交 （后面可加   value 显示你对应的文字）</span><br><span class="line">    reset: 重置 form表单的内容 </span><br><span class="line">    button：按钮  本身没有任何功能 js后可自定义功能</span><br><span class="line">        &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;reset&quot;</span> value=<span class="string">&quot;重置&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;按钮&quot;</span>&gt;</span><br><span class="line"><span class="comment"># 能过触发form表单提交数据的方式（*****）：</span></span><br><span class="line">	<span class="number">1</span>、 &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">    2、 &lt;button&gt;点击&lt;/button&gt;</span><br><span class="line"><span class="comment"># 所以 获取 用户输入的标签 都应该有name 属性</span></span><br><span class="line"><span class="comment"># name 相当于变量名 （dict的键）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="select标签"><a href="#select标签" class="headerlink" title="select标签"></a>select标签</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">加 &lt;option&gt;&lt;/option&gt;</span><br><span class="line">默认单选 </span><br><span class="line">        &lt;select name=<span class="string">&quot;province&quot;</span> id=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">            &lt;option selected=&quot;selected&quot;&gt;province_one&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;province_two&lt;/option&gt;</span><br><span class="line">            &lt;option&gt;province_three&lt;/option&gt;</span><br><span class="line">        &lt;/select&gt;</span><br><span class="line">加 multiple 多选</span><br><span class="line">默认选择 --- selected</span><br><span class="line">        &lt;select name=<span class="string">&quot;xldx&quot;</span> id=<span class="string">&quot;&quot;</span>  multiple&gt;</span><br><span class="line">            &lt;option value=&quot;&quot; selected&gt;选择1&lt;/option&gt;</span><br><span class="line">            &lt;option value=&quot;&quot;&gt;选择2&lt;/option&gt;</span><br><span class="line">            &lt;option value=&quot;&quot;&gt;选择3&lt;/option&gt;</span><br><span class="line">        &lt;/select&gt;</span><br><span class="line">optgroup 带标题</span><br><span class="line">        &lt;select name=<span class="string">&quot;dx&quot;</span> id=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">            &lt;optgroup label=<span class="string">&quot;标题1&quot;</span>&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;1.1&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;1.2&lt;/option&gt;</span><br><span class="line">                &lt;option value=&quot;&quot;&gt;1.3&lt;/option&gt;</span><br><span class="line">            &lt;/optgroup&gt;</span><br><span class="line">            &lt;optgroup label=<span class="string">&quot;标题2&quot;</span>&gt;</span><br><span class="line">                &lt;option&gt;2.1&lt;/option&gt;</span><br><span class="line">                &lt;option&gt;2.2&lt;/option&gt;</span><br><span class="line">                &lt;option&gt;2.3&lt;/option&gt;</span><br><span class="line">            &lt;/optgroup&gt;</span><br><span class="line">            &lt;optgroup label=<span class="string">&quot;标题3&quot;</span>&gt;</span><br><span class="line">                &lt;option&gt;3.1&lt;/option&gt;</span><br><span class="line">                &lt;option&gt;3.2&lt;/option&gt;</span><br><span class="line">                &lt;option&gt;3.3&lt;/option&gt;</span><br><span class="line">            &lt;/optgroup&gt;</span><br><span class="line">        &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="textarea标签"><a href="#textarea标签" class="headerlink" title="textarea标签"></a>textarea标签</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">大段文本 </span><br><span class="line">&lt;textarea name=&quot;&quot; id=&quot;&quot; cols=&quot;&quot; rows=&quot;&quot; &gt;&lt;/textarea&gt;</span><br><span class="line">cols，rows 长宽</span><br></pre></td></tr></table></figure>
+
+<h3 id="form表单提交数据"><a href="#form表单提交数据" class="headerlink" title="form表单提交数据"></a>form表单提交数据</h3><p> form 表单提交数据默认是get方式</p>
+<p>method = ‘post’</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="form表单提交文件注意："><a href="#form表单提交文件注意：" class="headerlink" title="form表单提交文件注意："></a>form表单提交文件注意：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1、method必须是post</span></span><br><span class="line"><span class="comment"># 2、enctype = “multipart/form-data”</span></span><br><span class="line"><span class="comment"># enctype类似于数据提交的编码格式 默认是urlencoded 只能 够提交普通的文本数据</span></span><br><span class="line"><span class="comment"># formdata可以支持文件和文本 </span></span><br><span class="line">&lt;form action=<span class="string">&quot;http://127.0.0.1:5000/index/&quot;</span> method=<span class="string">&quot;post&quot;</span> enctype=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提前体验</span></span><br><span class="line">pip install FLASK,request</span><br><span class="line">flask框架 :</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="meta">@app.route(&#x27;/index/&#x27;, methods=[&#x27;GET&#x27;, &#x27;POST&#x27;])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    print(request.form)  <span class="comment"># 获取form表单 提交过来的 非文件数据</span></span><br><span class="line">    print(request.files)</span><br><span class="line">    file_obj = request.files.get(<span class="string">&#x27;file.jpg&#x27;</span>)</span><br><span class="line">    print(file_obj.name)</span><br><span class="line">    file_obj.save(file_obj.name)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;OK&#x27;</span></span><br><span class="line">app.run()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +229,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%7FHTML%2002%20day%20%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/jquery%2007/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/HTML%2001%20day%20%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +321,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#table%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">1.</span> <span class="toc-text">table表格标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">2.</span> <span class="toc-text">form表单标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#input-%E6%A0%87%E7%AD%BE"><span class="toc-number">2.1.</span> <span class="toc-text">input 标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select%E6%A0%87%E7%AD%BE"><span class="toc-number">2.2.</span> <span class="toc-text">select标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#textarea%E6%A0%87%E7%AD%BE"><span class="toc-number">2.3.</span> <span class="toc-text">textarea标签</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#form%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">3.</span> <span class="toc-text">form表单提交数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#form%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">form表单提交文件注意：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +376,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

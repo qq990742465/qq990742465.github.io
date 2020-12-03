@@ -8,13 +8,22 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="关于编辑器">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2076day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="关于编辑器">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213538.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213539.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213540.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213541.png">
+<meta property="article:published_time" content="2020-12-02T12:31:37.391Z">
+<meta property="article:modified_time" content="2020-12-02T13:36:09.956Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213538.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +157,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-全栈python开发 76day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="关于编辑器"><a href="#关于编辑器" class="headerlink" title="关于编辑器"></a>关于编辑器</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213538.png" alt="image-20200921162742249"></p>
+<a id="more"></a>
+
+<h1 id="语言分类"><a href="#语言分类" class="headerlink" title="语言分类"></a>语言分类</h1><h2 id="解释型-编译型"><a href="#解释型-编译型" class="headerlink" title="解释型 编译型"></a>解释型 编译型</h2><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213539.png" alt="image-20200921164356167"></p>
+<h1 id="从事方向"><a href="#从事方向" class="headerlink" title="从事方向"></a>从事方向</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213540.png" alt="image-20200921170344038"></p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213541.png" alt="image-20200923111529702"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python 中一切皆对象</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">type 和 object 的关系：</span></span><br><span class="line"><span class="string">	1 type 是 object 的类</span></span><br><span class="line"><span class="string">	2 type 继承了 object</span></span><br><span class="line"><span class="string">	3 type 是 type自己的类</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一切皆对象的好处</span></span><br><span class="line"><span class="comment"># 不同类型之间的变量可以直接相关赋值（不是计算）</span></span><br><span class="line">a = <span class="number">100</span></span><br><span class="line">a = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 其实本质上 变量都是指向了一个内存地址</span></span><br><span class="line"><span class="comment"># 于是出现了深浅拷贝问题</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="可变与不可变类型"><a href="#可变与不可变类型" class="headerlink" title="可变与不可变类型"></a>可变与不可变类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可变类型</span></span><br><span class="line">字典</span><br><span class="line">	字段的key必须用不可变类型，可以哈希（hash）</span><br><span class="line">    又叫哈希散列  是无序的  py3<span class="number">.6</span>开始做成有序</span><br><span class="line">列表</span><br><span class="line">集合</span><br><span class="line"><span class="comment"># 不可变类型</span></span><br><span class="line">数字</span><br><span class="line">字符</span><br><span class="line">元组</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># python中的参数传递 是值传递 还是 引用传递</span></span><br><span class="line">python中参数传递 都是copy一份传递过去 ，由于一切皆对象， 传过去的都是内存地址</span><br><span class="line">python中区分可变与不可变类型</span><br><span class="line">	可变类型传入函数之后会影响原来的</span><br><span class="line">    不可变类型不会影响原来的</span><br></pre></td></tr></table></figure>
+
+<h1 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算机的计量单位：</span></span><br><span class="line">bit比特位： <span class="number">0</span>或者<span class="number">1</span>的一个小格</span><br><span class="line"><span class="number">8</span>个比特位是一个byte 一个字节</span><br><span class="line">1024个字节---&gt;&gt;&gt; 1kb</span><br><span class="line">.......</span><br><span class="line"></span><br><span class="line">1个字节 ---&gt;&gt;&gt;  2的8次方种变化， 就可以表示出所有的字符（数字，字母，标点符号）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">计算机到了中国 ---&gt;&gt;&gt; 出现了汉字  GBK </span><br><span class="line"></span><br><span class="line">但是不同国家 就会出现乱码 问题 ---&gt;&gt;&gt; unicode</span><br><span class="line"></span><br><span class="line">utf<span class="number">-8</span> 目前主流的编码方式</span><br></pre></td></tr></table></figure>
+
+<h1 id="闭包函数"><a href="#闭包函数" class="headerlink" title="闭包函数"></a>闭包函数</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">同时满足：</span></span><br><span class="line"><span class="string">    1 定义在函数内部</span></span><br><span class="line"><span class="string">    2 对外部作用域有引用</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># python中函数是一等公民</span></span><br><span class="line">	函数可以赋值给一个变量</span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰器是闭包函数的典型应用</span></span><br><span class="line"><span class="comment"># python有装饰器语法糖 @</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span>(<span class="params">*args, **kwargs</span>):</span></span><br><span class="line">        <span class="comment"># func执行前的运行代码</span></span><br><span class="line">        res = func(*args, **kwargs)</span><br><span class="line">        <span class="comment"># func执行后运行代码</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>()；</span></span><br><span class="line"><span class="function">	<span class="title">pass</span></span></span><br><span class="line"><span class="function"># 没有语法糖时：</span></span><br><span class="line">a = wrapper(a)</span><br><span class="line">a()</span><br><span class="line"><span class="comment"># 有语法糖</span></span><br><span class="line"><span class="meta">@wrapper</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">a</span>():</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 面向切面编程 AOP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># OOP 面向对象编程</span></span><br><span class="line">     </span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +218,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2076day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2077%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2082%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +310,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">关于编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">语言分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E5%9E%8B-%E7%BC%96%E8%AF%91%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">解释型 编译型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8E%E4%BA%8B%E6%96%B9%E5%90%91"><span class="toc-number">3.</span> <span class="toc-text">从事方向</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E5%8F%98%E4%B8%8E%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">可变与不可变类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="toc-number">6.</span> <span class="toc-text">字符编码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">闭包函数</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +365,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

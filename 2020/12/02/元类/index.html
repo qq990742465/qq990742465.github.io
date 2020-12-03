@@ -8,11 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="什么是元类？由 python一切 皆对象 得知  类 也是一种对象1234567# 对象的产生方式class Lei:    def __init__(self, name):        self.name &#x3D; name # 调用类加（）obj &#x3D; Lei(&amp;#x27;test&amp;#x27;)# 由此获得 对象obj">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%85%83%E7%B1%BB/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="什么是元类？由 python一切 皆对象 得知  类 也是一种对象1234567# 对象的产生方式class Lei:    def __init__(self, name):        self.name &#x3D; name # 调用类加（）obj &#x3D; Lei(&amp;#x27;test&amp;#x27;)# 由此获得 对象obj">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-12-02T12:33:05.873Z">
+<meta property="article:modified_time" content="2020-12-02T13:39:03.022Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
   
@@ -148,180 +152,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-元类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<a id="more"></a>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
+<h4 id="那-类这个-对象-也应该是-调用某种-类加（）产生的"><a href="#那-类这个-对象-也应该是-调用某种-类加（）产生的" class="headerlink" title="那 类这个 对象 也应该是  调用某种 类加（）产生的"></a>那 类这个 对象 也应该是  调用某种 类加（）产生的</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># obj 是调用 Lei() 产生的</span></span><br><span class="line">type(obj)</span><br><span class="line">print(type(obj))---&gt;&gt;&gt; &lt;class &#x27;__main__.Lei&#x27;&gt;</span><br><span class="line"><span class="comment"># 用type 方法可知  obj 是调用哪个类得到</span></span><br><span class="line"><span class="comment"># 那么 同理  tpye（类） 试一下</span></span><br><span class="line">print (type(Lei))  ---&gt;&gt;&gt; &lt;class &#x27;type&#x27;&gt;</span><br><span class="line">print (type(int))	---&gt;&gt;&gt; &lt;class &#x27;type&#x27;&gt;</span><br><span class="line"><span class="comment"># 的到  class &#x27;type&#x27;   说明 Lei 这个类 是调用 type 的到</span></span><br></pre></td></tr></table></figure>
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h4 id="结论：-type就是-所以类-的元类"><a href="#结论：-type就是-所以类-的元类" class="headerlink" title="结论： type就是 所以类 的元类"></a>结论： type就是 所以类 的元类</h4><h4 id="关系：元类（type）—-gt-gt-gt-实例化—-gt-gt-gt-类（Lei）"><a href="#关系：元类（type）—-gt-gt-gt-实例化—-gt-gt-gt-类（Lei）" class="headerlink" title="关系：元类（type）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt;  类（Lei）"></a>关系：元类（type）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt;  类（Lei）</h4><h4 id="类（Lei）—-gt-gt-gt-实例化—-gt-gt-gt-对象-obj"><a href="#类（Lei）—-gt-gt-gt-实例化—-gt-gt-gt-对象-obj" class="headerlink" title="类（Lei）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt; 对象  (obj)"></a>类（Lei）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt; 对象  (obj)</h4><h4 id="所以-class关键字-在创造-类的时候-可能-是-由-Lei-type-来实现的"><a href="#所以-class关键字-在创造-类的时候-可能-是-由-Lei-type-来实现的" class="headerlink" title="所以 class关键字 在创造 类的时候 可能  是 由 Lei = type()来实现的"></a>所以 class关键字 在创造 类的时候 可能  是 由 Lei = type()来实现的</h4><h3 id="class-关键字创建类的机制："><a href="#class-关键字创建类的机制：" class="headerlink" title="class 关键字创建类的机制："></a>class 关键字创建类的机制：</h3><h4 id="类的三大特征："><a href="#类的三大特征：" class="headerlink" title="类的三大特征："></a>类的三大特征：</h4><ul>
+<li><p>1、类的名称</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_name = Lei</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2、类的基类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_bases = (object, )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3、类的类体代码 (执行类体代码拿到 类中属性的名称空间）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class_body = <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    def __init__(self, name):</span></span><br><span class="line"><span class="string">        self.name = name </span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">class_dic = &#123;&#125;</span><br><span class="line">exec(class_body, &#123;&#125;, class_dic)</span><br><span class="line">print(class_dic) <span class="comment"># &#123;&#x27;__init__&#x27;: &lt;function __init__ at 0x0000021478825948&gt;&#125;</span></span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
+</li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
+<h4 id="class-创造类-实际的名称空间"><a href="#class-创造类-实际的名称空间" class="headerlink" title="class 创造类 实际的名称空间"></a>class 创造类 实际的名称空间</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line">print(Lei.__dict__)</span><br><span class="line"><span class="comment"># &#123;&#x27;__module__&#x27;: &#x27;__main__&#x27;, &#x27;__init__&#x27;: &lt;function Lei.__init__ at 0x000001DE4FA56798&gt;, &#x27;__dict__&#x27;: &lt;attribute &#x27;__dict__&#x27; of &#x27;Lei&#x27; objects&gt;, &#x27;__weakref__&#x27;: &lt;attribute &#x27;__weakref__&#x27; of &#x27;Lei&#x27; objects&gt;, &#x27;__doc__&#x27;: None&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="对比可见-class-创建-类是-还有一步：-调用type元类"><a href="#对比可见-class-创建-类是-还有一步：-调用type元类" class="headerlink" title="对比可见   class  创建 类是 还有一步：(调用type元类)"></a>对比可见   class  创建 类是 还有一步：(调用type元类)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Lei = type(class_name,  class_bases, class_dic)</span><br><span class="line">print(Lei.__dict__)</span><br><span class="line"><span class="comment"># &#123;&#x27;__init__&#x27;: &lt;function __init__ at 0x000002CE5A7A64C8&gt;, &#x27;__module__&#x27;: &#x27;__main__&#x27;, &#x27;__dict__&#x27;: &lt;attribute &#x27;__dict__&#x27; of &#x27;Lei&#x27; objects&gt;, &#x27;__weakref__&#x27;: &lt;attribute &#x27;__weakref__&#x27; of &#x27;Lei&#x27; objects&gt;, &#x27;__doc__&#x27;: None&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="结论：class-创建类-大致就是-以上四步："><a href="#结论：class-创建类-大致就是-以上四步：" class="headerlink" title="结论：class 创建类 大致就是 以上四步："></a>结论：class 创建类 大致就是 以上四步：</h4><ul>
+<li>1、 class_name</li>
+<li>2 、class_bases</li>
+<li>3、 class_dic</li>
+<li>4、类名 = type（class_name， class_bases,  class_dic）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 由于 1 2 3 步 在使用class 关键字创建类时 就可以定义</span></span><br><span class="line"><span class="comment"># 所以 重点在与 如何 使用元类 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义元类即使用"><a href="#自定义元类即使用" class="headerlink" title="自定义元类即使用"></a>自定义元类即使用</h3>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -330,16 +229,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%85%83%E7%B1%BB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E7%B1%BB%E7%9A%84%E5%8F%8D%E5%B0%84+%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/python%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -354,67 +321,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%83%E7%B1%BB%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是元类？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B1-python%E4%B8%80%E5%88%87-%E7%9A%86%E5%AF%B9%E8%B1%A1-%E5%BE%97%E7%9F%A5-%E7%B1%BB-%E4%B9%9F%E6%98%AF%E4%B8%80%E7%A7%8D%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text">由 python一切 皆对象 得知  类 也是一种对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%A3-%E7%B1%BB%E8%BF%99%E4%B8%AA-%E5%AF%B9%E8%B1%A1-%E4%B9%9F%E5%BA%94%E8%AF%A5%E6%98%AF-%E8%B0%83%E7%94%A8%E6%9F%90%E7%A7%8D-%E7%B1%BB%E5%8A%A0%EF%BC%88%EF%BC%89%E4%BA%A7%E7%94%9F%E7%9A%84"><span class="toc-number">1.2.</span> <span class="toc-text">那 类这个 对象 也应该是  调用某种 类加（）产生的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A-type%E5%B0%B1%E6%98%AF-%E6%89%80%E4%BB%A5%E7%B1%BB-%E7%9A%84%E5%85%83%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">结论： type就是 所以类 的元类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E7%B3%BB%EF%BC%9A%E5%85%83%E7%B1%BB%EF%BC%88type%EF%BC%89%E2%80%94-gt-gt-gt-%E5%AE%9E%E4%BE%8B%E5%8C%96%E2%80%94-gt-gt-gt-%E7%B1%BB%EF%BC%88Lei%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">关系：元类（type）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt;  类（Lei）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%EF%BC%88Lei%EF%BC%89%E2%80%94-gt-gt-gt-%E5%AE%9E%E4%BE%8B%E5%8C%96%E2%80%94-gt-gt-gt-%E5%AF%B9%E8%B1%A1-obj"><span class="toc-number">1.5.</span> <span class="toc-text">类（Lei）—&gt;&gt;&gt; 实例化—&gt;&gt;&gt; 对象  (obj)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E4%BB%A5-class%E5%85%B3%E9%94%AE%E5%AD%97-%E5%9C%A8%E5%88%9B%E9%80%A0-%E7%B1%BB%E7%9A%84%E6%97%B6%E5%80%99-%E5%8F%AF%E8%83%BD-%E6%98%AF-%E7%94%B1-Lei-type-%E6%9D%A5%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="toc-number">1.6.</span> <span class="toc-text">所以 class关键字 在创造 类的时候 可能  是 由 Lei &#x3D; type()来实现的</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#class-%E5%85%B3%E9%94%AE%E5%AD%97%E5%88%9B%E5%BB%BA%E7%B1%BB%E7%9A%84%E6%9C%BA%E5%88%B6%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">class 关键字创建类的机制：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">类的三大特征：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class-%E5%88%9B%E9%80%A0%E7%B1%BB-%E5%AE%9E%E9%99%85%E7%9A%84%E5%90%8D%E7%A7%B0%E7%A9%BA%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">class 创造类 实际的名称空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E5%8F%AF%E8%A7%81-class-%E5%88%9B%E5%BB%BA-%E7%B1%BB%E6%98%AF-%E8%BF%98%E6%9C%89%E4%B8%80%E6%AD%A5%EF%BC%9A-%E8%B0%83%E7%94%A8type%E5%85%83%E7%B1%BB"><span class="toc-number">2.3.</span> <span class="toc-text">对比可见   class  创建 类是 还有一步：(调用type元类)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9Aclass-%E5%88%9B%E5%BB%BA%E7%B1%BB-%E5%A4%A7%E8%87%B4%E5%B0%B1%E6%98%AF-%E4%BB%A5%E4%B8%8A%E5%9B%9B%E6%AD%A5%EF%BC%9A"><span class="toc-number">2.4.</span> <span class="toc-text">结论：class 创建类 大致就是 以上四步：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%85%83%E7%B1%BB%E5%8D%B3%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">自定义元类即使用</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -444,8 +376,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

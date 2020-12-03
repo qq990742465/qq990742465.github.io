@@ -8,13 +8,30 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="操作标签样式操作class类">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/jQuery%2008/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="操作标签样式操作class类">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213333.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213334.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213335.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213336.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213337.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213338.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213339.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213340.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213341.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213342.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213343.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213344.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.549Z">
+<meta property="article:modified_time" content="2020-12-02T13:33:39.253Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213333.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +165,125 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-jQuery 08" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h2 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h2><h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h3><h4 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h4><a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addClass()	<span class="comment">// 添加指定的CSS类名</span></span><br><span class="line">removeClass()	<span class="comment">// 移除指定的CSS类名</span></span><br><span class="line">hasClass()	<span class="comment">// 判断类名是否存在</span></span><br><span class="line">toggleClass()	<span class="comment">// 如果有就删除，如果没有就添加</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .c1 &#123;</span><br><span class="line">            width: <span class="number">100</span>px;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            background: blue;</span><br><span class="line">        &#125;</span><br><span class="line">        .c2 &#123;</span><br><span class="line">            width: <span class="number">100</span>px;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;c1&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;jQuery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).addClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).removeClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).hasClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">false</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).addClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).hasClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"><span class="literal">true</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).toggleClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).toggleClass(<span class="string">&#x27;c2&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="css操作"><a href="#css操作" class="headerlink" title="css操作"></a>css操作</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原生JS</span></span><br><span class="line">标签对象.style.属性名 = 属性值</span><br><span class="line"><span class="comment">// jquery</span></span><br><span class="line">$(<span class="string">&#x27;d1&#x27;</span>).css(<span class="string">&#x27;属性名&#x27;</span>, <span class="string">&#x27;属性值&#x27;</span>)</span><br><span class="line"><span class="comment">// 多个属性</span></span><br><span class="line">$(<span class="string">&#x27;d1&#x27;</span>).css(&#123;<span class="string">&#x27;属性名&#x27;</span>:<span class="string">&#x27;属性值&#x27;</span>， <span class="string">&#x27;属性名2&#x27;</span>:<span class="string">&#x27;属性值2&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).css(<span class="string">&#x27;background&#x27;</span>, <span class="string">&#x27;red&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;height&#x27;</span>:<span class="string">&#x27;200px&#x27;</span>&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h4><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213333.png" alt="image-20200704143043584"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.offset()	<span class="comment">// 觉得定位 当前标签相对于浏览器窗口的位置</span></span><br><span class="line">    <span class="comment">// 移动标签</span></span><br><span class="line">    $(<span class="string">&#x27;#b1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).offset(&#123;<span class="attr">top</span>:<span class="number">200</span>,<span class="attr">left</span>:<span class="number">200</span>&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#b2&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).offset(&#123;<span class="attr">top</span>:<span class="number">8</span>,<span class="attr">left</span>:<span class="number">8</span>&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">.offset(&#123;<span class="string">&#x27;top&#x27;</span>:<span class="string">&#x27;20&#x27;</span>, <span class="string">&#x27;left&#x27;</span>:<span class="string">&#x27;20&#x27;</span>&#125;)	<span class="comment">//设置位置 </span></span><br><span class="line"></span><br><span class="line">.position()	<span class="comment">// 相对于父级标签的位置</span></span><br><span class="line"><span class="comment">// position  不能设置位置</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).scrollTop()	<span class="comment">// 滚轮向下移动的距离</span></span><br><span class="line">$(<span class="built_in">window</span>).scrollLeft()	<span class="comment">// 滚轮向右移动的距离</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213334.png" alt="image-20200704143101589"></p>
+<h4 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.height()	<span class="comment">// 盒子内部content 的大小   就是我们设置的标签 高度和宽度</span></span><br><span class="line">.width()</span><br><span class="line"></span><br><span class="line">innerHeight()	<span class="comment">//内容content的高度 + 两个padding的高度</span></span><br><span class="line">innerWidth</span><br><span class="line"></span><br><span class="line">outerHeight()	<span class="comment">// content + 两个padding + 两个border 不包括margin的高度  因为margin是标签与标签之间的距离</span></span><br><span class="line">outerWidth()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例</span></span><br><span class="line">        .c1 &#123;</span><br><span class="line">            border: <span class="number">5</span>px solid;</span><br><span class="line">            padding: <span class="number">50</span>px;</span><br><span class="line">            width: <span class="number">100</span>px;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            background: blue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).height()</span><br><span class="line"><span class="number">100</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).width()</span><br><span class="line"><span class="number">100</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).innerWidth()</span><br><span class="line"><span class="number">200</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).innerHeight()</span><br><span class="line"><span class="number">200</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).outerHeight()</span><br><span class="line"><span class="number">210</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).outerHeight()</span><br><span class="line"><span class="number">210</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="文本操作"><a href="#文本操作" class="headerlink" title="文本操作"></a>文本操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.html()</span><br><span class="line">.html(val)	<span class="comment">//能识别标签</span></span><br><span class="line"></span><br><span class="line">.text()</span><br><span class="line">.text(val)	<span class="comment">// 不能识别</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213335.png" alt="image-20200704221322353"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//	示例</span><br><span class="line">.c2 &#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;c2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$(&#x27;.c2&#x27;).text()</span><br><span class="line">&quot;</span><br><span class="line">    </span><br><span class="line">        Test</span><br><span class="line">    </span><br><span class="line">&quot;</span><br><span class="line">$(&#x27;.c2&#x27;).html()</span><br><span class="line">&quot;</span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&quot;</span><br><span class="line"></span><br><span class="line">$(&#x27;.c2&#x27;).text(&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;http://www.baidu.com&#x27;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;)// 下图</span><br><span class="line">$(&#x27;.c2&#x27;).html(&quot;<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&#x27;http://www.baidu.com&#x27;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span>&quot;)// 上图</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213336.png" alt="image-20200704221301782"></p>
+<h3 id="值操作"><a href="#值操作" class="headerlink" title="值操作"></a>值操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val()	<span class="comment">//获取值</span></span><br><span class="line">val(val)	<span class="comment">//设置值</span></span><br><span class="line">val([val1, val2])	<span class="comment">//设置多个值</span></span><br><span class="line"><span class="comment">// 多个值时 只会返回第一个值</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例 </span></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;text&lt;input id=<span class="string">&quot;i1&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    radio&lt;input name=<span class="string">&quot;radio&quot;</span> type=<span class="string">&quot;radio&quot;</span>&gt;</span><br><span class="line">    radio&lt;input name=<span class="string">&quot;radio&quot;</span> type=<span class="string">&quot;radio&quot;</span>&gt;</span><br><span class="line">    radio&lt;input name=<span class="string">&quot;radio&quot;</span> type=<span class="string">&quot;radio&quot;</span>&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">    checkbox1&lt;input name=<span class="string">&quot;Test&quot;</span> type=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">    checkbox2&lt;input name=<span class="string">&quot;Test&quot;</span> type=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">    checkbox3&lt;input name=<span class="string">&quot;Test&quot;</span> type=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;select name=<span class="string">&quot;&quot;</span> id=<span class="string">&quot;s1&quot;</span>&gt;</span><br><span class="line">    &lt;option value=<span class="string">&quot;1&quot;</span>&gt;<span class="number">1</span>&lt;/option&gt;</span><br><span class="line">    &lt;option value=<span class="string">&quot;2&quot;</span>&gt;<span class="number">2</span>&lt;/option&gt;</span><br><span class="line">    &lt;option value=<span class="string">&quot;3&quot;</span>&gt;<span class="number">3</span>&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当 radio 和 checkbox没有设置value属性时</span></span><br><span class="line">$(<span class="string">&#x27;:radio&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;on&quot;</span></span><br><span class="line">$(<span class="string">&#x27;:checkbox&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;on&quot;</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;123&quot;</span></span><br><span class="line">$(<span class="string">&#x27;#s1&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="comment">//  设置好value后(这种写法的到永远都是第一个的value)</span></span><br><span class="line"><span class="comment">// 因为$(&#x27;:radio&#x27;)或$(&#x27;:checkbox&#x27;) 获取到的事所有此属性的标签 而    .val() 是获取其标签的值</span></span><br><span class="line">$(<span class="string">&#x27;:radio&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;1&quot;</span></span><br><span class="line">$(<span class="string">&#x27;:checkbox&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;1&quot;</span></span><br><span class="line"><span class="comment">// 正确的写法 （在加上 :checked筛选器 得到的就是被选中的标签）</span></span><br><span class="line">$(<span class="string">&#x27;:radio:checked&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;2&quot;</span></span><br><span class="line">$(<span class="string">&#x27;:checkbox:checked&#x27;</span>).val()</span><br><span class="line"><span class="string">&quot;3&quot;</span></span><br><span class="line"><span class="comment">// 设置值 (在radio checkbox select 中的设置 对应的就是选中)</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).val(<span class="string">&#x27;123&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;:radio&#x27;</span>).val([<span class="string">&#x27;3&#x27;</span>])</span><br><span class="line"><span class="comment">//注意：设置选中的话 一定要用[]（val([&#x27;value&#x27;])） 如果是val(&#x27;value&#x27;)的话 tpye = radio/checebox的所有标签 的value都会变为 新的value</span></span><br><span class="line">$(<span class="string">&#x27;:checkbox&#x27;</span>).val([<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;3&#x27;</span>])</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;#s1&#x27;</span>).val(<span class="string">&#x27;2&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.attr(<span class="string">&#x27;属性名&#x27;</span>)	<span class="comment">// 查看属性</span></span><br><span class="line">.attr(<span class="string">&#x27;属性名&#x27;</span>, <span class="string">&#x27;属性值&#x27;</span>)	<span class="comment">// 设置单个属性</span></span><br><span class="line">.attr(&#123;<span class="string">&#x27;属性1&#x27;</span>:<span class="string">&#x27;值1&#x27;</span>, <span class="string">&#x27;属性2&#x27;</span>:<span class="string">&#x27;值2&#x27;</span>&#125;)	<span class="comment">// 设置多个值</span></span><br><span class="line">.removeAttr(<span class="string">&#x27;属性名&#x27;</span>)	<span class="comment">// 删除属性</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">prop --- 针对的事 checked\selected\disabled...</span><br><span class="line">prop不支持获取标签的自定义属性。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213337.png" alt="image-20200704164915776"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213338.png" alt="image-20200704222331810"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例</span></span><br><span class="line"><span class="comment">// HTML 同上</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).attr(<span class="string">&#x27;type&#x27;</span>)</span><br><span class="line"><span class="string">&quot;text&quot;</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).attr(<span class="string">&#x27;name&#x27;</span>,<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).attr(&#123;<span class="string">&#x27;proprety1&#x27;</span>:<span class="string">&#x27;value1&#x27;</span>,<span class="string">&#x27;proprety2&#x27;</span>:<span class="string">&#x27;value2&#x27;</span>&#125;)</span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).removeAttr(<span class="string">&#x27;proprety1&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对于 返回值为布尔型的属性 测试</span></span><br><span class="line"><span class="comment">// 选中</span></span><br><span class="line">$($(<span class="string">&#x27;:radio&#x27;</span>)[<span class="number">0</span>]).attr(<span class="string">&#x27;checked&#x27;</span>,<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$($(<span class="string">&#x27;:checkbox&#x27;</span>)[<span class="number">0</span>]).attr(<span class="string">&#x27;checked&#x27;</span>,<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$($(<span class="string">&#x27;#s1&#x27;</span>).children()[<span class="number">2</span>]).attr(<span class="string">&#x27;selected&#x27;</span>,<span class="string">&#x27;selected&#x27;</span>)</span><br><span class="line"><span class="comment">//取消</span></span><br><span class="line">$($(<span class="string">&#x27;:radio&#x27;</span>)[<span class="number">0</span>]).removeAttr(<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"></span><br><span class="line">$($(<span class="string">&#x27;:checkbox&#x27;</span>)[<span class="number">0</span>]).removeAttr(<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"><span class="comment">// 此时用 attr removeAttr 就 不是很方便</span></span><br><span class="line"><span class="comment">// 于是 checked\selected\disabled... 这类选择的 属性都使用prop</span></span><br><span class="line">$($(<span class="string">&#x27;:radio&#x27;</span>)[<span class="number">0</span>]).prop(<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"><span class="literal">false</span></span><br><span class="line">$($(<span class="string">&#x27;:radio&#x27;</span>)[<span class="number">0</span>]).prop(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">$($(<span class="string">&#x27;:checkbox&#x27;</span>)[<span class="number">0</span>]).prop(<span class="string">&#x27;checked&#x27;</span>)</span><br><span class="line"><span class="literal">false</span></span><br><span class="line">$($(<span class="string">&#x27;:checkbox&#x27;</span>)[<span class="number">0</span>]).prop(<span class="string">&#x27;checked&#x27;</span>,<span class="literal">true</span>)</span><br><span class="line"></span><br><span class="line">$($(<span class="string">&#x27;#s1&#x27;</span>).children()[<span class="number">2</span>]).prop(<span class="string">&#x27;selected&#x27;</span>)</span><br><span class="line"><span class="literal">true</span></span><br><span class="line">$($(<span class="string">&#x27;#s1&#x27;</span>).children()[<span class="number">2</span>]).prop(<span class="string">&#x27;selected&#x27;</span>,<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加到指定元素内部的后边（儿子）</span></span><br><span class="line">$(A).append(B)	<span class="comment">// 把B追加在A标签内部的后面</span></span><br><span class="line">	.append(<span class="string">&#x27;&lt;a href=&quot;http://www.jd.com&quot;&gt;京东&lt;/a&gt;&#x27;</span>)	<span class="comment">//能够识别</span></span><br><span class="line">$(A).appendTo(B)	<span class="comment">// 把A追加到B标签内部的后面</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加到指定元素内部的前面(儿子)</span></span><br><span class="line">$(A).prepend(B)<span class="comment">// 把B前置到A</span></span><br><span class="line">$(A).prependTo(B)<span class="comment">// 把A前置到B</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加到指定元素外部的后面(兄弟)</span></span><br><span class="line">$(A).after(B)<span class="comment">// 把B放到A的后面</span></span><br><span class="line">$(A).insertAfter(B)<span class="comment">// 把A放到B的后面</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加到指定元素外部的前面(兄弟)</span></span><br><span class="line">$(A).before(B)<span class="comment">// 把B放到A的前面</span></span><br><span class="line">$(A).insertBefore(B)<span class="comment">// 把A放到B的前面</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 清空</span></span><br><span class="line">A.empty()	<span class="comment">// 清空A的所有后代</span></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line">A.remove()	<span class="comment">// 删除整个A标签</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line">A.replaceWith(B)	<span class="comment">// 用B来替换A</span></span><br><span class="line">A.replaceAll(B)	<span class="comment">// 用A去替换B</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 克隆</span></span><br><span class="line">.clone()</span><br><span class="line"><span class="comment">// 默认不克隆 绑定的时间</span></span><br><span class="line">.clone(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">// 连事件一起克隆</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加到指定元素内部的后边（儿子）</span></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).append(<span class="string">&#x27;&lt;a&gt;123&lt;/a&gt;&#x27;</span>) <span class="comment">//在 .c1 的儿子的最后 添加 &lt;a&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">$(a).appendTo($(<span class="string">&#x27;.c1&#x27;</span>))</span><br><span class="line"><span class="comment">// 将 a  添加 到 .c1 的儿子的最后</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加到指定元素内部的前面（儿子）</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">$(a).prependTo($(<span class="string">&#x27;.c1&#x27;</span>))<span class="comment">// 将a添加到 .c1 儿子的最前面</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).prepend(<span class="string">&#x27;&lt;a&gt;123&lt;/a&gt;&#x27;</span>)  <span class="comment">// 在 .c1 的儿子的最前面添加&lt;a&gt;123&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213339.png" alt="image-20200704230546360"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加到指定元素外部的后面(兄弟)</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">$(a).insertAfter($(<span class="string">&#x27;.c1&#x27;</span>))	<span class="comment">// 将a添加到 .c1的后面</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).after(<span class="string">&#x27;&lt;a&gt;123&lt;/a&gt;&#x27;</span>)	<span class="comment">// 在 .c1 的后面添加 &lt;a&gt;123&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213340.png" alt="image-20200704230843253"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加到指定元素外部的前面(兄弟)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">$(a).insertBefore($(<span class="string">&#x27;.c1&#x27;</span>)) <span class="comment">// 将a 添加到 .c1 的前面</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).before(<span class="string">&#x27;&lt;a&gt;123&lt;/a&gt;&#x27;</span>)	<span class="comment">// 在 .c1 的前面添加&lt;a&gt;123&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213341.png" alt="image-20200704231121164"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">清空整个 .c1 标签（删除所有的后代）</span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).empyt()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213342.png" alt="image-20200704231316228"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除整个 .c1 标签（本身和后代一起删除）</span><br><span class="line">$(<span class="string">&#x27;.c1&#x27;</span>).remove()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213343.png" alt="image-20200704231420232"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 替换</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">$(a).replaceAll($($(<span class="string">&#x27;.c2&#x27;</span>)[<span class="number">0</span>]))  <span class="comment">// 用a 来替换$(&#x27;.c2&#x27;)[0]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">a.href = <span class="string">&#x27;http:www.baidu.com&#x27;</span></span><br><span class="line">a.text = <span class="string">&#x27;百度&#x27;</span></span><br><span class="line">$($(<span class="string">&#x27;.c2&#x27;</span>)[<span class="number">0</span>]).replaceWith($(a))<span class="comment">// 将$(&#x27;.c2&#x27;)[0]替换成 a</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213344.png" alt="image-20200704231614301"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//克隆</span></span><br><span class="line">.clone()  <span class="comment">// 默认不克隆绑定的事件</span></span><br><span class="line">.clone(<span class="literal">true</span>)	<span class="comment">// 克隆绑定的事件</span></span><br><span class="line">见练习---开除操作</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +292,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/jQuery%2008/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/jQuery%2009/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/jquery%2007/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +384,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%A0%87%E7%AD%BE"><span class="toc-number">1.</span> <span class="toc-text">操作标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">样式操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#class%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">class类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.2.</span> <span class="toc-text">css操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.3.</span> <span class="toc-text">位置操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.1.4.</span> <span class="toc-text">尺寸</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">文本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%BC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">值操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.</span> <span class="toc-text">属性操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">文档处理</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +439,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

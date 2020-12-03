@@ -150,29 +150,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-全栈python开发 87 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-进程 02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2087%20day/">JWT控制用户登录，返回的数据格式，自定义权限，多方式登录</a>
-    </h1>
-  
-
-        
-        <a href="/2020/11/01/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2087%20day/" class="archive-article-date">
-  	<time datetime="2020-11-01T12:46:14.093Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-01</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># md5固定长度   不可反解</span></span><br><span class="line"><span class="comment"># base64 变长 可反解</span></span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">test = <span class="string">b&#x27;test&#x27;</span></span><br><span class="line"><span class="comment"># base64  encode的参数必须是byte类型</span></span><br><span class="line">a = base64.b64encode(test)</span><br><span class="line">print(a)</span><br><span class="line">a = base64.b64decode(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+        <h2 id="进程对象与其他方法"><a href="#进程对象与其他方法" class="headerlink" title="进程对象与其他方法"></a>进程对象与其他方法</h2><p>from  multiprocessing import current_process</p>
+<ul>
+<li><p>一台 计算机上运行着很多进程 计算机会给每一个 运行的进程分配一PID</p>
+</li>
+<li><p>如何查询：</p>
+<ul>
+<li>windows 系统 在cmd中输入 tasklist <ul>
+<li>tasklist |findstr pid 查看具体的进程</li>
+</ul>
+</li>
+<li>mac 系统  在终端中输入 ps aux<ul>
+<li>ps aux|grep pid 查看具体进程 </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
         
-          <a class="article-more-a" href="/2020/11/01/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2087%20day/#more">more >></a>
+          <a class="article-more-a" href="/2020/12/02/%E8%BF%9B%E7%A8%8B%2002/#more">more >></a>
         
       
 
@@ -185,7 +186,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/11/01/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2087%20day/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/02/%E8%BF%9B%E7%A8%8B%2002/">展开全文 >></a>
         </p>
       
 
@@ -215,29 +216,14 @@
 
 
   
-    <article id="post-全栈python开发 86 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-并发 05" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/26/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2086%20day/">rest_framework自定制频率，API文档自动生成，JWT</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/26/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2086%20day/" class="archive-article-date">
-  	<time datetime="2020-10-26T02:57:19.584Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-26</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="自定制频率"><a href="#自定制频率" class="headerlink" title="自定制频率"></a>自定制频率</h1>
+        <h1 id="IO模型"><a href="#IO模型" class="headerlink" title="IO模型"></a>IO模型</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2>
         
-          <a class="article-more-a" href="/2020/10/26/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2086%20day/#more">more >></a>
+          <a class="article-more-a" href="/2020/12/02/%E5%B9%B6%E5%8F%91%2005/#more">more >></a>
         
       
 
@@ -250,7 +236,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/26/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2086%20day/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/02/%E5%B9%B6%E5%8F%91%2005/">展开全文 >></a>
         </p>
       
 
@@ -280,29 +266,15 @@
 
 
   
-    <article id="post-全栈python开发 85 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-并发 04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/">批量增删改查操作,分页器,IP限制</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/" class="archive-article-date">
-  	<time datetime="2020-10-25T08:30:18.691Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-25</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="表模型，抽象表"><a href="#表模型，抽象表" class="headerlink" title="表模型，抽象表"></a>表模型，抽象表</h1>
+        <h2 id="死锁与递归锁（了解）"><a href="#死锁与递归锁（了解）" class="headerlink" title="死锁与递归锁（了解）"></a>死锁与递归锁（了解）</h2><p>锁的使用–&gt;&gt; 抢锁后必须释放锁  </p>
+<p>在操作的时候也极易产生死锁的现象（整个程序卡死 阻塞）</p>
         
-          <a class="article-more-a" href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/#more">more >></a>
+          <a class="article-more-a" href="/2020/12/02/%E5%B9%B6%E5%8F%91%2004/#more">more >></a>
         
       
 
@@ -315,7 +287,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/25/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2085%20day/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/02/%E5%B9%B6%E5%8F%91%2004/">展开全文 >></a>
         </p>
       
 
@@ -345,29 +317,17 @@
 
 
   
-    <article id="post-全栈python开发 84 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-线程 03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/">rest_framework权限，频率....</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/" class="archive-article-date">
-  	<time datetime="2020-10-19T06:12:04.723Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-19</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># APIView --&gt;&gt; dispatch --&gt;&gt; self.initial --&gt;&gt; self.check_permissions(APIView的对象方法)</span></span><br></pre></td></tr></table></figure>
+        <h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><h3 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h3><ul>
+<li><p>进程：资源单位</p>
+</li>
+<li><p>线程：执行单位</p>
         
-          <a class="article-more-a" href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/#more">more >></a>
+          <a class="article-more-a" href="/2020/12/02/%E7%BA%BF%E7%A8%8B%2003/#more">more >></a>
         
       
 
@@ -380,7 +340,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/19/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2084%20day/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/02/%E7%BA%BF%E7%A8%8B%2003/">展开全文 >></a>
         </p>
       
 
@@ -410,29 +370,17 @@
 
 
   
-    <article id="post-全栈python开发 83 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-类的反射+内置方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/">rest_frame路由与认证</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/" class="archive-article-date">
-  	<time datetime="2020-10-12T14:03:42.860Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-12</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1在urls中直接配置</span></span><br><span class="line">路由 as_view()</span><br><span class="line"><span class="comment"># 2一旦视图类 继承了ViewSetMixin， </span></span><br><span class="line">路由 as_view(actions=&#123;<span class="string">&#x27;xxx&#x27;</span>:<span class="string">&#x27;xxx&#x27;</span>&#125;)</span><br><span class="line"><span class="comment"># 3 继承自ModelViewSet路由的写法</span></span><br></pre></td></tr></table></figure>
+        <h1 id="类的内置方法"><a href="#类的内置方法" class="headerlink" title="类的内置方法"></a>类的内置方法</h1><ul>
+<li><p>以   __ 开头并以 __ 结尾</p>
+</li>
+<li><p>在某种条件下自动触发</p>
         
-          <a class="article-more-a" href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/#more">more >></a>
+          <a class="article-more-a" href="/2020/12/02/%E7%B1%BB%E7%9A%84%E5%8F%8D%E5%B0%84+%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95/#more">more >></a>
         
       
 
@@ -445,7 +393,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/12/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2083%20day/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/12/02/%E7%B1%BB%E7%9A%84%E5%8F%8D%E5%B0%84+%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -477,7 +425,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

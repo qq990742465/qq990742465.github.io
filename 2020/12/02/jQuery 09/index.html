@@ -8,13 +8,20 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="事件绑定事件的两种方式方式一12$(&amp;#x27;xx&amp;#x27;).事件名(function()&amp;#123;&amp;#125;)">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/jQuery%2009/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="事件绑定事件的两种方式方式一12$(&amp;#x27;xx&amp;#x27;).事件名(function()&amp;#123;&amp;#125;)">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213347.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213348.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.552Z">
+<meta property="article:modified_time" content="2020-12-02T13:33:53.474Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213347.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +155,101 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-jQuery 09" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="绑定事件的两种方式"><a href="#绑定事件的两种方式" class="headerlink" title="绑定事件的两种方式"></a>绑定事件的两种方式</h2><h3 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;xx&#x27;</span>).事件名(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;) </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&#x27;xx&#x27;</span>).on(<span class="string">&#x27;事件名&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">...</span>)</span>&#123;&#125;)</span><br><span class="line">$().click(<span class="function"><span class="keyword">function</span>) 等同于 <span class="title">$</span>(<span class="params"></span>).<span class="title">on</span>(<span class="params"><span class="string">&#x27;click&#x27;</span>,function</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h2><h3 id="click"><a href="#click" class="headerlink" title="click"></a>click</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 左键点击事件</span></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;d1&quot;</span> style=<span class="string">&quot;height: 200px; width: 200px; background: blue&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;d2&quot;</span> style=<span class="string">&quot;height: 200px; width: 200px; background: red&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;jQuery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;方式一&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#d2&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;方式二&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="focus"><a href="#focus" class="headerlink" title="focus"></a>focus</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取到光标时触发	 通常用于input</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).on(<span class="string">&#x27;focus&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;red&#x27;</span>&#125;)</span><br><span class="line">        $(<span class="string">&#x27;#d2&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;:text&#x27;</span>).on(<span class="string">&#x27;blur&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>&#125;)</span><br><span class="line">        $(<span class="string">&#x27;#d2&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;red&#x27;</span>&#125;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="blur"><a href="#blur" class="headerlink" title="blur"></a>blur</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 失去光标时触发   通常用于input</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).on(<span class="string">&#x27;focus&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;red&#x27;</span>&#125;)</span><br><span class="line">        $(<span class="string">&#x27;#d2&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;:text&#x27;</span>).on(<span class="string">&#x27;blur&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;blue&#x27;</span>&#125;)</span><br><span class="line">        $(<span class="string">&#x27;#d2&#x27;</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;red&#x27;</span>&#125;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="change"><a href="#change" class="headerlink" title="change"></a>change</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 标签发生变化时触发</span></span><br><span class="line">$(<span class="string">&#x27;:text&#x27;</span>).on(<span class="string">&#x27;change&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d3&#x27;</span>).toggleClass(<span class="string">&#x27;c1&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#s1&#x27;</span>).on(<span class="string">&#x27;change&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">&#x27;#d3&#x27;</span>).toggleClass(<span class="string">&#x27;c1&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="hover"><a href="#hover" class="headerlink" title="hover"></a>hover</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// css 中 伪类选择器</span></span><br><span class="line">a:hover &#123;</span><br><span class="line">            color: yellow;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">// 同 a:hover 伪类选择器  一样  鼠标悬浮到标签上触发</span></span><br><span class="line"><span class="comment">// hover 事件 分两步  第一步移上去  第二波移开</span></span><br><span class="line">$(<span class="string">&#x27;#d3&#x27;</span>).hover(</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="built_in">this</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;pink&#x27;</span>&#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="built_in">this</span>).css(&#123;<span class="string">&#x27;background&#x27;</span>: <span class="string">&#x27;black&#x27;</span>&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="（mouseenter-or-mouseover）-and-mouseout"><a href="#（mouseenter-or-mouseover）-and-mouseout" class="headerlink" title="（mouseenter  or mouseover）  and mouseout"></a>（mouseenter  or mouseover）  and mouseout</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 鼠标悬浮 </span></span><br><span class="line"><span class="comment">//  当鼠标悬浮的标签有子标签时：</span></span><br><span class="line"><span class="comment">//  mouseover 和 mouseenter的区别是：mouseover事件是如果该标签有子标签，那么移动到该标签或者移动到子标签时会连续触发，mmouseenter事件不管有没有子标签都只触发一次，表示鼠标进入这个对象</span></span><br><span class="line">mouseover 在子标签与父标签的切换时也会触发</span><br><span class="line">mouseenter  不会触发 只有移动到标签外才会触发</span><br><span class="line"></span><br><span class="line">    <span class="comment">// $(&#x27;#d3&#x27;).mouseenter(function () &#123;</span></span><br><span class="line">    <span class="comment">//     $(this).css(&#x27;background&#x27;,&#x27;red&#x27;)</span></span><br><span class="line">    <span class="comment">//     console.log(1)</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br><span class="line">    $(<span class="string">&#x27;#d3&#x27;</span>).mouseover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="built_in">this</span>).css(<span class="string">&#x27;background&#x27;</span>,<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#d3&#x27;</span>).mouseout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="built_in">this</span>).css(<span class="string">&#x27;background&#x27;</span>,<span class="string">&#x27;grey&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="keydown-and-keyup"><a href="#keydown-and-keyup" class="headerlink" title="keydown  and keyup"></a>keydown  and keyup</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 键盘 按下 抬起 事件  </span></span><br><span class="line"><span class="comment">// 一般绑定window  $(window)</span></span><br><span class="line"><span class="comment">// 补充 事件对象event.keyCode</span></span><br><span class="line">$(<span class="built_in">window</span>).keydown(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(event.keyCode)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).keyup(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(event.keyCode)</span><br><span class="line">        <span class="keyword">if</span> (event.keyCode === <span class="number">32</span>)&#123;</span><br><span class="line">            alert(<span class="string">&#x27;你按下了空格&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听用户输入  input框中的数据发生变化时触发  搜索框  </span></span><br><span class="line"><span class="comment">// 必须使用方式二$().on(&#x27;input&#x27;, function) 来绑定</span></span><br><span class="line">$(<span class="string">&#x27;#inp&#x27;</span>).on(<span class="string">&#x27;input&#x27;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log($(<span class="built_in">this</span>).val())</span><br><span class="line">        <span class="keyword">if</span> ($(<span class="built_in">this</span>).val()===<span class="string">&#x27;666&#x27;</span>) &#123;</span><br><span class="line">            alert(<span class="number">666</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=<span class="string">&quot;d1&quot;</span> style=<span class="string">&quot;height: 200px; width: 200px; background: red&quot;</span>&gt;</span><br><span class="line">    &lt;button id=<span class="string">&quot;d2&quot;</span>&gt;test&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script src=<span class="string">&quot;jQuery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="string">&#x27;#d2&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;点击了d2&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;点击了d1&#x27;</span>)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"><span class="comment">//  当点击 button 时  div的点击事件也会触发  这就是 事件冒泡</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// event.stopPropagation()</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h3><h4 id="方式一-1"><a href="#方式一-1" class="headerlink" title="方式一"></a>方式一</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return false</span></span><br><span class="line">$(<span class="string">&#x27;#d2&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;点击了d2&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="方式二-1"><a href="#方式二-1" class="headerlink" title="方式二"></a>方式二</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// event 事件对象 .stopPropagation()</span></span><br><span class="line">$(<span class="string">&#x27;#d2&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;点击了d2&#x27;</span>)</span><br><span class="line">        <span class="comment">// return false</span></span><br><span class="line">        event.stopPropagation()</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    $(<span class="string">&#x27;button&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> btn = <span class="built_in">document</span>.createElement(<span class="string">&#x27;button&#x27;</span>)</span><br><span class="line">        $(btn).text(<span class="string">&#x27; 点击 复制一份&#x27;</span>)</span><br><span class="line">        $(btn).attr(<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;b1&#x27;</span>)</span><br><span class="line">        $(<span class="string">&#x27;div&#x27;</span>).append(btn)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// $(&#x27;button&#x27;).click(function () &#123;</span></span><br><span class="line">    <span class="comment">//     let a = $(&#x27;#b1&#x27;).clone()</span></span><br><span class="line">    <span class="comment">//     $(&#x27;div&#x27;).append(a)</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br><span class="line"><span class="comment">// 上面这两种 方式 添加的 标签 没有和 原标签一样绑定事件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(xx).on(<span class="string">&#x27;click&#x27;</span>,<span class="string">&#x27;委托人（选择器）&#x27;</span>, <span class="function"><span class="keyword">function</span>)</span></span><br><span class="line"><span class="function">// 利用事件冒泡  让页面加载完毕后添加的标签绑定事件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    $(<span class="string">&#x27;#d1&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>,<span class="string">&#x27;.c1&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> btn = <span class="built_in">document</span>.createElement(<span class="string">&#x27;button&#x27;</span>)</span><br><span class="line">        $(btn).text(<span class="string">&#x27; 点击 复制一份&#x27;</span>)</span><br><span class="line">        $(btn).attr(<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;b1&#x27;</span>)</span><br><span class="line">        $(btn).addClass(<span class="string">&#x27;c1&#x27;</span>)</span><br><span class="line">        $(<span class="string">&#x27;div&#x27;</span>).append(btn)</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//    $(&#x27;#d1&#x27;).on(&#x27;click&#x27;,&#x27;button&#x27;,function () &#123;</span></span><br><span class="line"><span class="comment">//        console.log($(this))</span></span><br><span class="line"><span class="comment">//        let a = $(&#x27;#b1&#x27;).clone()</span></span><br><span class="line"><span class="comment">//        $(&#x27;div&#x27;).append(a)</span></span><br><span class="line"><span class="comment">//    &#125;)</span></span><br><span class="line"><span class="comment">//上面 就是通过事件委托的方式 实现 页面加载成后 添加标签并绑定事件</span></span><br><span class="line"><span class="comment">// 原理 利用事件冒泡  后代将其事件委托给父类  从而 是父类（被委托人）里面的后代（委托人【选择器】） 都将绑定事件 </span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// $(&#x27;#b1&#x27;).click(function () &#123;</span></span><br><span class="line">    <span class="comment">//     let btn = $(this).clone(true)</span></span><br><span class="line">    <span class="comment">//     $(&#x27;div&#x27;).append(btn)</span></span><br><span class="line">    <span class="comment">// &#125;)</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213347.png" alt="image-20200705233614881"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事件委托是通过事件冒泡的原理，利用父标签去捕获子标签的事件，将未来添加进来的某些子标签自动绑定上事件。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="页面载入"><a href="#页面载入" class="headerlink" title="页面载入"></a>页面载入</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;script src=<span class="string">&quot;jQuery.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.style.background = <span class="string">&#x27;red&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;d1&quot;</span> style=<span class="string">&quot;width: 200px; height: 200px; background: blue&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"><span class="comment">// 若d1的绑定事件  在 d1 标签之上  则代码不会生效</span></span><br><span class="line"><span class="comment">// 因为 HTML 网页加载是从上到下  当script 加载的时候 还没有d1标签  于是当加载到d1 标签的时候  绑定的代码 已经执行过了</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="页面加载完毕后执行"><a href="#页面加载完毕后执行" class="headerlink" title="页面加载完毕后执行"></a>页面加载完毕后执行</h3><h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.style.background = <span class="string">&#x27;red&#x27;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"><span class="comment">// 等待页面加载完成之后 在触发加载 function里面的逻辑代码</span></span><br><span class="line"><span class="comment">// 缺点：window.onload 相当于一个全局变量  存在覆盖现象 如果后面再出现window.onload 则前面的window.onload的代码不会执行</span></span><br><span class="line">    </span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="number">111</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="number">222</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"><span class="comment">// 只会 弹出222</span></span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+<h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;)</span><br><span class="line"></span><br><span class="line">简写:</span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;)</span><br><span class="line"><span class="comment">// 同window.onload 一样 但是 不会出现 覆盖现象</span></span><br><span class="line"></span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="number">111</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">&#x27;#d1&#x27;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="number">222</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">   <span class="comment">//  111  和 222 都会弹出</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213348.png" alt="image-20200705223132466"></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +258,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/jQuery%2009/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/jQuery%2010/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/jQuery%2008/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +350,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%91%E5%AE%9A%E4%BA%8B%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">绑定事件的两种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-number">1.1.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-number">1.1.2.</span> <span class="toc-text">方式二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">常用事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#click"><span class="toc-number">1.2.1.</span> <span class="toc-text">click</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#focus"><span class="toc-number">1.2.2.</span> <span class="toc-text">focus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blur"><span class="toc-number">1.2.3.</span> <span class="toc-text">blur</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#change"><span class="toc-number">1.2.4.</span> <span class="toc-text">change</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hover"><span class="toc-number">1.2.5.</span> <span class="toc-text">hover</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88mouseenter-or-mouseover%EF%BC%89-and-mouseout"><span class="toc-number">1.2.6.</span> <span class="toc-text">（mouseenter  or mouseover）  and mouseout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#keydown-and-keyup"><span class="toc-number">1.2.7.</span> <span class="toc-text">keydown  and keyup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#input"><span class="toc-number">1.2.8.</span> <span class="toc-text">input</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-number">1.3.</span> <span class="toc-text">事件冒泡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">阻止事件冒泡</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80-1"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">方式一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C-1"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">方式二</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">1.4.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%BD%BD%E5%85%A5"><span class="toc-number">1.5.</span> <span class="toc-text">页面载入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%AE%8C%E6%AF%95%E5%90%8E%E6%89%A7%E8%A1%8C"><span class="toc-number">1.5.1.</span> <span class="toc-text">页面加载完毕后执行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">第一种</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">第二种</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +405,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

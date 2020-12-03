@@ -8,13 +8,25 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="django中间件添加request.data数据">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2077%20day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="django中间件添加request.data数据">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213623.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213624.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213625.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213626.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213627.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213628.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213629.png">
+<meta property="article:published_time" content="2020-12-02T12:31:37.394Z">
+<meta property="article:modified_time" content="2020-12-02T13:36:30.334Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213623.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +160,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-全栈python开发 77 day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="django中间件添加request-data数据"><a href="#django中间件添加request-data数据" class="headerlink" title="django中间件添加request.data数据"></a>django中间件添加request.data数据</h1><a id="more"></a>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213623.png" alt="image-20200923172246854"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 当前端通过form表单的post传输到后端的数据  格式为urlUnicode</span></span><br><span class="line"><span class="comment"># 存在后端Queryset对象（request.POST）中 body中的以二进制存放</span></span><br><span class="line"><span class="comment"># 想要在后端收到 JSON类型的数据 需要通过中间件</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        print(request.POST)</span><br><span class="line">        print(request.body)</span><br><span class="line">&lt;QueryDict: &#123;<span class="string">&#x27;user&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>], <span class="string">&#x27;pwd&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>]&#125;&gt;</span><br><span class="line"><span class="string">b&#x27;user=123&amp;pwd=123&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过ajax</span></span><br><span class="line"><span class="comment"># 未定义指定格式</span></span><br><span class="line">      $(<span class="string">&#x27;#submit&#x27;</span>).click(function () &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                <span class="string">&#x27;name&#x27;</span>: $(<span class="string">&#x27;#user&#x27;</span>).val(),</span><br><span class="line">                <span class="string">&#x27;pwd&#x27;</span>: $(<span class="string">&#x27;#pwd&#x27;</span>).val(),</span><br><span class="line">            &#125;,</span><br><span class="line">            success: function (args) &#123;</span><br><span class="line">                console.log(args)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    &lt;QueryDict: &#123;<span class="string">&#x27;name&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>], <span class="string">&#x27;pwd&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>]&#125;&gt;</span><br><span class="line"><span class="string">b&#x27;name=123&amp;pwd=123&#x27;</span></span><br><span class="line">同上</span><br><span class="line"><span class="comment"># 指定json格式</span></span><br><span class="line">      $(<span class="string">&#x27;#submit&#x27;</span>).click(function () &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            contentType:<span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">            data: JSON.stringify(&#123;</span><br><span class="line">                <span class="string">&#x27;name&#x27;</span>: $(<span class="string">&#x27;#user&#x27;</span>).val(),</span><br><span class="line">                <span class="string">&#x27;pwd&#x27;</span>: $(<span class="string">&#x27;#pwd&#x27;</span>).val(),</span><br><span class="line">            &#125;),</span><br><span class="line">            success: function (args) &#123;</span><br><span class="line">                console.log(args)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;QueryDict: &#123;&#125;&gt;</span><br><span class="line"><span class="string">b&#x27;&#123;&quot;name&quot;:&quot;123&quot;,&quot;pwd&quot;:&quot;123&quot;&#125;&#x27;</span></span><br><span class="line"><span class="comment"># Queryset对象中 没有得到数据  因为发送到后端来的事JSON格式的数据</span></span><br><span class="line"><span class="comment"># 在body中以JSON的形式存放</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 中间件</span></span><br><span class="line"><span class="keyword">from</span> django.utils.deprecation <span class="keyword">import</span> MiddlewareMixin</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyMiddle</span>(<span class="params">MiddlewareMixin</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span>(<span class="params">self, request</span>):</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            request.data = json.loads(request.body)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            request.data = request.POST</span><br><span class="line"><span class="comment"># 中间件自义定成功后 记得要在settings中注册</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 自义定中间件后 加入request.data</span></span><br><span class="line"><span class="comment"># form表单</span></span><br><span class="line">&lt;QueryDict: &#123;<span class="string">&#x27;user&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>], <span class="string">&#x27;pwd&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>]&#125;&gt;</span><br><span class="line"><span class="string">b&#x27;user=123&amp;pwd=123&#x27;</span></span><br><span class="line">&lt;QueryDict: &#123;<span class="string">&#x27;user&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>], <span class="string">&#x27;pwd&#x27;</span>: [<span class="string">&#x27;123&#x27;</span>]&#125;&gt;</span><br><span class="line"><span class="comment"># ajax</span></span><br><span class="line">&lt;QueryDict: &#123;&#125;&gt;</span><br><span class="line"><span class="string">b&#x27;&#123;&quot;name&quot;:&quot;123&quot;,&quot;pwd&quot;:&quot;123&quot;&#125;&#x27;</span></span><br><span class="line">&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;123&#x27;</span>, <span class="string">&#x27;pwd&#x27;</span>: <span class="string">&#x27;123&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="魔法方法"><a href="#魔法方法" class="headerlink" title="魔法方法"></a>魔法方法</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">__init__	<span class="comment"># 类实例化的时候触发</span></span><br><span class="line">__str__		<span class="comment"># 打印对象会触发</span></span><br><span class="line">__call__	<span class="comment"># 对象()时触发， 类也是对象 类() 调用了元类的__call__方法</span></span><br><span class="line">__new__		<span class="comment"># 在类实例化会触发 比__init__早执行</span></span><br><span class="line">__del__		<span class="comment"># 在 del对象 对象回收的时候触发</span></span><br><span class="line">__setattr__, __getattr__	<span class="comment"># （.拦截方法） 赋值调用set 获取调用get</span></span><br><span class="line">__getitem__, __setitem__	<span class="comment"># ([]拦截)</span></span><br><span class="line">__enter__, __exit__		<span class="comment"># 上下文管理器</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213624.png" alt="image-20200924113455360"></p>
+<h2 id="with上下文管理器"><a href="#with上下文管理器" class="headerlink" title="with上下文管理器"></a>with上下文管理器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># __enter__, __exit__</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213625.png" alt="image-20200924115307029"></p>
+<h1 id="cookie-session-token"><a href="#cookie-session-token" class="headerlink" title="cookie, session, token"></a>cookie, session, token</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># HTTP协议： 无状态 无连接 基于请求响应 基于tcp/ip 应用层协议</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mysql： c/s架构  底层基于socket 自己封装的协议 </span></span><br><span class="line"><span class="comment"># mysql的客户端：navacate（图形化界面） </span></span><br><span class="line"><span class="comment"># pymysql 用python语言实现了请求和响应协议</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213626.png" alt="image-20200924151941103"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cookice： 是存在于浏览器上的键值对，向服务端发送请求的时候，携带过去（不安全）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># session： 存在服务端的上的键值对</span></span><br><span class="line"><span class="comment"># 缺陷：如果用户量很大， 存储需要耗费大量的服务器资源</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># token： 就是个字符串（既安全又存信息） 加密字符串 包含个人信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># token现在应用非常广泛 契合了前后端分离</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># JWT： json web token</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="django中session底层原理"><a href="#django中session底层原理" class="headerlink" title="django中session底层原理"></a>django中session底层原理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213627.png" alt="image-20200924160334531"></p>
+<h1 id="pymysql的使用"><a href="#pymysql的使用" class="headerlink" title="pymysql的使用"></a>pymysql的使用</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213628.png" alt="image-20200924161656260"></p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213629.png" alt="image-20200924161639734"></p>
+<h2 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">Python isdigit() 方法检测字符串是否只由数字组成。</span></span><br><span class="line"><span class="string">Python isnumeric() 方法检测字符串是否只由数字组成。这种方法是只针对unicode对象。</span></span><br><span class="line"><span class="string">python中，判断某变量的数据类型是否为字符串，可用isinstance()函数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span>(<span class="params">self, key, value</span>):</span></span><br><span class="line">        <span class="keyword">if</span> type(value) <span class="keyword">is</span> str <span class="keyword">and</span> <span class="keyword">not</span> value.isdigit():</span><br><span class="line">            self.__dict__[key] = value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&#x27;只能是字符串&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getattr__</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        print(item)</span><br><span class="line">        print(<span class="string">&#x27;__getattr__&#x27;</span>)</span><br><span class="line">        value = self.__dict__[item]</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setitem__</span>(<span class="params">self, key, value</span>):</span></span><br><span class="line">        <span class="keyword">if</span> type(value) <span class="keyword">is</span> str <span class="keyword">and</span> <span class="keyword">not</span> value.isdigit():</span><br><span class="line">            self.__dict__[key] = value</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&#x27;只能是字符串&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span>(<span class="params">self, item</span>):</span></span><br><span class="line">        value = getattr(self, item)</span><br><span class="line">        print(<span class="string">&#x27;__getitem__&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">u = User(<span class="string">&#x27;sanye&#x27;</span>)</span><br><span class="line"><span class="comment"># print(u.name)</span></span><br><span class="line"><span class="comment"># u.name = &#x27;13a&#x27;</span></span><br><span class="line"><span class="comment"># print(u.name)</span></span><br><span class="line"></span><br><span class="line">print(u[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line">u[<span class="string">&#x27;name&#x27;</span>] = <span class="string">&#x27;asdasd&#x27;</span></span><br><span class="line">print(u[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="作业2"><a href="#作业2" class="headerlink" title="作业2"></a>作业2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">i = pymysql.connect(host=<span class="string">&#x27;127.0.0.1&#x27;</span>, port=<span class="number">3306</span>, user=<span class="string">&#x27;root&#x27;</span>, password=<span class="string">&quot;1234&quot;</span>,</span><br><span class="line">                       database=<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># a = i.cursor(pymysql.cursors.DictCursor)</span></span><br><span class="line"><span class="comment"># a.execute(&#x27;select * from userinfo&#x27;)</span></span><br><span class="line"><span class="comment"># print(a.fetchall())</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySQL</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, conn</span>):</span></span><br><span class="line">        self.conn = conn</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__dict__[<span class="string">&#x27;cur&#x27;</span>] = self.conn.cursor(pymysql.cursors.DictCursor)</span><br><span class="line">        print(<span class="string">&#x27;__enter__执行打开&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> self.cur</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span>(<span class="params">self, exc_type, exc_val, exc_tb</span>):</span></span><br><span class="line">        self.cur.close()</span><br><span class="line">        self.conn.close()</span><br><span class="line">        print(<span class="string">&#x27;__exit__数据库关闭&#x27;</span>)</span><br><span class="line"></span><br><span class="line">x = MySQL(i)</span><br><span class="line"><span class="keyword">with</span> x <span class="keyword">as</span> sql:</span><br><span class="line">    sql.execute(<span class="string">&#x27;select * from userinfo&#x27;</span>)</span><br><span class="line">    print(sql.fetchall())</span><br><span class="line">    <span class="comment"># sql.execute(&#x27;&#x27;)</span></span><br><span class="line">    <span class="comment"># sql.fetchall()</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="作业3"><a href="#作业3" class="headerlink" title="作业3"></a>作业3</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 中间件</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.utils.deprecation <span class="keyword">import</span> MiddlewareMixin</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> md5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MiddleToken</span>(<span class="params">MiddlewareMixin</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span>(<span class="params">self, request</span>):</span></span><br><span class="line">        <span class="keyword">if</span> request.path != <span class="string">&#x27;/login/&#x27;</span>:</span><br><span class="line">            <span class="keyword">if</span> request.COOKIES.get(<span class="string">&quot;token&quot;</span>):</span><br><span class="line">                user, token = request.COOKIES.get(<span class="string">&quot;token&quot;</span>).split(<span class="string">&#x27;|&#x27;</span>)</span><br><span class="line">                hash_obj = md5()</span><br><span class="line">                hash_obj.update(user.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">                <span class="keyword">if</span> hash_obj.hexdigest() != token:</span><br><span class="line">                    <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;用户未登录&#x27;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;用户未登录&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_response</span>(<span class="params">self, request, response</span>):</span></span><br><span class="line">        <span class="keyword">if</span> request.path == <span class="string">&#x27;/login/&#x27;</span> <span class="keyword">and</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">            username = request.POST.get(<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line">            password = request.POST.get(<span class="string">&#x27;password&#x27;</span>)</span><br><span class="line">            <span class="keyword">if</span> username == <span class="string">&#x27;root&#x27;</span> <span class="keyword">and</span> password == <span class="string">&#x27;1234&#x27;</span>:</span><br><span class="line">                hash_obj = md5()</span><br><span class="line">                hash_obj.update(username.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">                token = <span class="string">f&#x27;<span class="subst">&#123;username&#125;</span>|<span class="subst">&#123;hash_obj.hexdigest()&#125;</span>&#x27;</span></span><br><span class="line">                request.COOKIES[<span class="string">&#x27;token&#x27;</span>] = token</span><br><span class="line">                response.set_cookie(<span class="string">&#x27;token&#x27;</span>,token)</span><br><span class="line">                <span class="keyword">return</span> response</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;密码错误&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +238,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2077%20day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2078%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2076day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +330,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#django%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%B7%BB%E5%8A%A0request-data%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">django中间件添加request.data数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">魔法方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#with%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">with上下文管理器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cookie-session-token"><span class="toc-number">3.</span> <span class="toc-text">cookie, session, token</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#django%E4%B8%ADsession%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">3.1.</span> <span class="toc-text">django中session底层原理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">异常处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pymysql%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">5.</span> <span class="toc-text">pymysql的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-number">6.</span> <span class="toc-text">作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A1"><span class="toc-number">6.1.</span> <span class="toc-text">作业1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A2"><span class="toc-number">6.2.</span> <span class="toc-text">作业2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A3"><span class="toc-number">6.3.</span> <span class="toc-text">作业3</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +385,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

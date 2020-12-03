@@ -8,13 +8,21 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Django与ajax分页器组件">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2079%20day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="Django与ajax分页器组件">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213658.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213659.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213700.png">
+<meta property="article:published_time" content="2020-12-02T12:31:37.401Z">
+<meta property="article:modified_time" content="2020-12-02T13:37:03.107Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213658.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +156,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-全栈python开发 79 day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="Django与ajax"><a href="#Django与ajax" class="headerlink" title="Django与ajax"></a>Django与ajax</h1><h1 id="分页器组件"><a href="#分页器组件" class="headerlink" title="分页器组件"></a>分页器组件</h1><a id="more"></a>
+
+<h1 id="forms组件"><a href="#forms组件" class="headerlink" title="forms组件"></a>forms组件</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213658.png" alt="image-20200926144833097"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># forms组件</span></span><br><span class="line">	form.is_valid()---&gt;&gt;&gt;</span><br><span class="line">    <span class="number">1</span> 先内部进行一个<span class="keyword">for</span>循环 检验每个字段配置的规则</span><br><span class="line">    <span class="number">2</span> 完成校验后 走每个字段的局部钩子</span><br><span class="line">    <span class="number">3</span> 再走全局钩子</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213659.png" alt="image-20200926145740023"></p>
+<h1 id="cookie与session组件"><a href="#cookie与session组件" class="headerlink" title="cookie与session组件"></a>cookie与session组件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用django放置 cookie</span></span><br><span class="line">response.set_cookie(key, value)  <span class="comment"># HttpResponse对象</span></span><br><span class="line"><span class="comment"># 删除cookie</span></span><br><span class="line">response.delete_cookie(key)</span><br><span class="line"><span class="comment"># 获取</span></span><br><span class="line">request.COOKIE</span><br><span class="line">request.COOKIE.get(key)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取session</span></span><br><span class="line">request.session[key]</span><br><span class="line">request.session.get(key,<span class="string">&#x27;没有时的default&#x27;</span>)</span><br><span class="line"><span class="comment"># 设置</span></span><br><span class="line">request.session[key] = xxx</span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line"><span class="keyword">del</span> request.session[key]</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 请求来的时候</span></span><br><span class="line">process_request(self, request):</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(不在往后走  直接返回)</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">None</span>(会继续往后走)</span><br><span class="line"><span class="comment"># 返回HttpResponse的时候</span></span><br><span class="line">process_response(self, request, response):</span><br><span class="line">	<span class="keyword">return</span> response(必须返回，否则报错)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行的时候 从上往下  </span></span><br><span class="line"><span class="comment"># 出的时候 从下往上</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="auth"><a href="#auth" class="headerlink" title="auth"></a>auth</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">authenticate()</span><br><span class="line">login(HttpRequest, user)</span><br><span class="line">logout(request)</span><br><span class="line">is_authenticate()</span><br><span class="line">login_requierd()</span><br><span class="line">create_user()</span><br><span class="line">create_superuser()</span><br><span class="line">check_password()</span><br><span class="line">set_password()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拓展</span></span><br><span class="line">继承 AbstractUser </span><br><span class="line">在Settings中配置： AUTH_USER_MODEL = <span class="string">&#x27;app名.继承的表名&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213700.png" alt="image-20200926155906242"></p>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># html</span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="string">&#x27;#submit&#x27;</span>).click(function () &#123;</span><br><span class="line">        let data = JSON.stringify(&#123;</span><br><span class="line">        <span class="string">&#x27;name&#x27;</span>: $(<span class="string">&#x27;#username&#x27;</span>).val(),</span><br><span class="line">        <span class="string">&#x27;password&#x27;</span>: $(<span class="string">&#x27;#password&#x27;</span>).val()&#125;)</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            contentType: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">            data: data,</span><br><span class="line">            success: function (args) &#123;</span><br><span class="line">                console.log(args)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="comment"># views</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        print(request.body)</span><br><span class="line">        data = json.loads(request.body)</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(data)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># html</span></span><br><span class="line">file: &lt;input type=<span class="string">&quot;file&quot;</span> name=<span class="string">&quot;file&quot;</span> id=<span class="string">&quot;file&quot;</span>&gt;</span><br><span class="line">&#123;<span class="comment">#    &lt;input type=&quot;submit&quot;&gt;#&#125;</span></span><br><span class="line">    &lt;input type=<span class="string">&quot;button&quot;</span> value=<span class="string">&quot;提交1&quot;</span> id=<span class="string">&quot;submit&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(<span class="string">&#x27;#submit&#x27;</span>).click(function () &#123;</span><br><span class="line">        let Data = new FormData()</span><br><span class="line">        Data.append(<span class="string">&#x27;file&#x27;</span>,$(<span class="string">&#x27;#file&#x27;</span>)[<span class="number">0</span>].files[<span class="number">0</span>])</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            url: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">            type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">            processData: false,</span><br><span class="line">            contentType: false,</span><br><span class="line">            data: Data,</span><br><span class="line">            success: function (args) &#123;</span><br><span class="line">                <span class="keyword">if</span>(args.code==<span class="number">1000</span>)&#123;</span><br><span class="line">                    alert(args.msg)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># views</span></span><br><span class="line"><span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        back_dic = &#123;</span><br><span class="line">            <span class="string">&#x27;code&#x27;</span>: <span class="number">1000</span>,</span><br><span class="line">            <span class="string">&#x27;msg&#x27;</span>: <span class="string">&#x27;上传成功&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        print(request.FILES, type(request.FILES))  <span class="comment"># &lt;class &#x27;django.utils.datastructures.MultiValueDict&#x27;&gt;</span></span><br><span class="line">        print(request.FILES.get(<span class="string">&#x27;file&#x27;</span>),</span><br><span class="line">              type(request.FILES.get(<span class="string">&#x27;file&#x27;</span>)))  <span class="comment"># &lt;class &#x27;django.core.files.uploadedfile.InMemoryUploadedFile&#x27;&gt;</span></span><br><span class="line">        print(request.FILES.get(<span class="string">&#x27;file&#x27;</span>).name, type(request.FILES.get(<span class="string">&#x27;file&#x27;</span>).name))  <span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> open(request.FILES.get(<span class="string">&#x27;file&#x27;</span>).name, <span class="string">&#x27;wb&#x27;</span>)<span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> request.FILES.get(<span class="string">&#x27;file&#x27;</span>):</span><br><span class="line">                f.write(i)</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(back_dic)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># html</span></span><br><span class="line">&lt;form action=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">    &lt;p&gt;用户名：&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;id_username&quot;&gt;&lt;span style=&quot;color: red&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;p&gt;密码：&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;id_password&quot;&gt;&lt;span style=&quot;color: red&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;p&gt;确认密码：&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot; name=&quot;password_again&quot; id=&quot;id_password_again&quot;&gt;&lt;span style=&quot;color: red&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;p&gt;年龄：&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;id_age&quot;&gt;&lt;span style=&quot;color: red&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;p&gt;&lt;input type=&quot;button&quot; id=&quot;submit&quot; value=&quot;提交&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(<span class="string">&#x27;#submit&#x27;</span>).click(function () &#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        url: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        type: <span class="string">&#x27;post&#x27;</span>,</span><br><span class="line">        contentType: <span class="string">&#x27;application/json&#x27;</span>,</span><br><span class="line">        data: JSON.stringify(&#123;</span><br><span class="line">            <span class="string">&#x27;username&#x27;</span>: $(<span class="string">&#x27;#id_username&#x27;</span>).val(),</span><br><span class="line">            <span class="string">&#x27;password&#x27;</span>: $(<span class="string">&#x27;#id_password&#x27;</span>).val(),</span><br><span class="line">            <span class="string">&#x27;password_again&#x27;</span>: $(<span class="string">&#x27;#id_password_again&#x27;</span>).val(),</span><br><span class="line">            <span class="string">&#x27;age&#x27;</span>: $(<span class="string">&#x27;#id_age&#x27;</span>).val(),</span><br><span class="line">            &#123;<span class="comment">#&#x27;csrfmiddlewaretoken&#x27;: &#x27;&#123;&#123; csrf_token &#125;&#125;&#x27;#&#125;</span></span><br><span class="line">        &#125;),</span><br><span class="line">        success: function (args) &#123;</span><br><span class="line">            <span class="keyword">if</span> (args.code == <span class="number">1000</span>)&#123;</span><br><span class="line">                alert(<span class="string">&#x27;登陆成功&#x27;</span>)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                $.each(args.msg, function (index, value) &#123;</span><br><span class="line">                console.log(index, value)</span><br><span class="line">                $(`<span class="comment">#id_$&#123;index&#125;`).next().text(value)</span></span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"><span class="comment"># view</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        back_dic = &#123;<span class="string">&#x27;code&#x27;</span>: <span class="number">1000</span>, <span class="string">&#x27;msg&#x27;</span>: <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line">        <span class="comment"># print(request.POST)</span></span><br><span class="line">        <span class="comment"># print(request.body)</span></span><br><span class="line">        forms_obj = MyForms(json.loads(request.body))</span><br><span class="line">        <span class="comment"># forms_obj = forms_obj.is_valid()</span></span><br><span class="line">        <span class="comment"># print(forms_obj)  # False or True</span></span><br><span class="line">        <span class="keyword">if</span> forms_obj.is_valid():</span><br><span class="line">            <span class="comment"># 数据库操作</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            back_dic[<span class="string">&#x27;code&#x27;</span>] = <span class="number">1001</span></span><br><span class="line">            back_dic[<span class="string">&#x27;msg&#x27;</span>] = forms_obj.errors</span><br><span class="line">            <span class="comment"># print(forms_obj.errors)</span></span><br><span class="line">        <span class="keyword">return</span> JsonResponse(back_dic)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;register.html&#x27;</span>)</span><br><span class="line"><span class="comment"># forms组件</span></span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyForms</span>(<span class="params">forms.Form</span>):</span></span><br><span class="line">    username = forms.CharField(max_length=<span class="number">16</span>, min_length=<span class="number">4</span>, error_messages=&#123;</span><br><span class="line">                                   <span class="string">&#x27;min_length&#x27;</span>: <span class="string">&#x27;用户名不能短于4位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;max_length&#x27;</span>: <span class="string">&#x27;用户名不能大于16位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;required&#x27;</span>: <span class="string">&#x27;用户名不能为空&#x27;</span></span><br><span class="line">                               &#125;,)</span><br><span class="line">    password = forms.CharField(max_length=<span class="number">16</span>, min_length=<span class="number">4</span>, error_messages=&#123;</span><br><span class="line">                                   <span class="string">&#x27;min_length&#x27;</span>: <span class="string">&#x27;密码不能短于4位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;max_length&#x27;</span>: <span class="string">&#x27;密码不能大于16位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;required&#x27;</span>: <span class="string">&#x27;密码不能为空&#x27;</span></span><br><span class="line">                               &#125;)</span><br><span class="line">    password_again = forms.CharField(max_length=<span class="number">16</span>, min_length=<span class="number">4</span>, error_messages=&#123;</span><br><span class="line">                                   <span class="string">&#x27;min_length&#x27;</span>: <span class="string">&#x27;确认密码不能短于4位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;max_length&#x27;</span>: <span class="string">&#x27;确认密码不能大于16位&#x27;</span>,</span><br><span class="line">                                   <span class="string">&#x27;required&#x27;</span>: <span class="string">&#x27;确认密码不能为空&#x27;</span></span><br><span class="line">                               &#125;)</span><br><span class="line">    age = forms.IntegerField(max_value=<span class="number">150</span>, min_value=<span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_username</span>(<span class="params">self</span>):</span></span><br><span class="line">        username = self.cleaned_data.get(<span class="string">&#x27;username&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> username.startswith(<span class="string">&#x27;sb&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> username.endswith(<span class="string">&#x27;sb&#x27;</span>):</span><br><span class="line">                <span class="keyword">return</span> username</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.add_error(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;用户名不能以sb结尾&#x27;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.add_error(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;用户名不能以sb开头&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> username</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean</span>(<span class="params">self</span>):</span></span><br><span class="line">        password = self.cleaned_data.get(<span class="string">&#x27;password&#x27;</span>)</span><br><span class="line">        password_again = self.cleaned_data.get(<span class="string">&#x27;password_again&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> password == password_again:</span><br><span class="line">            self.add_error(<span class="string">&#x27;password_again&#x27;</span>, <span class="string">&#x27;两次密码不一致&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> self.cleaned_data            </span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +238,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2079%20day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2080%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2078%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +330,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django%E4%B8%8Eajax"><span class="toc-number">1.</span> <span class="toc-text">Django与ajax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E5%99%A8%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">分页器组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#forms%E7%BB%84%E4%BB%B6"><span class="toc-number">3.</span> <span class="toc-text">forms组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cookie%E4%B8%8Esession%E7%BB%84%E4%BB%B6"><span class="toc-number">4.</span> <span class="toc-text">cookie与session组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">中间件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#auth"><span class="toc-number">6.</span> <span class="toc-text">auth</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-number">7.</span> <span class="toc-text">作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80"><span class="toc-number">7.1.</span> <span class="toc-text">一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C"><span class="toc-number">7.2.</span> <span class="toc-text">二</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89"><span class="toc-number">8.</span> <span class="toc-text">三</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +385,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

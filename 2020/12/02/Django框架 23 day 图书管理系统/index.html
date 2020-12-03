@@ -8,13 +8,24 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="图书管理系统图书的增删改查 见python  django项目">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/Django%E6%A1%86%E6%9E%B6%2023%20day%20%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="图书管理系统图书的增删改查 见python  django项目">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212833.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212834.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212835.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212836.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212837.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212838.png">
+<meta property="article:published_time" content="2020-12-02T12:31:57.504Z">
+<meta property="article:modified_time" content="2020-12-02T13:28:40.233Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212833.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +159,83 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Django框架 23 day 图书管理系统" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h2 id="图书管理系统"><a href="#图书管理系统" class="headerlink" title="图书管理系统"></a>图书管理系统</h2><p>图书的增删改查</p>
+<p>见python  django项目</p>
+<a id="more"></a>
+
+<h2 id="choices参数（数据库字段设计-常见）"><a href="#choices参数（数据库字段设计-常见）" class="headerlink" title="choices参数（数据库字段设计  常见）"></a>choices参数（数据库字段设计  常见）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">models中：</span><br><span class="line">性别： </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>(<span class="params">models.Model</span>):</span></span><br><span class="line">    gender_choices = (</span><br><span class="line">    	(<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;其他&#x27;</span>)</span><br><span class="line">    )</span><br><span class="line">	gender = models.IntegerField(choices = gender_choices)</span><br><span class="line"></span><br><span class="line">取：</span><br><span class="line">	固定写法</span><br><span class="line">    get_字段名名_display()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212833.png" alt="image-20200824214330819"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212834.png" alt="image-20200824213017569"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212835.png" alt="image-20200824214406931"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">models:</span><br><span class="line">    gender_choices = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;其他&#x27;</span>)</span><br><span class="line">    )</span><br><span class="line">    gender = models.IntegerField(choices=gender_choices, null=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">查询：</span><br><span class="line">    <span class="keyword">from</span> app01 <span class="keyword">import</span> models</span><br><span class="line">    obj = models.Author.objects.filter(pk=<span class="number">2</span>).first()</span><br><span class="line">    print(obj.get_gender_display())</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="MTV与MVC模型"><a href="#MTV与MVC模型" class="headerlink" title="MTV与MVC模型"></a>MTV与MVC模型</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># MTV: Django号称是MTV模型</span></span><br><span class="line">M: models</span><br><span class="line">T: templates</span><br><span class="line">V: views</span><br><span class="line"><span class="comment"># MVC： 其实Django本质也是MVC</span></span><br><span class="line">M: models</span><br><span class="line">V: views</span><br><span class="line">C: controller </span><br><span class="line"></span><br><span class="line"><span class="comment"># vue 框架： MVVM模型</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="多对多关系的三种创建方式"><a href="#多对多关系的三种创建方式" class="headerlink" title="多对多关系的三种创建方式"></a>多对多关系的三种创建方式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全自动 ： 利用orm自动帮我们创建第三张关系表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> ...():</span></span><br><span class="line">    .....</span><br><span class="line">    ManyToManyField</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">   优点： 代码不需要自己写 非常方便  还支持orm提供的第三张关系表的方法</span></span><br><span class="line"><span class="string">   不足： 第三张关系表的拓展性极差  没有办法额外的添加新的字段</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 全手动： 自己写第三张表</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 第三张表（）：</span></span><br><span class="line">	表一主键.... = ForeignKey</span><br><span class="line">    表二主键.... = ForeignKey</span><br><span class="line">    </span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    优点：拓展性强</span></span><br><span class="line"><span class="string">    不足： 需要写的代码多  不能在使用orm提供的方法</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 半自动</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 表一（）：</span></span><br><span class="line">	... = models.ManyToManyField(to=&#x27;...&#x27;,</span><br><span class="line">                                 through=<span class="string">&#x27;第三张表名&#x27;</span>,</span><br><span class="line">                                 through_fields=(<span class="string">&#x27;表一主键（自己）&#x27;</span>,<span class="string">&#x27;表二主键&#x27;</span>))</span><br><span class="line"><span class="class"><span class="keyword">class</span> 表二（）：</span></span><br><span class="line">	... = models.ManyToManyField(to=&#x27;...&#x27;,</span><br><span class="line">                                 through=<span class="string">&#x27;第三张表名&#x27;</span>,</span><br><span class="line">                                 through_fields=(<span class="string">&#x27;表二主键（自己）&#x27;</span>,<span class="string">&#x27;表一主键&#x27;</span>))</span><br><span class="line">    <span class="comment">#  两张表中其一 写 ManyToManyField即可</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 第三张表（）：</span></span><br><span class="line">	表一主键.... = ForeignKey（to=&#x27;表一&#x27;）</span><br><span class="line">    表二主键.... = ForeignKey (to=<span class="string">&#x27;表二&#x27;</span>)</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    可以使用 orm的正反向查询  但是没法使用 add set clear remove </span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212836.png" alt="image-20200824221049350"></p>
+<h2 id="Ajax操作（重点）"><a href="#Ajax操作（重点）" class="headerlink" title="Ajax操作（重点）"></a>Ajax操作（重点）</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 我们使用的时 jQuery封装好的ajax  所有必须先导入jQuery</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 语法</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">&#x27;&#x27;</span>,	<span class="comment"># 朝后端那个地址发  不写就是默认当前地址  同action三种写法</span></span><br><span class="line">    type: <span class="string">&#x27;get/post&#x27;</span>,  <span class="comment">#提交方式 默认get  同 method参数一致</span></span><br><span class="line">    data:&#123;<span class="string">&#x27;..&#x27;</span>:<span class="string">&#x27;..&#x27;</span>&#125;, 	<span class="comment">#发送的数据</span></span><br><span class="line">    success:function(arg)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;	<span class="comment"># 异步回调处理机制</span></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">当你在利用ajax进行前后端交互的时候</span></span><br><span class="line"><span class="string">后端无论返回什么都只会被回调函数接受</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 拓展 参数</span></span><br><span class="line">dataType:<span class="string">&#x27;JSON&#x27;</span>,</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">当后端是以HttpResponse返回的json格式的数据</span></span><br><span class="line"><span class="string">默认不会自动反序列化</span></span><br><span class="line"><span class="string">	1、自己手动JSON.parse()</span></span><br><span class="line"><span class="string">	2、配置dataType参数</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 结论  写ajax的时候 直接将dataType参数加上  以防万一  或者后端直接使用JsonResponse</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">异步提交 局部刷新</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212837.png" alt="image-20200824222406893"></p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">AJAX:</span></span><br><span class="line"><span class="string">	&lt;script&gt;</span></span><br><span class="line"><span class="string">    $(&#x27;#b1&#x27;).click(function () &#123;</span></span><br><span class="line"><span class="string">        $.ajax(&#123;</span></span><br><span class="line"><span class="string">            url: &#x27;&#x27;,</span></span><br><span class="line"><span class="string">            type: &#x27;post&#x27;,</span></span><br><span class="line"><span class="string">            data: &#123;&#x27;i1&#x27;: $(&#x27;#i1&#x27;).val(), &#x27;i2&#x27;: $(&#x27;#i2&#x27;).val()&#125;,</span></span><br><span class="line"><span class="string">            dataType: &#x27;JSON&#x27;,</span></span><br><span class="line"><span class="string">            success: function (args) &#123;</span></span><br><span class="line"><span class="string">                &#123;#alert(args)#&#125;</span></span><br><span class="line"><span class="string">                $(&#x27;#i3&#x27;).val(args)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#views:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">home</span>(<span class="params">request</span>):</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        print(request.POST)</span><br><span class="line">        i1 = int(request.POST.get(<span class="string">&#x27;i1&#x27;</span>))</span><br><span class="line">        i2 = int(request.POST.get(<span class="string">&#x27;i2&#x27;</span>))</span><br><span class="line">        i3 = i1 + i2</span><br><span class="line">        <span class="comment"># 注意  前端发送过来的 数据时字符类型</span></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(i3)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">&#x27;home.html&#x27;</span>)</span><br><span class="line">  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212838.png" alt="image-20200824225539840"></p>
+<h2 id="前后端传输数据编码格式"><a href="#前后端传输数据编码格式" class="headerlink" title="前后端传输数据编码格式"></a>前后端传输数据编码格式</h2><h2 id="Ajax发送JSON格式数据"><a href="#Ajax发送JSON格式数据" class="headerlink" title="Ajax发送JSON格式数据"></a>Ajax发送JSON格式数据</h2><h2 id="Ajax发送文件"><a href="#Ajax发送文件" class="headerlink" title="Ajax发送文件"></a>Ajax发送文件</h2><h2 id="django自带的序列化功能-先了解"><a href="#django自带的序列化功能-先了解" class="headerlink" title="django自带的序列化功能(先了解)"></a>django自带的序列化功能(先了解)</h2><p>后面有更牛逼的序列化drf</p>
+<p>Ajax结合sweetalert实现删除按钮的二次却确认操作</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +244,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/Django%E6%A1%86%E6%9E%B6%2023%20day%20%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/Django%E6%A1%86%E6%9E%B6%2025%20day%20/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/Django%E6%A1%86%E6%9E%B6%2022%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +336,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text">图书管理系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#choices%E5%8F%82%E6%95%B0%EF%BC%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%97%E6%AE%B5%E8%AE%BE%E8%AE%A1-%E5%B8%B8%E8%A7%81%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">choices参数（数据库字段设计  常见）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MTV%E4%B8%8EMVC%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">MTV与MVC模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%85%B3%E7%B3%BB%E7%9A%84%E4%B8%89%E7%A7%8D%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">多对多关系的三种创建方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax%E6%93%8D%E4%BD%9C%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">Ajax操作（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">5.2.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">5.3.</span> <span class="toc-text">例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BC%A0%E8%BE%93%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-number">6.</span> <span class="toc-text">前后端传输数据编码格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax%E5%8F%91%E9%80%81JSON%E6%A0%BC%E5%BC%8F%E6%95%B0%E6%8D%AE"><span class="toc-number">7.</span> <span class="toc-text">Ajax发送JSON格式数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax%E5%8F%91%E9%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">Ajax发送文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#django%E8%87%AA%E5%B8%A6%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E5%8A%9F%E8%83%BD-%E5%85%88%E4%BA%86%E8%A7%A3"><span class="toc-number">9.</span> <span class="toc-text">django自带的序列化功能(先了解)</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +391,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

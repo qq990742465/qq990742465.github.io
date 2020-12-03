@@ -8,13 +8,22 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="死锁与递归锁（了解）锁的使用–&gt;&gt; 抢锁后必须释放锁   在操作的时候也极易产生死锁的现象（整个程序卡死 阻塞）">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%B9%B6%E5%8F%91%2004/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="死锁与递归锁（了解）锁的使用–&gt;&gt; 抢锁后必须释放锁   在操作的时候也极易产生死锁的现象（整个程序卡死 阻塞）">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212939.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212940.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212941.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212942.png">
+<meta property="article:published_time" content="2020-12-02T12:33:17.833Z">
+<meta property="article:modified_time" content="2020-12-02T13:29:42.810Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202212939.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,180 +157,143 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-并发 04" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
-      
+        <h2 id="死锁与递归锁（了解）"><a href="#死锁与递归锁（了解）" class="headerlink" title="死锁与递归锁（了解）"></a>死锁与递归锁（了解）</h2><p>锁的使用–&gt;&gt; 抢锁后必须释放锁  </p>
+<p>在操作的时候也极易产生死锁的现象（整个程序卡死 阻塞）</p>
+<a id="more"></a>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212939.png" alt="image-20200628173028218"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 死锁</span></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, Lock</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">mutex1 = Lock()</span><br><span class="line">mutex2 = Lock()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.func_1()</span><br><span class="line">        self.func_2()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func_1</span>(<span class="params">self</span>):</span></span><br><span class="line">        mutex1.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到了锁1&#x27;</span>)</span><br><span class="line">        mutex2.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到了锁2&#x27;</span>)</span><br><span class="line">        mutex2.release()</span><br><span class="line">        mutex1.release()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func_2</span>(<span class="params">self</span>):</span></span><br><span class="line">        mutex2.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到了锁1&#x27;</span>)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        mutex1.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到了锁2&#x27;</span>)</span><br><span class="line">        mutex1.release()</span><br><span class="line">        mutex2.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">        t = MyThread()</span><br><span class="line">        t.start()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h3 id="递归锁"><a href="#递归锁" class="headerlink" title="递归锁"></a>递归锁</h3><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212940.png" alt="image-20200628173447584"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">特点：</span></span><br><span class="line"><span class="string">	可以被连续的acquire和release</span></span><br><span class="line"><span class="string">	但是只能被第一个抢到这把锁的线程进行上述操作</span></span><br><span class="line"><span class="string">	他的内部有一个计数器  每acquire一次 计数加一  每 release 一次计数器减一</span></span><br><span class="line"><span class="string">	只要计数不为0 那么其他线程都无法抢到该锁	from threading Import RLock</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, RLock</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mutex1 = mutex2 = RLock()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.func1()</span><br><span class="line">        self.func2()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func1</span>(<span class="params">self</span>):</span></span><br><span class="line">        mutex1.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到1&#x27;</span>)</span><br><span class="line">        mutex2.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到2&#x27;</span>)</span><br><span class="line">        mutex1.release()</span><br><span class="line">        mutex2.release()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func2</span>(<span class="params">self</span>):</span></span><br><span class="line">        mutex2.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到2&#x27;</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        mutex2.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> 抢到2&#x27;</span>)</span><br><span class="line">        mutex2.release()</span><br><span class="line">        mutex1.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        t = MyThread()</span><br><span class="line">        t.start()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h2 id="信号量（了解）"><a href="#信号量（了解）" class="headerlink" title="信号量（了解）"></a>信号量（了解）</h2><p>信号量在不同阶段可能对应的技术点不同</p>
+<p>在并发 编程中  信号量指的是 锁</p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212941.png" alt="image-20200628173928742"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">from threading import Semaphore</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">sm = Semaohore(x)  <span class="comment"># x为几  就代表有几个</span></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, Semaphore</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">sm = Semaphore(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        sm.acquire()</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> is running&#x27;</span>)</span><br><span class="line">        time.sleep(random.randint(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">        print(<span class="string">f&#x27;<span class="subst">&#123;self.name&#125;</span> is over&#x27;</span>)</span><br><span class="line">        sm.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">        t = MyThread()</span><br><span class="line">        t.start()</span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
 
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+<h2 id="Event事件（了解）"><a href="#Event事件（了解）" class="headerlink" title="Event事件（了解）"></a>Event事件（了解）</h2><p>一些进程/线程需要等待其他进程/线程运行完毕之后才能运行</p>
+<p>from threading import Event</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">e = Event()  <span class="comment"># </span></span><br><span class="line">e.set() <span class="comment"># 告诉别人不用等待</span></span><br><span class="line">e.wait() <span class="comment"># 等待</span></span><br></pre></td></tr></table></figure>
 
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
+<h3 id="代码-实例"><a href="#代码-实例" class="headerlink" title="代码 实例"></a>代码 实例</h3><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202212942.png" alt="image-20200628174537638"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">模拟车等红绿灯</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, Event</span><br><span class="line"></span><br><span class="line">e = Event()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">light</span>():</span>  <span class="comment"># 红绿灯</span></span><br><span class="line">    print(<span class="string">&#x27;现在是红灯&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">        print(i)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">    print(<span class="string">&#x27;变为绿灯&#x27;</span>)</span><br><span class="line">    e.set()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">car</span>(<span class="params">name</span>):</span></span><br><span class="line">    print(<span class="string">f&#x27;车<span class="subst">&#123;name&#125;</span> 等红灯&#x27;</span>)</span><br><span class="line">    e.wait()</span><br><span class="line">    print(<span class="string">f&#x27;车<span class="subst">&#123;name&#125;</span> 通过红绿灯&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    t = Thread(target=light)</span><br><span class="line">    t.start()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        t = Thread(target=car, args=(i, ))</span><br><span class="line">        t.start()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
 
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
+
+
+
+<h2 id="线程q（了解）"><a href="#线程q（了解）" class="headerlink" title="线程q（了解）"></a>线程q（了解）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">同一个进程下的线程数据时共享的</span></span><br><span class="line"><span class="string">那线程q的作用是：</span></span><br><span class="line"><span class="string">	因为队列是 管道 + 锁</span></span><br><span class="line"><span class="string">	所以用队列q还是为了保护数据的安全</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="keyword">import</span> queque</span><br><span class="line"><span class="comment"># 我们现在使用的队列 都是只能在本地测试使用</span></span><br><span class="line"><span class="comment"># 后进先出q</span></span><br><span class="line">q = queue.LifoQueue()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 优先级q</span></span><br><span class="line">q = queue.PriorityQueue()</span><br><span class="line"><span class="comment"># 可以给放入队列的数据设置 优先级</span></span><br><span class="line">q.put((优先级，数据))</span><br><span class="line"><span class="comment"># put中的参数为元组， 元组中第一个参数是优先级 第二个是数据 ， 优先级的数字越小，优先级越高</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="进程池与线程池（掌握）"><a href="#进程池与线程池（掌握）" class="headerlink" title="进程池与线程池（掌握）"></a>进程池与线程池（掌握）</h2><ul>
+<li><p>无论是开始线程还是进程 都会消耗资源只是线程比进程 消耗的资源更少</p>
+</li>
+<li><p>但是我们不可能无休止的开设进程和线程 ，因为 计算机硬件的资源更不上， 而且硬件的更新远远更不上软件的更新</p>
+</li>
+<li><p>所以  我们应该是在保证计算机硬件能过正常运行的情况下最大限度的利用他</p>
+</li>
 </ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
+<h3 id="池的概念"><a href="#池的概念" class="headerlink" title="池的概念"></a>池的概念</h3><h4 id="什么是池"><a href="#什么是池" class="headerlink" title="什么是池"></a>什么是池</h4><ul>
+<li>池是用来保证计算机硬件安全的情况下最大限度的利用计算机</li>
+<li>它降低了程序的运行效率但是保证了计算机硬件的安全 从而保证程序的正常运行</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最简单的代码实现</span></span><br><span class="line"><span class="comment"># from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor</span></span><br><span class="line"><span class="comment"># import os</span></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># pool = ThreadPoolExecutor(5)  # 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def run(i):</span></span><br><span class="line"><span class="comment">#     print(i)</span></span><br><span class="line"><span class="comment">#     time.sleep(2)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     for i in range(20):</span></span><br><span class="line"><span class="comment">#         pool.submit(run, i)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 获取返回值</span></span><br><span class="line"><span class="comment"># from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor</span></span><br><span class="line"><span class="comment"># import os</span></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># pool = ThreadPoolExecutor(5)  # 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def run(i):</span></span><br><span class="line"><span class="comment">#     print(i)</span></span><br><span class="line"><span class="comment">#     time.sleep(1)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     for i in range(20):</span></span><br><span class="line"><span class="comment">#         res = pool.submit(run, i)</span></span><br><span class="line"><span class="comment">#         print(res.result())  # 等待获取到返回值 后在执行 后续代码 将并发变为串行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解决 result 的问题</span></span><br><span class="line"><span class="comment"># from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor</span></span><br><span class="line"><span class="comment"># import os</span></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># pool = ThreadPoolExecutor(5)  # 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def run(i):</span></span><br><span class="line"><span class="comment">#     print(&#x27;---&gt;&gt;&gt;&#x27;, i)</span></span><br><span class="line"><span class="comment">#     time.sleep(1)</span></span><br><span class="line"><span class="comment">#     return i</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     l = []</span></span><br><span class="line"><span class="comment">#     for i in range(20):</span></span><br><span class="line"><span class="comment">#         res = pool.submit(run, i)</span></span><br><span class="line"><span class="comment">#         l.append(res)</span></span><br><span class="line"><span class="comment">#     for i in l:</span></span><br><span class="line"><span class="comment">#         print(i.result())</span></span><br><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor, ProcessPoolExecutor</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">pool = ThreadPoolExecutor(<span class="number">5</span>)  <span class="comment"># 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">i</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;---&gt;&gt;&gt;&#x27;</span>, i)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">call_back</span>(<span class="params">res</span>):</span></span><br><span class="line">    print(res.result())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">        pool.submit(run, i).add_done_callback(call_back)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor, ProcessPoolExecutor</span><br><span class="line"></span><br><span class="line">poll = ThreadPoolExecutor()  <span class="comment"># 括号内可以传数字 不传的话 默认 开设cpu个数五倍的线程</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">池子造出来后 ， 里面固定存在创建时输入的个数</span></span><br><span class="line"><span class="string">这些 线程不会出现重复创建和销毁的过程</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">任务的提交方式：</span></span><br><span class="line"><span class="string">	同步：提交任务后 原地等待任务的返回结果 期间不做任何事</span></span><br><span class="line"><span class="string">	异步：提交任务后 不等待任务的返回结果 直接继续执行</span></span><br><span class="line"><span class="string">	异步提交任务的返回结果 应该通过回调机制来获取</span></span><br><span class="line"><span class="string">	回调机制：</span></span><br><span class="line"><span class="string">		给该任务绑定一个方法</span></span><br><span class="line"><span class="string">		在该任务 结束立刻 就启动</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">pool.submit(func, <span class="number">1</span>) <span class="comment"># 朝池子中提交任务 异步提交</span></span><br><span class="line"></span><br><span class="line">pool.shutdown()  <span class="comment"># 关闭线程池    等待线程池中的所有任务运行完毕</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor, ProcessPoolExecutor</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">pool = ThreadPoolExecutor(<span class="number">5</span>)  <span class="comment"># 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">i</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;---&gt;&gt;&gt;&#x27;</span>, i)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">call_back</span>(<span class="params">res</span>):</span></span><br><span class="line">    print(res.result())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">        pool.submit(run, i).add_done_callback(call_back)</span><br></pre></td></tr></table></figure>
+
+<h3 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pool = ProcessPoolExecutor()  <span class="comment"># 括号内可以传数字 不传的话 默认 开设cpu个数的进程</span></span><br><span class="line">其余代码同上</span><br><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor, ProcessPoolExecutor</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">pool = ProcessPoolExecutor(<span class="number">5</span>)  <span class="comment"># 可传入参数 参数代表开设线程的个数  不穿 默认为 CUP个数*5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">i</span>):</span></span><br><span class="line">    print(<span class="string">&#x27;---&gt;&gt;&gt;&#x27;</span>, i)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># def call_back(res):</span></span><br><span class="line"><span class="comment">#     print(res.result())</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    l = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">        res = pool.submit(run, i)</span><br><span class="line">        l.append(res)</span><br><span class="line">    pool.shutdown()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">        print(i.result())</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="协程（了解）"><a href="#协程（了解）" class="headerlink" title="协程（了解）"></a>协程（了解）</h2><p>这个概念是程序员资金定义的  根本不存在</p>
+<p>​    单线程下实现并发</p>
+<p>​    程序员在代码层面检测代码的IO操作</p>
+<p>​    一旦遇到IO   代码级别完成切换</p>
+<p>​    这样 让 CPU一直 在这个程序运行 没有IO</p>
+<p>​    从而提升了运行效率</p>
+<h3 id="切换是否一定提高效率"><a href="#切换是否一定提高效率" class="headerlink" title="切换是否一定提高效率"></a>切换是否一定提高效率</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># # 级算密集型</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_1():</span></span><br><span class="line"><span class="comment">#     for i in range(10000000):</span></span><br><span class="line"><span class="comment">#         i</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_2():</span></span><br><span class="line"><span class="comment">#     for i in range(10000000):</span></span><br><span class="line"><span class="comment">#         i</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     start_time = time.time()</span></span><br><span class="line"><span class="comment">#     func_1()</span></span><br><span class="line"><span class="comment">#     func_2()</span></span><br><span class="line"><span class="comment">#     print(time.time() - start_time)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # 0.5355658531188965</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_1():</span></span><br><span class="line"><span class="comment">#     for i in range(10000000):</span></span><br><span class="line"><span class="comment">#         yield</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_2():</span></span><br><span class="line"><span class="comment">#     for i in range(10000000):</span></span><br><span class="line"><span class="comment">#         func_1()</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     start_time = time.time()</span></span><br><span class="line"><span class="comment">#     func_2()</span></span><br><span class="line"><span class="comment">#     next(func_1())</span></span><br><span class="line"><span class="comment">#     print(time.time() - start_time)</span></span><br><span class="line"><span class="comment"># # 2.3876452445983887</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># IO密集型</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># import time</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_1():</span></span><br><span class="line"><span class="comment">#     time.sleep(2)</span></span><br><span class="line"><span class="comment">#     print(&#x27;func1&#x27;)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># def func_2():</span></span><br><span class="line"><span class="comment">#     time.sleep(3)</span></span><br><span class="line"><span class="comment">#     print(&#x27;func2&#x27;)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># if __name__ == &#x27;__main__&#x27;:</span></span><br><span class="line"><span class="comment">#     start_time = time.time()</span></span><br><span class="line"><span class="comment">#     func_1()</span></span><br><span class="line"><span class="comment">#     func_2()</span></span><br><span class="line"><span class="comment">#     print(time.time() - start_time)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># # 5.000505208969116</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> spawn</span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> monkey; monkey.patch_all()</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_1</span>():</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">&#x27;func1&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_2</span>():</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">&#x27;func2&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    start_time = time.time()</span><br><span class="line">    a = spawn(func_1)</span><br><span class="line">    a1 = spawn(func_2)</span><br><span class="line">    a.join()</span><br><span class="line">    a1.join()</span><br><span class="line">    print(time.time() - start_time)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.0215954780578613</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="gevent模块（了解）"><a href="#gevent模块（了解）" class="headerlink" title="gevent模块（了解）"></a>gevent模块（了解）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> spawn</span><br><span class="line"></span><br><span class="line">“”“</span><br><span class="line"></span><br><span class="line">gevent 模块本身 无法检测常见的IO操作</span><br><span class="line"></span><br><span class="line">在使用的时候需要额外的导入一句话</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> monkey</span><br><span class="line"></span><br><span class="line">monkey.patch_all()  // 猴子不懂</span><br><span class="line"></span><br><span class="line">有由于上面的两句话是 必须导入的 </span><br><span class="line"></span><br><span class="line">所以还支持简写</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> monkey;monkey.patch_all()</span><br><span class="line"></span><br><span class="line">””“</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="协程实现TCP服务端的并发效果（了解）"><a href="#协程实现TCP服务端的并发效果（了解）" class="headerlink" title="协程实现TCP服务端的并发效果（了解）"></a>协程实现TCP服务端的并发效果（了解）</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># server</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> monkey; monkey.patch_all()</span><br><span class="line"><span class="keyword">from</span> gevent <span class="keyword">import</span> spawn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>():</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            res = conn.recv(<span class="number">1024</span>)</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> res: <span class="keyword">break</span></span><br><span class="line">            conn.send(res)</span><br><span class="line">            print(res.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            print(e)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server = socket.socket()</span><br><span class="line">server.bind((<span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="number">8008</span>))</span><br><span class="line">server.listen(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    conn, addr = server.accept()</span><br><span class="line">    a = spawn(run)</span><br><span class="line">    a.join()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># client</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="comment"># from multiprocessing import Process</span></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread, current_thread</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">s = socket.socket()</span><br><span class="line"></span><br><span class="line">s.connect((<span class="string">&#x27;127.0.0.1&#x27;</span>, <span class="number">8008</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">i</span>):</span></span><br><span class="line">    n = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        res = <span class="string">f&#x27;<span class="subst">&#123;current_thread().name&#125;</span>---&gt;&gt;&gt;:<span class="subst">&#123;n&#125;</span>&#x27;</span></span><br><span class="line">        s.send(res.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        res = s.recv(<span class="number">1024</span>)</span><br><span class="line">        print(res.decode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        n += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">200</span>):</span><br><span class="line">        t = Thread(target=run, args=(i, ))</span><br><span class="line">        t.start()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -330,16 +302,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%B9%B6%E5%8F%91%2004/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E5%B9%B6%E5%8F%91%2005/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E7%BA%BF%E7%A8%8B%2003/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -354,67 +394,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E4%B8%8E%E9%80%92%E5%BD%92%E9%94%81%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">死锁与递归锁（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-number">1.1.</span> <span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E9%94%81"><span class="toc-number">1.2.</span> <span class="toc-text">递归锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">信号量（了解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event%E4%BA%8B%E4%BB%B6%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Event事件（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.1.</span> <span class="toc-text">代码 实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8Bq%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">线程q（了解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%B1%A0%E4%B8%8E%E7%BA%BF%E7%A8%8B%E6%B1%A0%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">进程池与线程池（掌握）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%A0%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">5.1.</span> <span class="toc-text">池的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B1%A0"><span class="toc-number">5.1.1.</span> <span class="toc-text">什么是池</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-number">5.2.</span> <span class="toc-text">线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E6%B1%A0"><span class="toc-number">5.3.</span> <span class="toc-text">进程池</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">协程（了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E6%98%AF%E5%90%A6%E4%B8%80%E5%AE%9A%E6%8F%90%E9%AB%98%E6%95%88%E7%8E%87"><span class="toc-number">6.1.</span> <span class="toc-text">切换是否一定提高效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gevent%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">gevent模块（了解）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8F%E7%A8%8B%E5%AE%9E%E7%8E%B0TCP%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%95%88%E6%9E%9C%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">协程实现TCP服务端的并发效果（了解）</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+
   
 
 
@@ -444,8 +449,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

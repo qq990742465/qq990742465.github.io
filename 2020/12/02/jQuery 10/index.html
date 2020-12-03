@@ -8,11 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="动画（了解）123456789101112131415&#x2F;&#x2F; 基本$(xx).show(毫秒数)	&#x2F;&#x2F; 秒后显示 并且有动画效果    $(xx).hide(毫秒数)	&#x2F;&#x2F; 隐藏$(xx).toggle(毫秒)&#x2F;&#x2F; 滑动 拉窗帘一样.slideDown().slideUp.slideToggle()&#x2F;&#x2F; 淡入淡出（控制透明度）$(&amp;#x27;div&amp;#x27;).fadeIn(3000)$(&amp;#x2">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/jQuery%2010/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="动画（了解）123456789101112131415&#x2F;&#x2F; 基本$(xx).show(毫秒数)	&#x2F;&#x2F; 秒后显示 并且有动画效果    $(xx).hide(毫秒数)	&#x2F;&#x2F; 隐藏$(xx).toggle(毫秒)&#x2F;&#x2F; 滑动 拉窗帘一样.slideDown().slideUp.slideToggle()&#x2F;&#x2F; 淡入淡出（控制透明度）$(&amp;#x27;div&amp;#x27;).fadeIn(3000)$(&amp;#x2">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-12-02T12:31:57.556Z">
+<meta property="article:modified_time" content="2020-12-02T13:33:57.668Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
   
@@ -148,19 +152,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-jQuery 10" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h2 id="动画（了解）"><a href="#动画（了解）" class="headerlink" title="动画（了解）"></a>动画（了解）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本</span></span><br><span class="line">$(xx).show(毫秒数)	<span class="comment">// 秒后显示 并且有动画效果</span></span><br><span class="line">    $(xx).hide(毫秒数)	<span class="comment">// 隐藏</span></span><br><span class="line">$(xx).toggle(毫秒)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 滑动 拉窗帘一样</span></span><br><span class="line">.slideDown()</span><br><span class="line">.slideUp</span><br><span class="line">.slideToggle()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 淡入淡出（控制透明度）</span></span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).fadeIn(<span class="number">3000</span>)</span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).fadeOut(<span class="number">3000</span>)</span><br><span class="line">$(<span class="string">&#x27;div&#x27;</span>).fadeToggle(<span class="number">3000</span>)</span><br><span class="line"><span class="comment">//更多动画效果 在用到时 查询JQuery文档</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="循环遍历"><a href="#循环遍历" class="headerlink" title="循环遍历"></a>循环遍历</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a.eq(i))</span><br><span class="line">&#125;</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [prevObject: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM205:<span class="number">2</span> jQuery.fn.init [prevObject: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此方法 会将 jQuery对象的其他属性都遍历一次</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a.eq(i))</span><br><span class="line">&#125;</span><br><span class="line">VM241:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM241:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM241:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM241:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line">VM241:<span class="number">2</span> jQuery.fn.init [li, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">5</span>)]</span><br><span class="line"><span class="literal">undefined</span></span><br><span class="line"><span class="comment">// 此方法规定了 for循环的次数 </span></span><br></pre></td></tr></table></figure>
+
+<h3 id="each-function"><a href="#each-function" class="headerlink" title=".each(function(){})"></a>.each(function(){})</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环标签</span></span><br><span class="line">$(<span class="string">&#x27;li&#x27;</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">k, v</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(k, v)</span><br><span class="line">&#125;)</span><br><span class="line">VM387:<span class="number">2</span> <span class="number">0</span> &lt;li&gt;​<span class="number">1</span>​&lt;/li&gt;​</span><br><span class="line">VM387:<span class="number">2</span> <span class="number">1</span> &lt;li&gt;​<span class="number">2</span>​&lt;/li&gt;​</span><br><span class="line">VM387:<span class="number">2</span> <span class="number">2</span> &lt;li&gt;​<span class="number">3</span>​&lt;/li&gt;​</span><br><span class="line">VM387:<span class="number">2</span> <span class="number">3</span> &lt;li&gt;​<span class="number">4</span>​&lt;/li&gt;​</span><br><span class="line">VM387:<span class="number">2</span> <span class="number">4</span> &lt;li&gt;​<span class="number">5</span>​&lt;/li&gt;​</span><br><span class="line"></span><br><span class="line"><span class="comment">// 循环普通数组</span></span><br><span class="line"></span><br><span class="line">$.each(a, <span class="function"><span class="keyword">function</span>(<span class="params">k, v</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(k, v)</span><br><span class="line">&#125;)</span><br><span class="line">VM734:<span class="number">2</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line">VM734:<span class="number">2</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line">VM734:<span class="number">2</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">VM734:<span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">VM734:<span class="number">2</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">VM734:<span class="number">2</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line"><span class="comment">// 停止循环 return false; ---&gt;&gt;&gt; break;</span></span><br><span class="line">$.each(a, <span class="function"><span class="keyword">function</span>(<span class="params">k, v</span>)</span>&#123;  </span><br><span class="line">    <span class="built_in">console</span>.log(k, v)  </span><br><span class="line">    <span class="keyword">if</span> (k === <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">VM884:<span class="number">3</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line">VM884:<span class="number">3</span> <span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="comment">// return ; ---&gt;&gt;&gt; continue;</span></span><br><span class="line"></span><br><span class="line">$.each(a, <span class="function"><span class="keyword">function</span>(<span class="params">k, v</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (k === <span class="number">1</span>)&#123;</span><br><span class="line">    	<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(k, v)</span><br><span class="line">&#125;)</span><br><span class="line">VM904:<span class="number">8</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line">VM904:<span class="number">8</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line">VM904:<span class="number">8</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">VM904:<span class="number">8</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line">VM904:<span class="number">8</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="data"><a href="#data" class="headerlink" title=".data()"></a>.data()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(xx).data(<span class="string">&#x27;key&#x27;</span>, <span class="string">&#x27;value&#x27;</span>)	<span class="comment">//给标签对象添加数据  类似于全局变量</span></span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).data(&#123;<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;b&#x27;</span>:<span class="string">&#x27;2&#x27;</span>&#125;)</span><br><span class="line">jQuery.fn.init [ul, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">1</span>)]</span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).data(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="string">&quot;1&quot;</span></span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).data(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"><span class="string">&quot;2&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="removeData"><a href="#removeData" class="headerlink" title=".removeData()"></a>.removeData()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(xx).removeData()<span class="comment">//删除值</span></span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).removeData(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">jQuery.fn.init [ul, <span class="attr">prevObject</span>: jQuery.fn.init(<span class="number">1</span>)]</span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).data(<span class="string">&#x27;b&#x27;</span>)</span><br><span class="line"><span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">$.extend(&#123;</span><br><span class="line">    min:<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;<span class="keyword">return</span> a &lt; b ? a: b;&#125;, </span><br><span class="line">    max:<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;<span class="keyword">return</span> a &gt; b ? a: b;&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.min(<span class="number">1</span>, <span class="number">2</span>) -- <span class="number">1</span></span><br><span class="line">$.max(<span class="number">1</span>, <span class="number">2</span>) -- <span class="number">2</span></span><br><span class="line"><span class="comment">// 同过 extend 创建的方法 只能在$. 下使用  对应 标签对象无法使用</span></span><br><span class="line">$.extend(&#123;</span><br><span class="line">    max:<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;<span class="keyword">return</span> a&gt;b?a:b&#125;,</span><br><span class="line">    min:<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;<span class="keyword">return</span> a&gt;b?b:a&#125;</span><br><span class="line">&#125;)</span><br><span class="line">ƒ ( selector, context ) &#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// The jQuery object is actually just the init constructor &#x27;enhanced&#x27;</span></span><br><span class="line">		<span class="comment">// Need init if jQuery is called (just allow error to be thrown if not included)</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> jQ…</span><br><span class="line">$.min(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">$.max(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span></span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).min(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    VM1372:<span class="number">1</span> Uncaught <span class="built_in">TypeError</span>: $(...).min is not a <span class="function"><span class="keyword">function</span></span></span><br><span class="line"><span class="function">    <span class="title">at</span> &lt;<span class="title">anonymous</span>&gt;:1:9</span></span><br><span class="line"><span class="function">                                                                     </span></span><br><span class="line"><span class="function">// .<span class="title">fn</span>.<span class="title">extend</span> 创建的方法 对 标签对象 可用                                  </span></span><br><span class="line"><span class="function"><span class="title">$</span>.<span class="title">fn</span>.<span class="title">extend</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    max:function(a, b)&#123;return a&gt;b?a:b&#125;,</span></span></span><br><span class="line"><span class="function"><span class="params">    min:function(a, b)&#123;return a&gt;b?b:a&#125;</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;</span>)</span></span><br><span class="line">Object [jquery: &quot;3.5.1&quot;, constructor: ƒ, toArray: ƒ, get: ƒ, pushStack: ƒ, …]</span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).min(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">$(<span class="string">&#x27;ul&#x27;</span>).max(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">2</span>                </span><br><span class="line">                                   </span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +213,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/jQuery%2010/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/JS%2004%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/jQuery%2009/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +305,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">动画（了解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86"><span class="toc-number">2.</span> <span class="toc-text">循环遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#each-function"><span class="toc-number">2.1.</span> <span class="toc-text">.each(function(){})</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#data"><span class="toc-number">3.</span> <span class="toc-text">.data()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#removeData"><span class="toc-number">4.</span> <span class="toc-text">.removeData()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">插件</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +360,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

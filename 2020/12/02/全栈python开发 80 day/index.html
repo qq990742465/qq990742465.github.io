@@ -8,13 +8,23 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>世人皆苦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="drfdjango-rest-framework Web软件开发模式123456789# 前后端混合开发（前后端不分离）返回的是html的内容 需要写模板 # 前后端分离：只专注于写后端接口返回json格式数据# xml 格式&lt;xml&gt;&lt;name&gt;xxx&lt;&#x2F;name&gt;&lt;&#x2F;xml&gt;# json格式&amp;#123;&quot;name&quot;:&amp;quot">
+<meta property="og:type" content="article">
 <meta property="og:title" content="世人皆苦">
-<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:url" content="http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2080%20day/index.html">
 <meta property="og:site_name" content="世人皆苦">
+<meta property="og:description" content="drfdjango-rest-framework Web软件开发模式123456789# 前后端混合开发（前后端不分离）返回的是html的内容 需要写模板 # 前后端分离：只专注于写后端接口返回json格式数据# xml 格式&lt;xml&gt;&lt;name&gt;xxx&lt;&#x2F;name&gt;&lt;&#x2F;xml&gt;# json格式&amp;#123;&quot;name&quot;:&amp;quot">
 <meta property="og:locale">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213717.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213718.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213719.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213720.png">
+<meta property="og:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213721.png">
+<meta property="article:published_time" content="2020-12-02T12:31:37.405Z">
+<meta property="article:modified_time" content="2020-12-02T13:37:21.784Z">
 <meta property="article:author" content="T-hree">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/T-hree/Blog/raw/master/img/20201202213717.png">
   
     <link rel="alternative" href="/atom.xml" title="世人皆苦" type="application/atom+xml">
   
@@ -148,19 +158,95 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-元类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-全栈python开发 80 day" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="什么是元类？"><a href="#什么是元类？" class="headerlink" title="什么是元类？"></a>什么是元类？</h3><h4 id="由-python一切-皆对象-得知-类-也是一种对象"><a href="#由-python一切-皆对象-得知-类-也是一种对象" class="headerlink" title="由 python一切 皆对象 得知  类 也是一种对象"></a>由 python一切 皆对象 得知  类 也是一种对象</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对象的产生方式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lei</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line"><span class="comment"># 调用类加（）</span></span><br><span class="line">obj = Lei(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line"><span class="comment"># 由此获得 对象obj</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/#more">more >></a>
-        
+        <h1 id="drf"><a href="#drf" class="headerlink" title="drf"></a>drf</h1><p>django-rest-framework</p>
+<h1 id="Web软件开发模式"><a href="#Web软件开发模式" class="headerlink" title="Web软件开发模式"></a>Web软件开发模式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前后端混合开发（前后端不分离）返回的是html的内容 需要写模板 </span></span><br><span class="line"><span class="comment"># 前后端分离：只专注于写后端接口返回json格式数据</span></span><br><span class="line"><span class="comment"># xml 格式</span></span><br><span class="line">&lt;xml&gt;</span><br><span class="line">&lt;name&gt;xxx&lt;/name&gt;</span><br><span class="line">&lt;/xml&gt;</span><br><span class="line"><span class="comment"># json格式</span></span><br><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;xxx&quot;</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213717.png" alt="image-20200927152728262"></p>
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213718.png" alt="image-20200927153333290"></p>
+<h2 id="api接口"><a href="#api接口" class="headerlink" title="api接口"></a>api接口</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过网络 规定了前后端信息交互的媒介</span></span><br><span class="line">url：长得像返回数据的url连接</span><br><span class="line">	https://api.map.baidu.com/place/v2/search</span><br><span class="line">请求方式： get post put patch delete</span><br><span class="line">	采用get方式请求接口</span><br><span class="line">请求参数  json或者xml格式的key-value类型数据</span><br><span class="line">响应结果 json或者xml格式的数据</span><br><span class="line"><span class="comment"># 百度地铁api接口</span></span><br><span class="line">https://api.map.baidu.com/place/v2/search?xx=xx&amp;xx=xx&amp;xx=xx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="postman的使用"><a href="#postman的使用" class="headerlink" title="postman的使用"></a>postman的使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 模拟发送http请求的攻击</span></span><br><span class="line"><span class="comment"># 解析json格式的数据</span></span><br><span class="line">json.cn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头中User-Agent： 客户端类型</span></span><br><span class="line"><span class="comment"># 请求头中加其他参数 </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213719.png" alt="image-20200927175843498"></p>
+<h2 id="Restful规范"><a href="#Restful规范" class="headerlink" title="Restful规范"></a>Restful规范</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">REST 全称 representational State Transfer</span></span><br><span class="line"><span class="string">他是一种定义Web API接口的设计风格  尤其使用于前后端分离的应用模式中</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">这种风格的理念认为后端开发任务就是提供数据 对外提供数据资源的访问接口  所以在定义接口时 客户端访问的URL路径就表示这种要操作的数据资源</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">事实上 我们可以使用任何一个框架都可以实现符合restful规范的API接口</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 10条规范</span></span><br><span class="line"><span class="number">1</span> 数据的安全保障：</span><br><span class="line">	url链接尽量使用https协议进行传送</span><br><span class="line"><span class="number">2</span> 接口的特征表现</span><br><span class="line">	用api关键字标识接口url：</span><br><span class="line">    api.xxx.com...</span><br><span class="line">    xxx.com/api...</span><br><span class="line">    注：看到api字眼， 就代表该请求url链接是完成前后端数据交互的</span><br><span class="line"><span class="number">3</span> 多数据版本共存</span><br><span class="line">	在url链接中标识数据版本</span><br><span class="line">    api.xxx.com/v1</span><br><span class="line">    api.xxx.com/v2</span><br><span class="line">    注：url中的v1 v2 就是不同数据版本的体现</span><br><span class="line"><span class="number">4</span> 数据即资源， 均使用名词（可复数）</span><br><span class="line">	api.xxx.com/users</span><br><span class="line">    api.xxx.com/books</span><br><span class="line"><span class="number">5</span> 资源操作由请求方式决定（method）</span><br><span class="line">	api.xxx.com/books -get请求 	获取所有书</span><br><span class="line">    api.xxx.com/books/<span class="number">1</span>	-get请求	获取主键为<span class="number">1</span>的书</span><br><span class="line">    api.xxx.com/books -post请求	新增一本书</span><br><span class="line">    api.xxx.com/books/<span class="number">1</span> -put请求	整体修改主键为<span class="number">1</span>的书</span><br><span class="line">    api.xxx.com/books/<span class="number">1</span>	-patch请求	局部修改主键为<span class="number">1</span>的书</span><br><span class="line">    api.xxx.com/books/<span class="number">1</span> -delete请求	删除主键为<span class="number">1</span>的书</span><br><span class="line"><span class="number">6</span> 过滤 通过在url上传参的形式 传递搜索条件</span><br><span class="line">	api.xxx.com/v1/books?limit=10	指定返回记录的数量</span><br><span class="line">    api.xxx.com/v1/books?offset=10	指定返回开始的位置</span><br><span class="line">    api.xxx.com/v1/books?page=2&amp;per_page=100	指定第几页 以及每页的个数</span><br><span class="line">    api.xxx.com/v1/books?sortby=name&amp;order=asc	指定返回结果按照那个属性排序以及排序顺序</span><br><span class="line">    api.xxx.com/v1/books?type_id=1	指定筛选条件</span><br><span class="line">    </span><br><span class="line"><span class="number">7</span> 响应状态码</span><br><span class="line">	正常<span class="number">2</span>xx</span><br><span class="line">    	<span class="number">200</span> 常规</span><br><span class="line">        <span class="number">201</span> 创建成功</span><br><span class="line">    重定向<span class="number">3</span>xx</span><br><span class="line">    	<span class="number">301</span> 永久重定向</span><br><span class="line">        <span class="number">302</span> 暂时重定向</span><br><span class="line">    客户端异常<span class="number">4</span>xx</span><br><span class="line">    	<span class="number">403</span> 请求无权限</span><br><span class="line">        <span class="number">404</span> 请求路径不存在</span><br><span class="line">        <span class="number">405</span> 请求发法不存在</span><br><span class="line">    服务器异常<span class="number">5</span>xx</span><br><span class="line">    	<span class="number">500</span> 服务器异常</span><br><span class="line"><span class="number">8</span> 错误处理 应返回错误信息</span><br><span class="line">	&#123;</span><br><span class="line">        error(msg):<span class="string">&quot;xxx&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">9</span> 返回结果 针对不同操作 服务器向用户返回的结果应该符合以下规范</span><br><span class="line">	GET /collection		返回资源对象的列表（数组）</span><br><span class="line">    GET /collection/resource		返回单个资源对象</span><br><span class="line">    POST /collection		返回新生成的资源对象</span><br><span class="line">    PUT /collection/resource		返回完整的资源对象</span><br><span class="line">    PATCH /collection/resource		返回完整的资源对象</span><br><span class="line">    DELETE /collection/resource		返回一个空文档</span><br><span class="line"><span class="number">10</span> 需要url请求的资源 需要访问资源的请求连接</span><br><span class="line">	<span class="comment"># 让用户在不查操作文档的情况下 也知道下一步应该做什么</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;code&quot;</span>:<span class="number">1000</span>,</span><br><span class="line">        <span class="string">&quot;msg&quot;</span>:<span class="string">&quot;ok&quot;</span>,</span><br><span class="line">        <span class="string">&quot;results&quot;</span>:[</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;name&quot;</span>:<span class="string">&quot;xxx&quot;</span>,</span><br><span class="line">                <span class="string">&quot;xxx&quot;</span>:<span class="string">&quot;xxx&quot;</span>,</span><br><span class="line">            &#125;</span><br><span class="line">            &#123;obj2&#125;</span><br><span class="line">            ......</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="drf的安装和简单实用"><a href="#drf的安装和简单实用" class="headerlink" title="drf的安装和简单实用"></a>drf的安装和简单实用</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 pip install djangorestframework</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">	<span class="number">1</span> 在setting.py 的app中注册</span><br><span class="line">    INSTALLED_APPS = [</span><br><span class="line">        <span class="string">&#x27;rest_framework&#x27;</span></span><br><span class="line">    ]</span><br><span class="line">	<span class="number">2</span> 在models中写表模型</span><br><span class="line">    	<span class="class"><span class="keyword">class</span> <span class="title">XXX</span>（<span class="title">models</span>.<span class="title">Model</span>）：</span></span><br><span class="line"><span class="class">        	....</span></span><br><span class="line"><span class="class">            ...</span></span><br><span class="line"><span class="class">            ..</span></span><br><span class="line"><span class="class">    3 新建一个序列化类</span></span><br><span class="line"><span class="class">    4 在视图中写视图类（<span class="title">CBV</span>）</span></span><br><span class="line"><span class="class">    5 写路由关系</span></span><br><span class="line"><span class="class">           </span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="cbv的源码"><a href="#cbv的源码" class="headerlink" title="cbv的源码"></a>cbv的源码</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 限度View的源码</span></span><br><span class="line">form django.views <span class="keyword">import</span> View</span><br><span class="line"></span><br><span class="line"><span class="comment"># urls.py</span></span><br><span class="line">url(<span class="string">&#x27;books/&#x27;</span>, view.Books.as_view()), <span class="comment"># 在这个地方应该写个函数的内存地址，view.Books.as_view()执行完，是个函数内存地址，as_view()是一个类方法。类直接来调用，会把类自动传入</span></span><br><span class="line">放了一个view的内存地 </span><br><span class="line">址（View--&gt;&gt;as_view--&gt;&gt;内层函数）</span><br><span class="line"><span class="comment"># 请求来了 如果路径匹配上 会执行    函数内存地址（request）</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="APIView源码分析"><a href="#APIView源码分析" class="headerlink" title="APIView源码分析"></a>APIView源码分析</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.views <span class="keyword">import</span> APIView</span><br><span class="line"><span class="comment"># APIView继承了django原生的View</span></span><br><span class="line"><span class="comment">#urls中</span></span><br><span class="line">url(<span class="string">&#x27;booksapiview/&#x27;</span>, view.Booksapiview.as_view()), <span class="comment"># 在这个地方应该写个函数的内存地址  同上</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># APIView的as_view方法（类的绑定方法）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只要继承了APIView， 就没有csrf认证了</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># APIView的dispatch方法重写</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Request类"><a href="#Request类" class="headerlink" title="Request类"></a>Request类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.request <span class="keyword">import</span> Request</span><br><span class="line"><span class="comment"># 只要继承了APIView  视图类中的request对象 都是新的 其中封装了原生的request</span></span><br><span class="line"><span class="comment"># 原生request在新的request._request中</span></span><br><span class="line"><span class="comment"># 这个新的request对象 使用和原生的使用方式相同</span></span><br><span class="line">	原因：</span><br><span class="line">    重写了 __getattr__方法 反射 </span><br><span class="line">    从 原生request中获取attr</span><br><span class="line"><span class="comment"># request.data 表面上是属性   其实是方法</span></span><br><span class="line"><span class="meta">@property</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">data</span>(<span class="params">self</span>):</span></span><br><span class="line">    ....</span><br><span class="line">他返回的事一个字典  post请求不管使用什么编码  传过来的数据都在request.data中</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="Csrf补充"><a href="#Csrf补充" class="headerlink" title="Csrf补充"></a>Csrf补充</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213720.png" alt="image-20200928114331248"></p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><p><img src="https://gitee.com/T-hree/Blog/raw/master/img/20201202213721.png" alt="image-20200928151835991"></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/zhifubao.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -169,16 +255,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/%E5%85%83%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2080%20day/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2081%20day/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/02/%E5%85%A8%E6%A0%88python%E5%BC%80%E5%8F%91%2079%20day/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -193,228 +347,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="list-count"><a href="#list-count" class="headerlink" title="list.count"></a>list.count</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> l:</span><br><span class="line">	print(l.count(i))</span><br><span class="line"></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><a target="_blank" rel="noopener" href="http://idea.medeming.com/jets">http://idea.medeming.com/jets</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/python%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#drf"><span class="toc-number">1.</span> <span class="toc-text">drf</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Web%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">Web软件开发模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#api%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">api接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postman%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.2.</span> <span class="toc-text">postman的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Restful%E8%A7%84%E8%8C%83"><span class="toc-number">2.3.</span> <span class="toc-text">Restful规范</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#drf%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E5%AE%9E%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">drf的安装和简单实用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cbv%E7%9A%84%E6%BA%90%E7%A0%81"><span class="toc-number">4.</span> <span class="toc-text">cbv的源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#APIView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">APIView源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Request%E7%B1%BB"><span class="toc-number">5.1.</span> <span class="toc-text">Request类</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Csrf%E8%A1%A5%E5%85%85"><span class="toc-number">6.</span> <span class="toc-text">Csrf补充</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A"><span class="toc-number">7.</span> <span class="toc-text">作业</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-cmd永久管理员模式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、 打开C盘</p>
-<p>2、定位到C:\Windows\System32目录</p>
-<p>3、找到CMD</p>
-<p>4、添加到桌面快捷方式</p>
-        
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/cmd%E6%B0%B8%E4%B9%85%E7%AE%A1%E7%90%86%E5%91%98%E6%A8%A1%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 05 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="变量补充"><a href="#变量补充" class="headerlink" title="变量补充"></a>变量补充</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
-<li><p>js变量命名规范</p>
-<ul>
-<li>变量名只能是 数字 字母 下划线 $</li>
-<li>变量名 命名规范  驼峰式</li>
-<li>变量名 不能用 关键字</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2005%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS 04 day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h1><h2 id="Js的引入方式"><a href="#Js的引入方式" class="headerlink" title="Js的引入方式"></a>Js的引入方式</h2><h3 id="script-直接书写"><a href="#script-直接书写" class="headerlink" title="script 直接书写"></a>script 直接书写</h3><h3 id="script-src-属性-引入外部js文件"><a href="#script-src-属性-引入外部js文件" class="headerlink" title="script  src 属性 引入外部js文件"></a>script  src 属性 引入外部js文件</h3>
-        
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/02/JS%2004%20day/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -444,8 +402,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
